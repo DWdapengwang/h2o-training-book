@@ -1,4 +1,4 @@
-# Anomoly Detection
+# Anomaly Detection
 
 # Anomaly Detection on MNIST with H2O Deep Learning
 

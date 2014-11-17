@@ -1,2 +1,2 @@
-# H2O in Big Data environments
+# H2O in Big Data Environments
 

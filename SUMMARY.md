@@ -2,7 +2,7 @@
 
 * [Introduction](README.md)
 * [H2O World Training Sandbox](h2o_world_training_sandbox/README.md)
-* [H2O in Big Data environments](h2o_in_big_data_environments/README.md)
+* [H2O in Big Data Environments](h2o_in_big_data_environments/README.md)
 * [Hands-On Training](hands-on_training/README.md)
    * [H2O with the Web UI](hands-on_training/h2o_with_the_web_ui.md)
    * [R with H2O ](hands-on_training/r_with_h2o.md)
@@ -13,7 +13,7 @@
    * [Unsupervised Learning](hands-on_training/unsupervised_learning.md)
        * [KMeans Clustering](hands-on_training/kmeans_clustering.md)
        * [Dimensionality Reduction](hands-on_training/dimensionality_reduction.md)
-       * [Anomoly Detection](hands-on_training/anomoly_detection.md)
+       * [Anomaly Detection](hands-on_training/anomoly_detection.md)
    * [Advanced Topics](hands-on_training/advanced_topics.md)
        * [Multi-model Parameter Tuning](hands-on_training/multi-model_parameter_tuning_for_higgs_dataset.md)
        * [Categorical Feature Engineering](hands-on_training/categorical_feature_engineering.md)
