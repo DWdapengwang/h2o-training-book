@@ -1,4 +1,4 @@
-# H2O World Training Sandbox
+# Setup H<sub>2</sub>O World Training Sandbox
 
 ## 1. Prerequisites
   * VirtualBox
@@ -13,12 +13,18 @@
 
 ## 2. Setup Sandbox
   * Open VirtualBox
-  * Go to menu _File > Import Appliance_
+  ![VirtualBox Application](images/01_virtualbox.png)
+
+  * Select the menu item _File > Import Appliance_
+  ![VirtualBox Menu](images/02_vb_menu.png)
+
+  * Import wizard is shown
+  ![Select file](images/03_select_file.png)
+
   * Open provided _h2oworld-training.ova_ file
+  ![Select file](images/04_import_wizard.png)
 
->
-
- TODO: needs screenshosts
+  * Review imported image
 
 ## 3. Launch Sandbox
   * Select h2oworld-training item and click on _Start_ icon
