@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Anomoly Detection | What is H2O?</title>
+        <title>Tools | What is H2O?</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../hands-on_training/advanced_topics.html" />
+    <link rel="next" href="../hands-on_training/practical_use_cases" />
     
     
-    <link rel="prev" href="../hands-on_training/dimensionality_reduction.html" />
+    <link rel="prev" href="../hands-on_training/categorical_feature_engineering.html" />
     
 
         
@@ -37,7 +37,7 @@
 
 
         
-    <div class="book"  data-level="3.4.3" data-basepath=".." data-revision="1416253371525">
+    <div class="book"  data-level="3.5.3" data-basepath=".." data-revision="1416254106586">
     
 
 <div class="book-summary">
@@ -167,10 +167,10 @@
                 
     
         
-        <li class="chapter " data-level="3.3.1" data-path="hands-on_training/regression">
+        <li class="chapter " data-level="3.3.1" data-path="hands-on_training/regression.html">
             
                 
-                    <a href="../hands-on_training/regression">
+                    <a href="../hands-on_training/regression.html">
                         <i class="fa fa-check"></i>
                         
                             <b>3.3.1.</b>
@@ -269,7 +269,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="3.4.3" data-path="hands-on_training/anomoly_detection.html">
+        <li class="chapter " data-level="3.4.3" data-path="hands-on_training/anomoly_detection.html">
             
                 
                     <a href="../hands-on_training/anomoly_detection.html">
@@ -339,7 +339,7 @@
         </li>
     
         
-        <li class="chapter " data-level="3.5.3" data-path="hands-on_training/tools.html">
+        <li class="chapter active" data-level="3.5.3" data-path="hands-on_training/tools.html">
             
                 
                     <a href="../hands-on_training/tools.html">
@@ -481,13 +481,67 @@
                 
             
             
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.1.1" data-path="hackers_station/kmeans.html">
+            
+                
+                    <a href="../hackers_station/kmeans.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.1.</b>
+                        
+                         KMeans
+                    </a>
+                
+            
+            
         </li>
     
         
-        <li class="chapter " data-level="5.2" data-path="hackers_station/build_applications_on_top_of_h2o">
+        <li class="chapter " data-level="5.1.2" data-path="hackers_station/grep.html">
             
                 
-                    <a href="../hackers_station/build_applications_on_top_of_h2o">
+                    <a href="../hackers_station/grep.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.2.</b>
+                        
+                         Grep
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.1.3" data-path="hackers_station/quantiles.html">
+            
+                
+                    <a href="../hackers_station/quantiles.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.3.</b>
+                        
+                         Quantiles
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.2" data-path="hackers_station/build_applications_on_top_of_h2o.html">
+            
+                
+                    <a href="../hackers_station/build_applications_on_top_of_h2o.html">
                         <i class="fa fa-check"></i>
                         
                             <b>5.2.</b>
@@ -500,10 +554,10 @@
         </li>
     
         
-        <li class="chapter " data-level="5.3" data-path="hackers_station/start_with_sparkling_water">
+        <li class="chapter " data-level="5.3" data-path="hackers_station/start_with_sparkling_water.html">
             
                 
-                    <a href="../hackers_station/start_with_sparkling_water">
+                    <a href="../hackers_station/start_with_sparkling_water.html">
                         <i class="fa fa-check"></i>
                         
                             <b>5.3.</b>
@@ -521,10 +575,10 @@
         </li>
     
         
-        <li class="chapter " data-level="6" data-path="troubleshooting/README">
+        <li class="chapter " data-level="6" data-path="troubleshooting/README.html">
             
                 
-                    <a href="../troubleshooting/README">
+                    <a href="../troubleshooting/README.html">
                         <i class="fa fa-check"></i>
                         
                             <b>6.</b>
@@ -641,93 +695,136 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1285">
+                    <section class="normal" id="section-gitbook_4021">
                     
-                        <h1 id="anomoly-detection">Anomoly Detection</h1>
-<h1 id="anomaly-detection-on-mnist-with-h2o-deep-learning">Anomaly Detection on MNIST with H2O Deep Learning</h1>
-<h6 id="this-tutorial-shows-how-a-deep-learning-auto-encoderhttpenwikipediaorgwikiautoencoder-model-can-be-used-to-find-outliers-in-a-dataset-this-file-is-both-valid-r-and-markdown-code-we-use-the-well-known-mnisthttpyannlecuncomexdbmnist-dataset-of-hand-written-digits-where-each-row-contains-the-282784-raw-gray-scale-pixel-values-from-0-to-255-of-the-digitized-digits-0-to-9">This tutorial shows how a Deep Learning <a href="http://en.wikipedia.org/wiki/Autoencoder" target="_blank">Auto-Encoder</a> model can be used to find outliers in a dataset. This file is both valid R and markdown code. We use the well-known <a href="http://yann.lecun.com/exdb/mnist/" target="_blank">MNIST</a> dataset of hand-written digits, where each row contains the 28^2=784 raw gray-scale pixel values from 0 to 255 of the digitized digits (0 to 9).</h6>
-<h3 id="start-h2o-and-load-the-mnist-data">Start H2O and load the MNIST data</h3>
-<h6 id="initialize-the-h2o-server-and-import-the-mnist-trainingtesting-datasets">Initialize the H2O server and import the MNIST training/testing datasets.</h6>
-<pre><code>library(h2o)
-h2oServer &lt;- h2o.init(nthreads=-1)
-homedir &lt;- &quot;/data/h2o-training/mnist/&quot;
-TRAIN = &quot;train.csv.gz&quot;
-TEST = &quot;test.csv.gz&quot;
-train_hex &lt;- h2o.importFile(h2oServer, path = paste0(homedir,TRAIN), header = F, sep = &#39;,&#39;, key = &#39;train.hex&#39;)
-test_hex &lt;- h2o.importFile(h2oServer, path = paste0(homedir,TEST), header = F, sep = &#39;,&#39;, key = &#39;test.hex&#39;)
-</code></pre><h6 id="the-data-consists-of-784-282-pixel-values-per-row-with-gray-scale-values-from-0-to-255-the-last-column-is-the-response-a-label-in-0129">The data consists of 784 (=28^2) pixel values per row, with (gray-scale) values from 0 to 255. The last column is the response (a label in 0,1,2,...,9).</h6>
-<pre><code>predictors = c(1:784)
-resp = 785
-</code></pre><h6 id="we-do-unsupervised-training-so-we-can-drop-the-response-column">We do unsupervised training, so we can drop the response column.</h6>
-<pre><code>train_hex &lt;- train_hex[,-resp]
-test_hex &lt;- test_hex[,-resp]
-</code></pre><h3 id="finding-outliers---ugly-hand-written-digits">Finding outliers - ugly hand-written digits</h3>
-<h6 id="we-train-a-deep-learning-auto-encoder-to-learn-a-compressed-low-dimensional-non-linear-representation-of-the-dataset-hence-learning-the-intrinsic-structure-of-the-training-dataset-the-auto-encoder-model-is-then-used-to-transform-all-test-set-images-to-their-reconstructed-images-by-passing-through-the-lower-dimensional-neural-network-we-then-find-outliers-in-a-test-dataset-by-comparing-the-reconstruction-of-each-scanned-digit-with-its-original-pixel-values-the-idea-is-that-a-high-reconstruction-error-of-a-digit-indicates-that-the-test-set-point-doesnt-conform-to-the-structure-of-the-training-data-and-can-hence-be-called-an-outlier">We train a Deep Learning Auto-Encoder to learn a compressed (low-dimensional) non-linear representation of the dataset, hence learning the intrinsic structure of the training dataset. The auto-encoder model is then used to transform all test set images to their reconstructed images, by passing through the lower-dimensional neural network. We then find outliers in a test dataset by comparing the reconstruction of each scanned digit with its original pixel values. The idea is that a high reconstruction error of a digit indicates that the test set point doesn&#39;t conform to the structure of the training data and can hence be called an outlier.</h6>
-<h4 id="1-learn-whats-normal-from-the-training-data">1. Learn what&#39;s <em>normal</em> from the training data</h4>
-<h6 id="train-unsupervised-deep-learning-autoencoder-model-on-the-training-dataset-for-simplicity-we-train-a-model-with-1-hidden-layer-of-50-tanh-neurons-to-create-50-non-linear-features-with-which-to-reconstruct-the-original-dataset--we-learned-from-the-dimensionality-reduction-tutorial-that-50-is-a-reasonable-choice-for-simplicity-we-train-the-auto-encoder-for-only-1-epoch-one-pass-over-the-data-we-explicitly-include-constant-columns-all-white-background-for-the-visualization-to-be-easier">Train unsupervised Deep Learning autoencoder model on the training dataset. For simplicity, we train a model with 1 hidden layer of 50 Tanh neurons to create 50 non-linear features with which to reconstruct the original dataset.  We learned from the Dimensionality Reduction tutorial that 50 is a reasonable choice. For simplicity, we train the auto-encoder for only 1 epoch (one pass over the data). We explicitly include constant columns (all white background) for the visualization to be easier.</h6>
-<pre><code>ae_model &lt;- h2o.deeplearning(x=predictors,
-                           y=42, #response (ignored - pick any non-constant column)
-                           data=train_hex,
-                           activation=&quot;Tanh&quot;,
-                           autoencoder=T,
-                           hidden=c(50),
-                           ignore_const_cols=F,
-                           epochs=1)
-</code></pre><h6 id="note-that-the-response-column-is-ignored-it-is-only-required-because-of-a-shared-deeplearning-code-framework">Note that the response column is ignored (it is only required because of a shared DeepLearning code framework).</h6>
-<h4 id="2-find-outliers-in-the-test-data">2. Find outliers in the test data</h4>
-<h6 id="the-anomaly-app-computes-the-per-row-reconstruction-error-for-the-test-data-set-it-passes-it-through-the-autoencoder-model-built-on-the-training-data-and-computes-mean-square-error-mse-for-each-row-in-the-test-set">The Anomaly app computes the per-row reconstruction error for the test data set. It passes it through the autoencoder model (built on the training data) and computes mean square error (MSE) for each row in the test set.</h6>
-<pre><code>test_rec_error &lt;- as.data.frame(h2o.anomaly(test_hex, ae_model))
-</code></pre><h6 id="in-case-you-wanted-to-see-the-lower-dimensional-features-created-by-the-auto-encoder-deep-learning-model-heres-a-way-to-extract-them-for-a-given-dataset-this-a-non-linear-dimensionality-reduction-similar-to-pca-but-the-values-are-capped-by-the-activation-function-in-this-case-they-range-from--11">In case you wanted to see the lower-dimensional features created by the auto-encoder deep learning model, here&#39;s a way to extract them for a given dataset. This a non-linear dimensionality reduction, similar to PCA, but the values are capped by the activation function (in this case, they range from -1...1)</h6>
-<pre><code>test_features_deep &lt;- h2o.deepfeatures(test_hex, ae_model, layer=1)
-summary(test_features_deep)
-</code></pre><h4 id="3-visualize-the-good-the-bad-and-the-ugly">3. Visualize the <em>good</em>, the <em>bad</em> and the <em>ugly</em></h4>
-<h6 id="we-will-need-a-helper-function-for-plotting-handwritten-digits-adapted-from-httpwwwr-bloggerscomthe-essence-of-a-handwritten-digit-dont-worry-if-you-dont-follow-this-code">We will need a helper function for plotting handwritten digits (adapted from <a href="http://www.r-bloggers.com/the-essence-of-a-handwritten-digit/" target="_blank">http://www.r-bloggers.com/the-essence-of-a-handwritten-digit/</a>). Don&#39;t worry if you don&#39;t follow this code...</h6>
-<pre><code>plotDigit &lt;- function(mydata, rec_error) {
-  len&lt;-nrow(mydata)
-  N&lt;-ceiling(sqrt(len))
-  op &lt;- par(mfrow=c(N,N),pty=&#39;s&#39;,mar=c(1,1,1,1),xaxt=&#39;n&#39;,yaxt=&#39;n&#39;)
-  for (i in 1:nrow(mydata)) {
-    colors&lt;-c(&#39;white&#39;,&#39;black&#39;)
-    cus_col&lt;-colorRampPalette(colors=colors)
-    z&lt;-array(mydata[i,],dim=c(28,28))
-    z&lt;-z[,28:1]
-    image(1:28,1:28,z,main=paste0(&quot;rec_error: &quot;, round(rec_error[i],4)),col=cus_col(256))
-  }
-  on.exit(par(op))
-}
+                        <h1 id="tools">Tools</h1>
+<h3 id="synthetic-data">Synthetic Data</h3>
+<h6 id="use-h2ocreateframe-to-synthetic-random-data-in-h2o-this-method-can-also-be-used-to-quickly-create-very-large-datasets-for-scaling-tests-note-that-there-is-no-intrinsic-structure-in-the-data-its-either-constant-or-random-so-results-from-many-machine-learning-methods-will-not-be-very-meaningful">Use <code>h2o.createFrame</code> to synthetic random data in H2O. This method can also be used to quickly create very large datasets for scaling tests. Note that there is no intrinsic structure in the data (it&#39;s either constant or random), so results from many machine learning methods will not be very meaningful.</h6>
+<pre><code>myframe = h2o.createFrame(localH2O, &#39;framekey&#39;, rows = 20, cols = 5,
+                          seed = -12301283, randomize = TRUE, value = 0,
+                          categorical_fraction = 0.8, factors = 10, real_range = 1,
+                          integer_fraction = 0.2, integer_range = 10, missing_fraction = 0.2,
+                          response_factors = 1)
+</code></pre><h6 id="we-created-a-small-random-frame-in-h2o-that-contains-missing-values-categorical-and-numerical-columns">We created a small random frame in H2O that contains missing values, categorical and numerical columns.</h6>
+<pre><code>head(myframe,20)
 
-plotDigits &lt;- function(data, rec_error, rows) {
-  row_idx &lt;- order(rec_error[,1],decreasing=F)[rows]
-  my_rec_error &lt;- rec_error[row_idx,]
-  my_data &lt;- as.matrix(as.data.frame(data[row_idx,]))
-  plotDigit(my_data, my_rec_error)
-}
-</code></pre><h6 id="lets-look-at-the-test-set-points-with-lowmedianhigh-reconstruction-errors-we-will-now-visualize-the-original-test-set-points-and-their-reconstructions-obtained-by-propagating-them-through-the-narrow-neural-net">Let&#39;s look at the test set points with low/median/high reconstruction errors. We will now visualize the original test set points and their reconstructions obtained by propagating them through the narrow neural net.</h6>
-<pre><code>test_recon &lt;- h2o.predict(ae_model, test_hex)
-summary(test_recon)
-</code></pre><h4 id="the-good">The good</h4>
-<h6 id="lets-plot-the-25-digits-with-lowest-reconstruction-error-first-we-plot-the-reconstruction-then-the-original-scanned-images">Let&#39;s plot the 25 digits with lowest reconstruction error. First we plot the reconstruction, then the original scanned images.</h6>
-<pre><code>plotDigits(test_recon, test_rec_error, c(1:25))
-plotDigits(test_hex,   test_rec_error, c(1:25))
-</code></pre><h5 id="imagesgood_bothpng"><img src="images/good_both.png" alt=""></h5>
-<h6 id="clearly-a-well-written-digit-1-appears-in-both-the-training-and-testing-set-and-is-easy-to-reconstruct-by-the-autoencoder-with-minimal-reconstruction-error-nothing-is-as-easy-as-a-straight-line">Clearly, a well-written digit 1 appears in both the training and testing set, and is easy to reconstruct by the autoencoder with minimal reconstruction error. Nothing is as easy as a straight line.</h6>
-<h4 id="the-bad">The bad</h4>
-<h6 id="now-lets-look-at-the-25-digits-with-median-reconstruction-error">Now let&#39;s look at the 25 digits with median reconstruction error.</h6>
-<pre><code>plotDigits(test_recon, test_rec_error, c(4988:5012))
-plotDigits(test_hex,   test_rec_error, c(4988:5012))
-</code></pre><h5 id="imagesbad_bothpng"><img src="images/bad_both.png" alt=""></h5>
-<h6 id="these-test-set-digits-look-normal---it-is-plausible-that-they-resemble-digits-from-the-training-data-to-a-large-extent-but-they-do-have-some-particularities-that-cause-some-reconstruction-error">These test set digits look &quot;normal&quot; - it is plausible that they resemble digits from the training data to a large extent, but they do have some particularities that cause some reconstruction error.</h6>
-<h4 id="the-ugly">The ugly</h4>
-<h6 id="and-here-are-the-biggest-outliers---the-25-digits-with-highest-reconstruction-error">And here are the biggest outliers - The 25 digits with highest reconstruction error!</h6>
-<pre><code>plotDigits(test_recon, test_rec_error, c(9976:10000))
-plotDigits(test_hex,   test_rec_error, c(9976:10000))
-</code></pre><h5 id="imagesugly_bothpng"><img src="images/ugly_both.png" alt=""></h5>
-<h6 id="now-here-are-some-pretty-ugly-digits-that-are-plausibly-not-commonly-found-in-the-training-data---some-are-even-hard-to-classify-by-humans">Now here are some pretty ugly digits that are plausibly not commonly found in the training data - some are even hard to classify by humans.</h6>
-<h3 id="voila">Voila!</h3>
-<h5 id="we-were-able-to-find-outliers-with-h2o-deep-learning-auto-encoder-models-we-would-love-to-hear-your-usecase-for-anomaly-detection">We were able to find outliers with H2O Deep Learning Auto-Encoder models. We would love to hear your usecase for Anomaly detection.</h5>
-<h6 id="note-every-run-of-deeplearning-results-in-different-results-since-we-use-hogwildhttpwwweecsberkeleyedubrechtpapershogwildtrpdf-parallelization-with-intentional-race-conditions-between-threads--to-get-reproducible-results-at-the-expense-of-speed-for-small-datasets-set-reproduciblet-and-specify-a-seed"><em>Note:</em> Every run of DeepLearning results in different results since we use <a href="http://www.eecs.berkeley.edu/~brecht/papers/hogwildTR.pdf" target="_blank">Hogwild!</a> parallelization with intentional race conditions between threads.  To get reproducible results at the expense of speed for small datasets, set reproducible=T and specify a seed.</h6>
-<h4 id="more-information-can-be-found-in-the-h2o-deep-learning-booklethttpstcokwzyfmgj2s-and-in-our-slideshttpwwwslidesharenet0xdatapresentations">More information can be found in the <a href="https://t.co/kWzyFMGJ2S" target="_blank">H2O Deep Learning booklet</a> and in our <a href="http://www.slideshare.net/0xdata/presentations" target="_blank">slides</a>.</h4>
+#         response    C1    C2 C3    C4    C5
+#    1  -0.4227451 4a41c a1290  3 326a0 82dce
+#    2   0.4594655 0a79a a1290 -6 05f22 f4772
+#    3   0.2784008 70d75 4c3a7  7 320a8 6b17b
+#    4  -0.5674698       07067  6 320a8 a78d9
+#    5  -0.7041911 24800 4c3a7  8       82dce
+#    6   0.5853957 8e64f a1290 NA ea644
+#    7   0.8540204              4 05f22 a6b1e
+#    8  -0.1466706 4a41c        1 cef5a 89717
+#    9          NA 0a79a c402d  3 070d5 a78d9
+#    10 -0.7357408 4a41c a1290  9 e055d 64439
+#    11 -0.2798403       4c3a7  3       f4772
+#    12  0.3454386 24800       NA
+#    13         NA 0a79a ca1de  9 070d5 a78d9
+#    14 -0.6732674 8e64f 50b47  9 320a8 6b17b
+#    15         NA cc3d5 ca1de  4 e055d f4772
+#    16         NA cc3d5 07067  1 070d5 89717
+#    17  0.8564855 4f8b9 a1290 -1 326a0 6b17b
+#    18 -0.5555804 0a79a 50b47 NA       82dce
+#    19  0.5639324              3 e055d
+#    20  0.2511743              7 30c85 cae4c
+</code></pre><h6 id="we-remove-the-response-column-and-convert-the-integer-column-to-a-factor">We remove the response column and convert the integer column to a factor.</h6>
+<pre><code>myframe &lt;- myframe[,-1]
+myframe[,3] &lt;- as.factor(myframe$C3)
+summary(myframe)
+head(myframe, 20)
+</code></pre><h3 id="interaction-features-between-factors">Interaction Features between Factors</h3>
+<h6 id="create-pairwise-interactions-for-2-groups-of-columns-keep-only-up-to-10-most-common-factors-per-interaction">Create pairwise interactions for 2 groups of columns, keep only up to 10 (most common) factors per interaction.</h6>
+<pre><code>pairwise &lt;- h2o.interaction(myframe, key = &#39;pairwise&#39;, factors = list(c(1,2),c(2,3,4)),
+                            pairwise=TRUE, max_factors = 10, min_occurrence = 1)
+head(pairwise, 20)
+levels(pairwise[,2])
+</code></pre><h6 id="create-5-th-order-interaction-between-the-specified-columns-and-allow-up-to-10k-resulting-factors-per-pair-wise-interaction">Create 5-th order interaction between the specified columns, and allow up to 10k resulting factors (per pair-wise interaction).</h6>
+<pre><code>higherorder &lt;- h2o.interaction(myframe, key = &#39;higherorder&#39;, factors = c(1,2,3,4,5),
+                               pairwise=FALSE, max_factors = 10000, min_occurrence = 1)
+head(higherorder, 20)
+</code></pre><h6 id="create-a-categorical-variable-out-of-the-integer-column-via-self-interaction-and-keep-at-most-3-factors-and-only-if-they-occur-at-least-twice">Create a categorical variable out of the integer column via self-interaction, and keep at most 3 factors, and only if they occur at least twice</h6>
+<pre><code>summary(myframe$C3)
+head(myframe$C3, 20)
+trim_integer_levels &lt;- h2o.interaction(myframe, key = &#39;trim_integers&#39;, factors = 3,
+                                       pairwise = FALSE, max_factors = 3, min_occurrence = 2)
+head(trim_integer_levels, 20)
+</code></pre><h6 id="append-all-interactions-to-the-original-frame-and-clean-up-temporaries">Append all interactions to the original frame and clean up temporaries</h6>
+<pre><code>myframe &lt;- cbind(myframe, pairwise, higherorder, trim_integer_levels)
+myframe &lt;- h2o.assign(myframe, &#39;final.key&#39;)
+h2o.rm(localH2O, grep(pattern = &quot;Last.value&quot;, x = h2o.ls(localH2O)$Key, value = TRUE))
+myframe
+head(myframe,20)
+summary(myframe)
 
+#    &gt; head(myframe,20)
+#          C1    C2 C3    C4    C5       C1_C2    C2_C3       C2_C4    C3_C4             C1_C2_C3_C4_C5 C3_C3
+#    1  49ed9 d9ff0  3 c9523 00599 49ed9_d9ff0  d9ff0_3 d9ff0_c9523    other  49ed9_d9ff0_3_c9523_00599     3
+#    2  e2271 d9ff0 -6 fe2d9 cb67d e2271_d9ff0 d9ff0_-6 d9ff0_fe2d9 -6_fe2d9 e2271_d9ff0_-6_fe2d9_cb67d other
+#    3  408d2 6c5ce  7 28b4d 3e4cb 408d2_6c5ce    other       other    other  408d2_6c5ce_7_28b4d_3e4cb other
+#    4        ae93f  6 28b4d da0c6       other    other       other    other     NA_ae93f_6_28b4d_da0c6 other
+#    5  722ea 6c5ce  8       00599 722ea_6c5ce    other    6c5ce_NA     8_NA     722ea_6c5ce_8_NA_00599 other
+#    6  5e310 d9ff0 NA 9dbca       5e310_d9ff0 d9ff0_NA       other    other    5e310_d9ff0_NA_9dbca_NA
+#    7               4 fe2d9 8d2b5       NA_NA    other    NA_fe2d9  4_fe2d9        NA_NA_4_fe2d9_8d2b5 other
+#    8  49ed9        1 87bef 92d9c    49ed9_NA     NA_1       other  1_87bef     49ed9_NA_1_87bef_92d9c     1
+#    9  e2271 14aa5  3 d77b0 da0c6       other  14aa5_3 14aa5_d77b0  3_d77b0  e2271_14aa5_3_d77b0_da0c6     3
+#    10 49ed9 d9ff0  9 79727 b7a40 49ed9_d9ff0    other       other    other  49ed9_d9ff0_9_79727_b7a40     9
+#    11       6c5ce  3       cb67d    NA_6c5ce  6c5ce_3    6c5ce_NA     3_NA        NA_6c5ce_3_NA_cb67d     3
+#    12 722ea       NA                722ea_NA    NA_NA       NA_NA    NA_NA          722ea_NA_NA_NA_NA
+#    13 e2271 0036a  9 d77b0 da0c6       other    other 0036a_d77b0  9_d77b0  e2271_0036a_9_d77b0_da0c6     9
+#    14 5e310 0a9ed  9 28b4d 3e4cb       other    other       other    other  5e310_0a9ed_9_28b4d_3e4cb     9
+#    15 f76de 0036a  4 79727 cb67d       other    other       other    other  f76de_0036a_4_79727_cb67d other
+#    16 f76de ae93f  1 d77b0 92d9c       other  ae93f_1 ae93f_d77b0  1_d77b0  f76de_ae93f_1_d77b0_92d9c     1
+#    17 853d4 d9ff0 -1 c9523 3e4cb 853d4_d9ff0 d9ff0_-1 d9ff0_c9523    other 853d4_d9ff0_-1_c9523_3e4cb other
+#    18 e2271 0a9ed NA       00599       other 0a9ed_NA    0a9ed_NA    NA_NA    e2271_0a9ed_NA_NA_00599
+#    19              3 79727             NA_NA    other       other    other           NA_NA_3_79727_NA     3
+#    20              7 8007d 1280c       NA_NA    other    NA_8007d  7_8007d        NA_NA_7_8007d_1280c other
+</code></pre><h3 id="imputation-of-missing-values">Imputation of Missing Values</h3>
+<h6 id="first-we-randomly-replace-50-rows-in-each-column-of-the-iris-dataset-with-missing-values">First, we randomly replace 50 rows in each column of the iris dataset with missing values</h6>
+<pre><code>ds &lt;- iris
+ds[sample(nrow(ds), 50),1] &lt;- NA
+ds[sample(nrow(ds), 50),2] &lt;- NA
+ds[sample(nrow(ds), 50),3] &lt;- NA
+ds[sample(nrow(ds), 50),4] &lt;- NA
+ds[sample(nrow(ds), 50),5] &lt;- NA
+summary(ds)
+</code></pre><h6 id="upload-the-naed-dataset-to-h2o">upload the NA&#39;ed dataset to H2O</h6>
+<pre><code>hex &lt;- as.h2o(localH2O, ds)
+head(hex,20)
+</code></pre><h6 id="impute-the-nas-in-the-first-column-in-place-with-median">Impute the NAs in the first column in place with &quot;median&quot;</h6>
+<pre><code>h2o.impute(hex, &quot;Sepal.Length&quot;, method = &quot;median&quot;)
+head(hex,20)
+</code></pre><h6 id="impute-the-nas-in-the-second-column-with-the-mean-based-on-the-groupby-columns-sepallength-and-petalwidth-and-species">Impute the NAs in the second column with the mean based on the groupBy columns Sepal.Length and Petal.Width and Species</h6>
+<pre><code>h2o.impute(hex, &quot;Sepal.Width&quot;, method = &quot;mean&quot;, groupBy = c(&quot;Sepal.Length&quot;, &quot;Petal.Width&quot;, &quot;Species&quot;))
+head(hex,20)
+</code></pre><h6 id="impute-the-species-column-with-the-mode-based-on-the-columns-1-and-4">Impute the Species column with the &quot;mode&quot; based on the columns 1 and 4</h6>
+<pre><code>h2o.impute(hex, 5, method = &quot;mode&quot;, groupBy = c(1,4))
+head(hex,20)
+</code></pre><h3 id="splitting-h2o-frames-into-consecutive-subsets">Splitting H2O Frames into Consecutive Subsets</h3>
+<h6 id="first-we-create-a-large-frame">First, we create a large frame</h6>
+<pre><code>myframe = h2o.createFrame(localH2O, &#39;large&#39;, rows = 1000000, cols = 10,
+                          seed = -12301283, randomize = TRUE, value = 0,
+                          categorical_fraction = 0.8, factors = 10, real_range = 1,
+                          integer_fraction = 0.2, integer_range = 10, missing_fraction = 0.2,
+                          response_factors = 1)
+dim(myframe)
+</code></pre><h6 id="now-we-split-that-dataset-into-4-consecutive-pieces-so-we-need-to-specify-the-sizes-of-the-first-3-splits">Now, we split that dataset into 4 consecutive pieces, so we need to specify the sizes of the first 3 splits</h6>
+<pre><code>splits &lt;- h2o.splitFrame(myframe, c(0.4,0.2,0.1))
+dim(splits[[1]])
+dim(splits[[2]])
+dim(splits[[3]])
+dim(splits[[4]])
+</code></pre><h3 id="splitting-h2o-frames-into-random-subsets">Splitting H2O Frames into Random Subsets</h3>
+<h6 id="we-create-a-1d-vector-with-uniform-values-sampled-from-the-interval-01-and-use-that-to-assign-rows-to-the-splits">We create a 1D vector with uniform values sampled from the interval 0...1 and use that to assign rows to the splits.</h6>
+<pre><code>random &lt;- h2o.runif(myframe, seed = 123456789)
+train &lt;- myframe[random &lt; .8,]
+valid &lt;- myframe[random &gt;= .8 &amp; random &lt; 0.9,]
+test  &lt;- myframe[random &gt;= .9,]
+dim(train)
+dim(valid)
+dim(test)
+</code></pre>
                     
                     </section>
                 
@@ -737,10 +834,10 @@ plotDigits(test_hex,   test_rec_error, c(9976:10000))
         </div>
 
         
-        <a href="../hands-on_training/dimensionality_reduction.html" class="navigation navigation-prev " aria-label="Previous page: Dimensionality Reduction"><i class="fa fa-angle-left"></i></a>
+        <a href="../hands-on_training/categorical_feature_engineering.html" class="navigation navigation-prev " aria-label="Previous page: Categorical Feature Engineering"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../hands-on_training/advanced_topics.html" class="navigation navigation-next " aria-label="Next page: Advanced Topics"><i class="fa fa-angle-right"></i></a>
+        <a href="../hands-on_training/practical_use_cases" class="navigation navigation-next " aria-label="Next page: Practical Use Cases"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

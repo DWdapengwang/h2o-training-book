@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Tableau | What is H2O?</title>
+        <title>KMeans Clustering | What is H2O?</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../demos/excel.html" />
+    <link rel="next" href="../hands-on_training/dimensionality_reduction.html" />
     
     
-    <link rel="prev" href="../demos/README.html" />
+    <link rel="prev" href="../hands-on_training/unsupervised_learning.html" />
     
 
         
@@ -37,7 +37,7 @@
 
 
         
-    <div class="book"  data-level="4.1" data-basepath=".." data-revision="1416253371525">
+    <div class="book"  data-level="3.4.1" data-basepath=".." data-revision="1416254106586">
     
 
 <div class="book-summary">
@@ -167,10 +167,10 @@
                 
     
         
-        <li class="chapter " data-level="3.3.1" data-path="hands-on_training/regression">
+        <li class="chapter " data-level="3.3.1" data-path="hands-on_training/regression.html">
             
                 
-                    <a href="../hands-on_training/regression">
+                    <a href="../hands-on_training/regression.html">
                         <i class="fa fa-check"></i>
                         
                             <b>3.3.1.</b>
@@ -237,7 +237,7 @@
                 
     
         
-        <li class="chapter " data-level="3.4.1" data-path="hands-on_training/kmeans_clustering.html">
+        <li class="chapter active" data-level="3.4.1" data-path="hands-on_training/kmeans_clustering.html">
             
                 
                     <a href="../hands-on_training/kmeans_clustering.html">
@@ -398,7 +398,7 @@
                 
     
         
-        <li class="chapter active" data-level="4.1" data-path="demos/integration_with_tableau_and_excel.html">
+        <li class="chapter " data-level="4.1" data-path="demos/integration_with_tableau_and_excel.html">
             
                 
                     <a href="../demos/integration_with_tableau_and_excel.html">
@@ -481,13 +481,67 @@
                 
             
             
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.1.1" data-path="hackers_station/kmeans.html">
+            
+                
+                    <a href="../hackers_station/kmeans.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.1.</b>
+                        
+                         KMeans
+                    </a>
+                
+            
+            
         </li>
     
         
-        <li class="chapter " data-level="5.2" data-path="hackers_station/build_applications_on_top_of_h2o">
+        <li class="chapter " data-level="5.1.2" data-path="hackers_station/grep.html">
             
                 
-                    <a href="../hackers_station/build_applications_on_top_of_h2o">
+                    <a href="../hackers_station/grep.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.2.</b>
+                        
+                         Grep
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.1.3" data-path="hackers_station/quantiles.html">
+            
+                
+                    <a href="../hackers_station/quantiles.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.3.</b>
+                        
+                         Quantiles
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.2" data-path="hackers_station/build_applications_on_top_of_h2o.html">
+            
+                
+                    <a href="../hackers_station/build_applications_on_top_of_h2o.html">
                         <i class="fa fa-check"></i>
                         
                             <b>5.2.</b>
@@ -500,10 +554,10 @@
         </li>
     
         
-        <li class="chapter " data-level="5.3" data-path="hackers_station/start_with_sparkling_water">
+        <li class="chapter " data-level="5.3" data-path="hackers_station/start_with_sparkling_water.html">
             
                 
-                    <a href="../hackers_station/start_with_sparkling_water">
+                    <a href="../hackers_station/start_with_sparkling_water.html">
                         <i class="fa fa-check"></i>
                         
                             <b>5.3.</b>
@@ -521,10 +575,10 @@
         </li>
     
         
-        <li class="chapter " data-level="6" data-path="troubleshooting/README">
+        <li class="chapter " data-level="6" data-path="troubleshooting/README.html">
             
                 
-                    <a href="../troubleshooting/README">
+                    <a href="../troubleshooting/README.html">
                         <i class="fa fa-check"></i>
                         
                             <b>6.</b>
@@ -641,70 +695,69 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1277">
+                    <section class="normal" id="section-gitbook_4016">
                     
-                        <h1 id="tableau">Tableau</h1>
-<h1 id="beauty-and-big-data-tableau">Beauty and Big Data: Tableau</h1>
-<h2 id="tableau">Tableau</h2>
-<p>Download <a href="http://www.tableausoftware.com/" target="_blank">Tableau</a> in order to use notebooks available on our <a href="https://github.com/0xdata/h2o/tree/master/tableau" target="_blank">github</a>.</p>
-<h3 id="how-does-tableau-play-with-h2o">How does Tableau play with H2O?</h3>
-<p>Tableau is the frontend visual organizer that utilizes all the available statistic tools from open source R and H2O. Tableau will connect to R via a socket server using a library package already built for R. The H2O client package available for installation allows R to connect and communicate to H2O via a REST API. So by connecting Tableau to R, Tableau essentially can launch or initiate H2O and run any of the features already available for R.</p>
-<p><img alt="Integration Workflow" src="images/workflow.png" width="640"></img></p>
-<h3 id="r-component">R Component</h3>
-<p>First, make sure to <a href="http://docs.0xdata.com/Ruser/Rinstall.html#r-installation" target="_blank">install H<sub>2</sub>O</a> in R:</p>
-<pre><code>&gt; install.packages(&quot;h2o&quot;)
-</code></pre><p>Then install the Rserve package in R that will allow the user to start up a R session on a local server that Tableau will communicate with:</p>
-<pre><code>&gt; install.packages(&quot;Rserve&quot;)
-&gt; library(&quot;Rserve&quot;)
-&gt; run.Rserve(port = 6311)
-</code></pre><h3 id="tableau-front-end">Tableau Front End</h3>
-<ul>
-<li><p><strong>Step 1: Connection Setup</strong></p>
-<p>Open Demo_Template_8.1.twb which should have all the calculated fields containing R script already in the sidebar.</p>
-<p>Navigate to “Help &gt; Settings and Performance &gt; Manage R Connection” to establish a connection to the R serve.</p>
-<p><img src="images/tableau_r_connection1.png" alt="Manage R Connection"></p>
-<p>Input for IP: &#39;localhost&#39; and for port: &#39;54321&#39;</p>
-<p><img src="images/tableau_r_connection2.png" alt="Manage R Connection"></p>
-</li>
-<li><p><strong>Step 2: Data Connection</strong></p>
-<p>Set the workbook’s connection to the airlines_meta.csv data by navigating to the data section on the left sidebar, right clicking on the airlines_meta and choosing to “Edit Connection.”</p>
-<p><img src="images/tableau_data_connection1.png" alt="Data Connection"></p>
-<p><img src="images/tableau_data_connection2.png" alt="Data Connection"></p>
-</li>
-</ul>
-<ul>
-<li><p><strong>Step 3: H2O Initialization</strong></p>
-<p>Configure the IP Address and Port that H2O will launch at as well as the path to the full airlines data file.</p>
-<p><img src="images/tableau_h2o_parameters.png" alt="H2O Parameters"></p>
-</li>
-<li><p><strong>Step 4: Data Import</strong></p>
-<p><img src="images/tableau_execute.png" alt="Execute function"></p>
-<p>Execute “00 Load H2O and Tableau functions” to run:</p>
-<pre><code>&gt; library(h2o)
-&gt; tableauFunctions &lt;- functions(x){
-&gt; ...
-&gt; }
-&gt; print(&#39;Finish loading necessary functions&#39;)
-</code></pre><p>Execute “01 Init H2O &amp; Parse Data” to:</p>
-<pre><code>&gt; library(h2o)
-&gt; localH2O = h2o.init(ip = &quot;localhost&quot;, port = 54321, nthreads = -1)
-&gt; data = h2o.importFile(localH2O, &quot;/data/h2o-training/airlines/allyears2k.csv&quot;)
-</code></pre><p>Execute “02 Compute Aggregation with H2O’s ddply” to groupby columns and do roll ups. First calculate the number of flights coming and going per month:</p>
-<pre><code>numFlights = ddply(data.hex, &#39;Month&#39;, nrow)
-numFlights.R = as.data.frame(numFlights)
-</code></pre><p>Then compute the number of cancelled flights per month:</p>
-<pre><code>fun2 = function(df) {sum(df$Cancelled)}
-h2o.addFunction(h2oLocal, fun2)
-canFlights = ddply(data.hex, &#39;Month&#39;, fun2)
-canFlights.R = as.data.frame(canFlights)
-</code></pre><p>Execute “03 Run GLM” to build a GLM model in H2O and grab back coefficient values that will be plotted in multiple worksheets:</p>
-<pre><code>data.glm = h2o.glm(x = c(&#39;Origin&#39;, &#39;Dest&#39;, &#39;Distance&#39;, &#39;Unique Carrier&#39;) , y = &#39;Cancelled&#39;, data = data.hex, family = &#39;binomial&#39;, nfolds = 0, standardize=TRUE)
-</code></pre></li>
-<li><p>After the calculated fields finishes running, scroll through the different dashboards to see data differently.</p>
-<p><img alt="Tableau Dashboard" src="images/tableau_dashboard.png" width="1024"></img></p>
-</li>
-</ul>
+                        <h1 id="kmeans-clustering">KMeans Clustering</h1>
+<h1 id="unsupervised-learning-and-clustering-with-h2o-kmeans">Unsupervised Learning and Clustering With H2O KMeans</h1>
+<h6 id="this-tutorial-shows-how-a-kmeanshttpenwikipediaorgwikik-means_clustering-model-is-trained-this-file-is-both-valid-r-and-markdown-code-we-will-use-a-variety-of-well-known-datasets-that-are-used-in-published-papers-which-evaluate-various-kmeans-implementations">This tutorial shows how a <a href="http://en.wikipedia.org/wiki/K-means_clustering" target="_blank">KMeans</a> model is trained. This file is both valid R and markdown code. We will use a variety of well-known datasets that are used in published papers, which evaluate various KMeans implementations.</h6>
+<h3 id="start-h2o-and-build-a-kmeans-model-on-iris">Start H2O and build a KMeans model on iris</h3>
+<h6 id="initialize-the-h2o-server-and-import-the-datasets-we-need-for-this-session">Initialize the H2O server and import the datasets we need for this session.</h6>
+<pre><code>library(h2o)
+h2oServer  &lt;- h2o.init(nthreads=-1)
+homedir    &lt;- &quot;/data/h2o-training/clustering/&quot;
+iris.h2o    &lt;- as.h2o(h2oServer, iris)
+</code></pre><h3 id="our-first-kmeans-model">Our first KMeans model</h3>
+<h6 id="its-easy-to-run-kmeans-its-just-like-the-kmeans-method-available-in-the-stats-package-well-leave-out-the-species-column-and-cluster-on-the-iris-flower-attributes">It&#39;s easy to run KMeans, it&#39;s just like the <code>kmeans</code> method available in the stats package. We&#39;ll leave out the <code>Species</code> column and cluster on the iris flower attributes.</h6>
+<pre><code>km.model &lt;- h2o.kmeans(data = iris.h2o, centers = 5, cols = 1:4, init=&quot;furthest&quot;)
+</code></pre><h6 id="lets-look-at-the-model-summary">Let&#39;s look at the model summary:</h6>
+<pre><code>km.model
+km.model@model$centers       # The centers for each cluster
+km.model@model$tot.withinss  # total within cluster sum of squares
+km.model@model$cluster       # cluster assignments per observation
+</code></pre><h6 id="to-see-the-model-parameters-that-were-used-access-the-modelmodelparams-field">To see the model parameters that were used, access the model@model$params field:</h6>
+<pre><code>km.model@model$params
+</code></pre><h6 id="you-can-get-the-r-documentation-help-here">You can get the R documentation help here:</h6>
+<pre><code>?h2o.kmeans
+</code></pre><h3 id="use-the-gap-statistic-beta-to-find-the-optimal-number-of-clusters">Use the Gap Statistic (Beta) To Find the Optimal Number of Clusters</h3>
+<h6 id="this-is-essentially-a-grid-search-over-kmeans">This is essentially a grid search over KMeans.</h6>
+<h6 id="you-can-get-the-r-documentation-help-here">You can get the R documentation help here:</h6>
+<pre><code>?h2o.gapStatistic
+</code></pre><h6 id="the-idea-is-that-for-each-k-generate-wcss-from-a-reference-distribution-and-examine-the-gap-between-the-expected-wcss-and-the-observed-wcss-to-obtain-the-w_k-from-the-reference-distribution-b-monte-carlo-replicates-are-drawn-from-the-reference-distribution-for-each-replicate-a-kmeans-is-constructed-and-the-wcss-reported-back">The idea is that, for each &#39;k&#39;, generate WCSS from a reference distribution and examine the gap between the expected WCSS and the observed WCSS. To obtain the W_k from the reference distribution, &#39;B&#39; Monte Carlo replicates are drawn from the reference distribution. For each replicate, a KMeans is constructed and the WCSS reported back.</h6>
+<pre><code>gap_stat &lt;- h2o.gapStatistic(data = iris.h2o, K = 10, B = 100, boot_frac = .1, cols=1:4)
+</code></pre><h6 id="lets-take-a-look-at-the-output-the-default-output-display-will-show-the-number-of-kmeans-models-that-were-run-and-the-optimal-value-of-k">Let&#39;s take a look at the output. The default output display will show the number of KMeans models that were run and the optimal value of k:</h6>
+<pre><code>gap_stat
+</code></pre><h6 id="we-can-also-run-summary-on-the-gap_stat-model">We can also run summary on the gap_stat model:</h6>
+<pre><code>summary(gap_stat)
+</code></pre><h6 id="we-can-also-plot-our-gap_stat-model">We can also plot our gap_stat model:</h6>
+<pre><code>plot(gap_stat)
+</code></pre><h3 id="comparison-against-other-kmeans-implementations">Comparison against other KMeans implementations.</h3>
+<h6 id="lets-use-the-census-1990-datasethttpsarchiveicsuciedumldatasetsuscensusdata28199029-which-has-25-million-data-points-with-68-integer-features">Let&#39;s use the <a href="https://archive.ics.uci.edu/ml/datasets/US+Census+Data+%281990%29" target="_blank">Census 1990 dataset</a>, which has 2.5 million data points with 68 integer features.</h6>
+<pre><code># census1990 &lt;- &quot;Census1990.csv.gz&quot;
+# census.1990 &lt;- h2o.importFile(h2oServer, path = paste0(homedir,census1990), header = F, sep = &#39;,&#39;, key = &#39;census.1990.hex&#39;)
 
+# dim(census.1990)
+# km.census &lt;- h2o.kmeans(data = census.1990, centers = 24, init=&quot;furthest&quot;)  # NOT RUN: Too long on VM
+# km.census@model$tot.withinss
+</code></pre><h6 id="we-can-compare-the-result-with-the-published-result-from-fast-and-accurate-kmeans-on-large-datasetshttppapersnipsccpaper4362-fast-and-accurate-k-means-for-large-datasetspdf-where-the-cost-for-k--24-and-2gb-of-ram-was-approximately-350e18-this-paper-implements-a-streaming-kmeans-so-of-course-accuracy-in-the-streaming-case-will-not-be-as-good-as-a-batch-job-but-results-are-comparable-within-a-few-orders-of-magnitude-h2o-gives-the-ability-to-work-on-datasets-that-dont-fit-in-a-single-boxs-ram-without-having-to-stream-the-data-from-cold-storage-simply-use-distributed-h2o">We can compare the result with the published result from <a href="http://papers.nips.cc/paper/4362-fast-and-accurate-k-means-for-large-datasets.pdf" target="_blank">Fast and Accurate KMeans on Large Datasets</a> where the cost for k = 24 and ~2GB of RAM was approximately 3.50E+18. This paper implements a streaming KMeans, so of course accuracy in the streaming case will not be as good as a batch job, but results are comparable within a few orders of magnitude. H2O gives the ability to work on datasets that don&#39;t fit in a single box&#39;s RAM without having to stream the data from cold storage: simply use distributed H2O.</h6>
+<h6 id="we-can-also-compare-with-streamkm-a-clustering-algorithm-for-data-streamshttpwwwcsuni-paderborndeuploadstx_sibibtex2012_ackermannmrsls_streamkmpppdf-for-various-k-we-can-compare-our-implementation-but-we-only-do-k--30-here">We can also compare with <a href="http://www.cs.uni-paderborn.de/uploads/tx_sibibtex/2012_AckermannMRSLS_StreamKMpp.pdf" target="_blank">StreamKM++: A Clustering Algorithm for Data Streams</a>. For various k, we can compare our implementation, but we only do k = 30 here.</h6>
+<pre><code># km.census &lt;- h2o.kmeans(data = census.1990, centers = 30, init=&quot;furthest&quot;)  # NOT RUN: Too long on VM
+# km.census@model$tot.withinss                                                # NOT RUN: Too long on VM
+</code></pre><h5 id="we-can-also-compare-with-the-kmeans-package">We can also compare with the kmeans package:</h5>
+<pre><code># census.1990.r &lt;- read.csv(file.path(homedir,census1990))
+# km.census.r &lt;- kmeans(census.1990.r, centers = 24)         # NOT RUN: Quick-TRANSfer stage steps exceeded maximum (= 122914250)
+# km.census.r$tot.withinss
+</code></pre><h6 id="lets-compare-now-on-the-big-dataset-bigcross-big-crosshttpwwwcsuni-paderborndeenfachgebieteag-bloemerresearchclusteringstreamkmpp-which-has-116-million-data-points-with-57-integer-features">Let&#39;s compare now on the big dataset BigCross <a href="http://www.cs.uni-paderborn.de/en/fachgebiete/ag-bloemer/research/clustering/streamkmpp/" target="_blank">Big Cross</a>, which has 11.6 million data points with 57 integer features.</h6>
+<pre><code># bigcross   &lt;- &quot;BigCross.data.gz&quot;
+# big.cross   &lt;- h2o.importFile(h2oServer, path = paste0(homedir,bigcross), header = F, sep = &#39;,&#39;, key = &#39;big.cross.hex&#39;)
+
+# dim(big.cross)                                                                # NOT RUN: Too long on VM
+# km.bigcross &lt;- h2o.kmeans(data = big.cross, centers = 24, init=&quot;furthest&quot;)    # NOT RUN: Too long on VM
+# km.bigcross@model$tot.withinss                                                # NOT RUN: Too long on VM
+</code></pre><h6 id="we-can-compare-the-result-with-the-published-result-from-fast-and-accurate-kmeans-on-large-datasetshttppapersnipsccpaper4362-fast-and-accurate-k-means-for-large-datasetspdf-where-the-cost-for-k--24-and-2gb-of-ram-was-approximately-150e14">We can compare the result with the published result from <a href="http://papers.nips.cc/paper/4362-fast-and-accurate-k-means-for-large-datasets.pdf" target="_blank">Fast and Accurate KMeans on Large Datasets</a>, where the cost for k = 24 and ~2GB of RAM was approximately 1.50E+14.</h6>
+<h6 id="we-can-also-compare-with-streamkm-a-clustering-algorithm-for-data-streamshttpwwwcsuni-paderborndeuploadstx_sibibtex2012_ackermannmrsls_streamkmpppdf-for-various-k-we-can-compare-our-implementation-but-we-only-do-k--30-here">We can also compare with <a href="http://www.cs.uni-paderborn.de/uploads/tx_sibibtex/2012_AckermannMRSLS_StreamKMpp.pdf" target="_blank">StreamKM++: A Clustering Algorithm for Data Streams</a>. For various k, we can compare our implementation, but we only do k = 30 here.</h6>
+<pre><code># km.bigcross &lt;- h2o.kmeans(data = big.cross, centers = 30, init=&quot;furthest&quot;)    # NOT RUN: Too long on VM
+# km.bigcross@model$tot.withinss                                                # NOT RUN: Too long on VM
+</code></pre>
                     
                     </section>
                 
@@ -714,10 +767,10 @@ canFlights.R = as.data.frame(canFlights)
         </div>
 
         
-        <a href="../demos/README.html" class="navigation navigation-prev " aria-label="Previous page: Demos"><i class="fa fa-angle-left"></i></a>
+        <a href="../hands-on_training/unsupervised_learning.html" class="navigation navigation-prev " aria-label="Previous page: Unsupervised Learning"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../demos/excel.html" class="navigation navigation-next " aria-label="Next page: Excel"><i class="fa fa-angle-right"></i></a>
+        <a href="../hands-on_training/dimensionality_reduction.html" class="navigation navigation-next " aria-label="Next page: Dimensionality Reduction"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

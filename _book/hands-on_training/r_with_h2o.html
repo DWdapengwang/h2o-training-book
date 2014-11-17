@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Demos | What is H2O?</title>
+        <title>R with H2O  | What is H2O?</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../demos/integration_with_tableau_and_excel.html" />
+    <link rel="next" href="../hands-on_training/supervised_learning_with_regressions.html" />
     
     
-    <link rel="prev" href="../hands-on_training/practical_use_cases" />
+    <link rel="prev" href="../hands-on_training/h2o_with_the_web_ui.html" />
     
 
         
@@ -37,7 +37,7 @@
 
 
         
-    <div class="book"  data-level="4" data-basepath=".." data-revision="1416253371525">
+    <div class="book"  data-level="3.2" data-basepath=".." data-revision="1416254106586">
     
 
 <div class="book-summary">
@@ -134,7 +134,7 @@
         </li>
     
         
-        <li class="chapter " data-level="3.2" data-path="hands-on_training/r_with_h2o.html">
+        <li class="chapter active" data-level="3.2" data-path="hands-on_training/r_with_h2o.html">
             
                 
                     <a href="../hands-on_training/r_with_h2o.html">
@@ -167,10 +167,10 @@
                 
     
         
-        <li class="chapter " data-level="3.3.1" data-path="hands-on_training/regression">
+        <li class="chapter " data-level="3.3.1" data-path="hands-on_training/regression.html">
             
                 
-                    <a href="../hands-on_training/regression">
+                    <a href="../hands-on_training/regression.html">
                         <i class="fa fa-check"></i>
                         
                             <b>3.3.1.</b>
@@ -381,7 +381,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="4" data-path="demos/README.html">
+        <li class="chapter " data-level="4" data-path="demos/README.html">
             
                 
                     <a href="../demos/README.html">
@@ -481,13 +481,67 @@
                 
             
             
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.1.1" data-path="hackers_station/kmeans.html">
+            
+                
+                    <a href="../hackers_station/kmeans.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.1.</b>
+                        
+                         KMeans
+                    </a>
+                
+            
+            
         </li>
     
         
-        <li class="chapter " data-level="5.2" data-path="hackers_station/build_applications_on_top_of_h2o">
+        <li class="chapter " data-level="5.1.2" data-path="hackers_station/grep.html">
             
                 
-                    <a href="../hackers_station/build_applications_on_top_of_h2o">
+                    <a href="../hackers_station/grep.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.2.</b>
+                        
+                         Grep
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.1.3" data-path="hackers_station/quantiles.html">
+            
+                
+                    <a href="../hackers_station/quantiles.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.3.</b>
+                        
+                         Quantiles
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.2" data-path="hackers_station/build_applications_on_top_of_h2o.html">
+            
+                
+                    <a href="../hackers_station/build_applications_on_top_of_h2o.html">
                         <i class="fa fa-check"></i>
                         
                             <b>5.2.</b>
@@ -500,10 +554,10 @@
         </li>
     
         
-        <li class="chapter " data-level="5.3" data-path="hackers_station/start_with_sparkling_water">
+        <li class="chapter " data-level="5.3" data-path="hackers_station/start_with_sparkling_water.html">
             
                 
-                    <a href="../hackers_station/start_with_sparkling_water">
+                    <a href="../hackers_station/start_with_sparkling_water.html">
                         <i class="fa fa-check"></i>
                         
                             <b>5.3.</b>
@@ -521,10 +575,10 @@
         </li>
     
         
-        <li class="chapter " data-level="6" data-path="troubleshooting/README">
+        <li class="chapter " data-level="6" data-path="troubleshooting/README.html">
             
                 
-                    <a href="../troubleshooting/README">
+                    <a href="../troubleshooting/README.html">
                         <i class="fa fa-check"></i>
                         
                             <b>6.</b>
@@ -641,11 +695,168 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1276">
+                    <section class="normal" id="section-gitbook_4018">
                     
-                        <h1 id="demos">Demos</h1>
-<p><a href="https://www.youtube.com/watch?v=Mn8S0cTls9A" target="_blank">Video Screencast</a></p>
+                        <h1 id="r-with-h2o">R with H2O</h1>
+<p>This tutorial demonstrates basic data import, manipulations, and summarizations of data within an H2O cluster from within R. It requires an installation of the h2o R package and its dependencies.</p>
+<h3 id="load-the-h2o-r-package-and-start-an-local-h2o-cluster">Load the h2o R package and start an local H2O cluster</h3>
+<p>Connection to an H2O cloud is established through the <code>h2o.init</code> function from the <code>h2o</code> package. For the purposes of this training exercise, we will use a local H2O cluster running on the default port of <code>54321</code>. We will also use the default cluster memory size and set <code>nthreads = -1</code> to make all the CPUs available to the H2O cluster.</p>
+<pre><code>library(h2o)
+h2oServer &lt;- h2o.init(nthreads = -1)
+</code></pre><h3 id="load-data-into-the-key-value-store-in-the-h2o-cluster">Load data into the key-value store in the H2O cluster</h3>
+<p>This tutorial uses a 10% sample of the Person-Level 1% 2013 Public Use Microdata Sample (PUMS) from United States Census Bureau, making it a Person-Level 0.1% 2013 PUMS. We will use the <code>h2o.importFile</code> function to read the data into the H2O key-value store.</p>
+<pre><code>datadir &lt;- &quot;/data&quot;
+pumsdir &lt;- file.path(datadir, &quot;h2o-training&quot;, &quot;pums2013&quot;)
+csvfile &lt;- &quot;adult_2013_full.csv.gz&quot;
+adult_2013_full &lt;- h2o.importFile(h2oServer,
+                                  path = file.path(pumsdir, csvfile),
+                                  key = &quot;adult_2013_full&quot;, sep = &quot;,&quot;)
+</code></pre><p>The <code>key</code> argument to the <code>h2o.importFile</code> function sets the name of the data set in the H2O key-value store. If the <code>key</code> argument is not supplied, the data will reside in the H2O key-value store under a machine generated name.</p>
+<h6 id="the-results-of-the-h2ols-function-shows-the-size-of-the-object-held-by-the-adult_2013_full-key-in-the-h2o-key-value-store">The results of the <code>h2o.ls</code> function shows the size of the object held by the <code>adult_2013_full</code> key in the H2O key-value store.</h6>
+<pre><code>kvstore &lt;- h2o.ls(h2oServer)
+kvstore
+kvstore$Bytesize[kvstore$Key == &quot;adult_2013_full&quot;] / 1024^2
+</code></pre><h3 id="examine-the-proxy-object-for-the-h2o-resident-data">Examine the proxy object for the H2O resident data</h3>
+<p>The resulting <code>adult_2013_full</code> object is of class <code>H2OParsedData</code>, which implements methods commonly associated with native R <code>data.frame</code> objects.</p>
+<pre><code>class(adult_2013_full)
+dim(adult_2013_full)
+head(colnames(adult_2013_full), 50)
+</code></pre><h3 id="create-an-up-to-date-uci-adult-data-set">Create an up-to-date UCI Adult Data Set</h3>
+<p>In the interest of familiarity, we will create a data set similar to the <a href="https://archive.ics.uci.edu/ml/datasets/Adult" target="_blank">UCI Adult Data Set</a> from the University of California Irvine (UCI) Machine Learning Repository. In particular, we want to extract the age of person (<code>AGEP</code>), class of worker (<code>COW</code>), educational attainment (<code>SCHL</code>), marital status (<code>MAR</code>), industry employed (<code>INDP</code>), relationship (<code>RELP</code>), race (<code>RAC1P</code>), sex (<code>SEX</code>), interest/dividends/net rental income over the past 12 months (<code>INTP</code>), usual hours worked per week over the past 12 months (<code>WKHP</code>), place of birth (<code>POBP</code>), and wages/salary income over the past 12 months.</p>
+<pre><code>nms &lt;- c(&quot;AGEP&quot;, &quot;COW&quot;, &quot;SCHL&quot;, &quot;MAR&quot;, &quot;INDP&quot;, &quot;RELP&quot;, &quot;RAC1P&quot;, &quot;SEX&quot;,
+         &quot;INTP&quot;, &quot;WKHP&quot;, &quot;POBP&quot;, &quot;WAGP&quot;)
+adult_2013 &lt;- adult_2013_full[!is.na(adult_2013_full$WAGP) &amp;
+                              adult_2013_full$WAGP &gt; 0, nms]
+h2o.ls(h2oServer)
+</code></pre><p>Although we created an object in R called <code>adult_2013</code>, there is no value with that key in the H2O key-value store. To make it easier to track our data set, we will copy it&#39;s value to the <code>adult_2013</code> key using the <code>h2o.assign</code> function and delete all the machine generated keys with the prefix <code>Last.value</code> that served as intermediary objects using the <code>h2o.rm</code> function.</p>
+<pre><code>adult_2013 &lt;- h2o.assign(adult_2013, key = &quot;adult_2013&quot;)
+h2o.ls(h2oServer)
 
+rmLastValues &lt;- function(pattern = &quot;Last.value.&quot;)
+{
+  keys &lt;- h2o.ls(h2oServer, pattern = pattern)$Key
+  if (!is.null(keys))
+    h2o.rm(h2oServer, keys)
+  invisible(keys)
+}
+rmLastValues()
+
+kvstore &lt;- h2o.ls(h2oServer)
+kvstore
+kvstore$Bytesize[kvstore$Key == &quot;adult_2013&quot;] / 1024^2
+</code></pre><h3 id="summarize-the-2013-update-of-the-uci-adult-data-set">Summarize the 2013 update of the UCI Adult Data Set</h3>
+<p>As mentioned above, an R proxy object to an H2O data set implements several methods commonly associated with R <code>data.frame</code> objects including the <code>summary</code> function to obtain column-level summaries and the <code>dim</code> function to get the row and column count</p>
+<pre><code>summary(adult_2013)
+dim(adult_2013)
+</code></pre><p>As with R <code>data.frame</code> objects, individual columns within an H2O data set can be summarized using methods commonly associated with R <code>vector</code> objects. For example, the <code>quantile</code> function in R is used to find sample quantiles at probability values specified in the <code>prob</code> argument.</p>
+<pre><code>centiles &lt;- quantile(adult_2013$WAGP, probs = seq(0, 1, by = 0.01))
+centiles
+</code></pre><p>The use of the <code>$</code> operator to extract the column <code>WAGP</code> from the <code>adult_2013</code> data set generated new <code>Last.value</code> keys that we will clean up in the interest of maintaining a tidy key-value store.</p>
+<pre><code>h2o.ls(h2oServer)
+rmLastValues()
+h2o.ls(h2oServer)
+</code></pre><h3 id="derive-columns-capital-gain-and-capital-loss-columns">Derive columns: capital gain and capital loss columns</h3>
+<p>The original UCI Adult Data Set contains columns for capital gain and capital loss, which can be extracted from the <code>INTP</code> column within the Person-Level PUMS data set. We will derive these two columns using the <code>ifelse</code> function where the test condition is whether the <code>INTP</code> column is positive or negative, and if that condition is met, the value is either <code>INT</code> (capital gain) / <code>- INT</code> (capital loss) or <code>0</code>. If we were just interested in measure the magnitude of either a loss or a gain, we could have used the <code>abs</code> function.</p>
+<pre><code>capgain &lt;- ifelse(adult_2013$INTP &gt; 0, adult_2013$INTP, 0)
+caploss &lt;- ifelse(adult_2013$INTP &lt; 0, - adult_2013$INTP, 0)
+adult_2013$CAPGAIN &lt;- capgain
+adult_2013$CAPLOSS &lt;- caploss
+adult_2013 &lt;- adult_2013[,- match(&quot;INTP&quot;, colnames(adult_2013))]
+</code></pre><p>Now that we have the capital gain and loss columns, we can assign our new data set to the <code>adult_2013</code> key and remove all the temporary keys from the H2O key-value store.</p>
+<pre><code>adult_2013 &lt;- h2o.assign(adult_2013, key = &quot;adult_2013&quot;)
+
+h2o.ls(h2oServer)
+rmLastValues()
+h2o.ls(h2oServer)
+</code></pre><h3 id="derive-columns-log-transformations-for-income-variables">Derive columns: log transformations for income variables</h3>
+<p>The UCI Adult Data Set was originally created to predict whether a person&#39;s income in the early 1990s exceeds $50,000 per year. Given that incomes are right-skewed, transforming these measures to a log scale tends to make them more conducive to use in predictive modeling.</p>
+<pre><code>adult_2013$LOG_CAPGAIN &lt;- log(adult_2013$CAPGAIN + 1L)
+adult_2013$LOG_CAPLOSS &lt;- log(adult_2013$CAPLOSS + 1L)
+adult_2013$LOG_WAGP    &lt;- log(adult_2013$WAGP    + 1L)
+</code></pre><p>Now that we have the log transformed columns, we can assign our new data set to the <code>adult_2013</code> key and remove all the temporary keys from the H2O key-value store.</p>
+<pre><code>h2o.ls(h2oServer)
+rmLastValues()
+h2o.ls(h2oServer)
+</code></pre><h3 id="create-cross-tabulations-of-original-and-derived-categorical-variables">Create cross-tabulations of original and derived categorical variables</h3>
+<p>We will begin an analysis of wages by exploring the pairwise relationships between wage groups subdivided into percentiles and the variables we will use as predictors in our statistical models. In the code below the <code>h2o.cut</code> function create the wage groups and the <code>h2o.table</code> function to performs the cross-tabulations.</p>
+<pre><code>cutpoints &lt;- centiles
+cutpoints[1L] &lt;- 0
+adult_2013$CENT_WAGP &lt;- h2o.cut(adult_2013$WAGP, cutpoints)
+adult_2013$TOP2_WAGP &lt;- adult_2013$WAGP &gt; centiles[99L]
+
+centcounts &lt;- h2o.table(adult_2013[&quot;CENT_WAGP&quot;], return.in.R = TRUE)
+round(100 * centcounts/sum(centcounts), 2)
+
+top2counts &lt;- h2o.table(adult_2013[&quot;TOP2_WAGP&quot;], return.in.R = TRUE)
+round(100 * top2counts/sum(top2counts), 2)
+
+relpxtabs &lt;- h2o.table(adult_2013[c(&quot;RELP&quot;, &quot;TOP2_WAGP&quot;)], return.in.R = TRUE)
+relpxtabs
+round(100 * relpxtabs/rowSums(relpxtabs), 2)
+
+schlxtabs &lt;- h2o.table(adult_2013[c(&quot;SCHL&quot;, &quot;TOP2_WAGP&quot;)], return.in.R = TRUE)
+schlxtabs
+
+round(100 * schlxtabs/rowSums(schlxtabs), 2)
+</code></pre><p>Perform a key-value store clean up.</p>
+<pre><code>h2o.ls(h2oServer)
+rmLastValues()
+h2o.ls(h2oServer)
+</code></pre><h3 id="coerce-integer-columns-to-factor-categorical-columns">Coerce integer columns to factor (categorical) columns</h3>
+<h6 id="as-with-standard-r-integer-vectors-integer-columns-in-h2o-can-be-converted-to-a-categorical-type-using-an-asfactor-method-for-our-data-set-we-have-8-columns-that-use-integer-codes-to-represent-categorical-levels">As with standard R integer vectors, integer columns in H2O can be converted to a categorical type using an <code>as.factor</code> method. For our data set we have 8 columns that use integer codes to represent categorical levels.</h6>
+<pre><code>for (j in c(&quot;COW&quot;, &quot;SCHL&quot;, &quot;MAR&quot;, &quot;INDP&quot;, &quot;RELP&quot;, &quot;RAC1P&quot;, &quot;SEX&quot;, &quot;POBP&quot;))
+  adult_2013[[j]] &lt;- as.factor(adult_2013[[j]])
+</code></pre><p>Perform a key-value store clean up.</p>
+<pre><code>h2o.ls(h2oServer)
+rmLastValues()
+h2o.ls(h2oServer)
+</code></pre><h3 id="create-pairwise-interaction-terms-for-linear-modeling">Create pairwise interaction terms for linear modeling</h3>
+<p>While some modeling approaches, such as gradient boosting machines (GBM), random forests, and deep learning, are able to derive interactions between terms during the modeling training stage, other modeling approaches, such as generalized linear models (GLM), require interactions to be user defined inputs. We will use the <code>h2o.interaction</code> function to generate a new column in our data set that pairs relationship (<code>RELP</code>) with education attainment (<code>SCHL</code>) to form a new column labeled <code>RELP_SCHL</code> that we will &quot;column bind&quot; to our data set using a <code>cbind</code> method.</p>
+<pre><code>inter_2013 &lt;- h2o.interaction(adult_2013, factors = c(&quot;RELP&quot;, &quot;SCHL&quot;),
+                              pairwise = TRUE, max_factors = 10000,
+                              min_occurrence = 10)
+adult_2013 &lt;- cbind(adult_2013, inter_2013)
+adult_2013 &lt;- h2o.assign(adult_2013, key = &quot;adult_2013&quot;)
+colnames(adult_2013)
+</code></pre><p>Now that we have derived a few sets of variables, we can examine the H2O key-value store to ensure we have the expected objects.</p>
+<pre><code>h2o.ls(h2oServer)
+rmLastValues()
+
+kvstore &lt;- h2o.ls(h2oServer)
+kvstore
+kvstore$Bytesize[kvstore$Key == &quot;adult_2013&quot;] / 1024^2
+</code></pre><h3 id="generate-group-by-aggregates">Generate group by aggregates</h3>
+<p>In addition to cross-tabulations, we can create more detailed group by aggregates using the <code>h2o.ddply</code> function that was inspired by the <code>ddply</code> function from Hadley Wickham&#39;s <a href="http://cran.r-project.org/web/packages/plyr/index.html" target="_blank">plyr</a> package, which is hosted on the Comprehensive R Archive Network (CRAN).</p>
+<pre><code>wagpSummary &lt;- function(frame) {
+  cbind(N      = length(frame$WAGP),
+        Min    = min(frame$WAGP),
+        Median = median(frame$WAGP),
+        Max    = max(frame$WAGP),
+        Mean   = mean(frame$WAGP),
+        StdDev = sd(frame$WAGP))
+}
+h2o.addFunction(h2oServer, wagpSummary)
+statsByGroup &lt;- as.data.frame(h2o.ddply(adult_2013, &quot;RELP&quot;, wagpSummary))
+colnames(statsByGroup)[-1L] &lt;- c(&quot;N&quot;, &quot;Min&quot;, &quot;Median&quot;, &quot;Mean&quot;, &quot;Max&quot;, &quot;StdDev&quot;)
+statsByGroup &lt;- statsByGroup[order(statsByGroup$median, decreasing = TRUE), ]
+rownames(statsByGroup) &lt;- NULL
+statsByGroup
+</code></pre><h3 id="create-training-and-test-data-sets-to-use-during-modeling">Create training and test data sets to use during modeling</h3>
+<p>As a final step in an exploration of H2O basics in R, we will create a 75% / 25% split, where the larger data set will be used for training a model and the smaller data set will be used for testing the usefulness of the model. We will achieve this by using the <code>h2o.runif</code> function to generate random uniforms over <code>[0, 1]</code> for each row and using those random values to determine the split designation for that row.</p>
+<pre><code>rand &lt;- h2o.runif(adult_2013, seed = 1185)
+adult_2013_train &lt;- adult_2013[rand &lt;= 0.75, ]
+adult_2013_train &lt;- h2o.assign(adult_2013_train, key = &quot;adult_2013_train&quot;)
+adult_2013_test &lt;- adult_2013[rand  &gt; 0.75, ]
+adult_2013_test &lt;- h2o.assign(adult_2013_test, key = &quot;adult_2013_test&quot;)
+</code></pre><p>Now check to make sure the size of the resulting data sets meet expectations.</p>
+<pre><code>nrow(adult_2013)
+nrow(adult_2013_train)
+nrow(adult_2013_test)
+</code></pre><p>Perform a key-value store clean up.</p>
+<pre><code>h2o.ls(h2oServer)
+rmLastValues()
+h2o.ls(h2oServer)
+</code></pre>
                     
                     </section>
                 
@@ -655,10 +866,10 @@
         </div>
 
         
-        <a href="../hands-on_training/practical_use_cases" class="navigation navigation-prev " aria-label="Previous page: Practical Use Cases"><i class="fa fa-angle-left"></i></a>
+        <a href="../hands-on_training/h2o_with_the_web_ui.html" class="navigation navigation-prev " aria-label="Previous page: H2O with the Web UI"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../demos/integration_with_tableau_and_excel.html" class="navigation navigation-next " aria-label="Next page: Tableau"><i class="fa fa-angle-right"></i></a>
+        <a href="../hands-on_training/supervised_learning_with_regressions.html" class="navigation navigation-next " aria-label="Next page: Supervised Learning"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

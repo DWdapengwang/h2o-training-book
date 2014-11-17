@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Classifications | What is H2O?</title>
+        <title>Supervised Learning | What is H2O?</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../hands-on_training/deep_learning.html" />
+    <link rel="next" href="../hands-on_training/regression.html" />
     
     
-    <link rel="prev" href="../hands-on_training/regression" />
+    <link rel="prev" href="../hands-on_training/r_with_h2o.html" />
     
 
         
@@ -37,7 +37,7 @@
 
 
         
-    <div class="book"  data-level="3.3.2" data-basepath=".." data-revision="1416253371525">
+    <div class="book"  data-level="3.3" data-basepath=".." data-revision="1416254106586">
     
 
 <div class="book-summary">
@@ -150,7 +150,7 @@
         </li>
     
         
-        <li class="chapter " data-level="3.3" data-path="hands-on_training/supervised_learning_with_regressions.html">
+        <li class="chapter active" data-level="3.3" data-path="hands-on_training/supervised_learning_with_regressions.html">
             
                 
                     <a href="../hands-on_training/supervised_learning_with_regressions.html">
@@ -167,10 +167,10 @@
                 
     
         
-        <li class="chapter " data-level="3.3.1" data-path="hands-on_training/regression">
+        <li class="chapter " data-level="3.3.1" data-path="hands-on_training/regression.html">
             
                 
-                    <a href="../hands-on_training/regression">
+                    <a href="../hands-on_training/regression.html">
                         <i class="fa fa-check"></i>
                         
                             <b>3.3.1.</b>
@@ -183,7 +183,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="3.3.2" data-path="hands-on_training/classifications.html">
+        <li class="chapter " data-level="3.3.2" data-path="hands-on_training/classifications.html">
             
                 
                     <a href="../hands-on_training/classifications.html">
@@ -481,13 +481,67 @@
                 
             
             
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.1.1" data-path="hackers_station/kmeans.html">
+            
+                
+                    <a href="../hackers_station/kmeans.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.1.</b>
+                        
+                         KMeans
+                    </a>
+                
+            
+            
         </li>
     
         
-        <li class="chapter " data-level="5.2" data-path="hackers_station/build_applications_on_top_of_h2o">
+        <li class="chapter " data-level="5.1.2" data-path="hackers_station/grep.html">
             
                 
-                    <a href="../hackers_station/build_applications_on_top_of_h2o">
+                    <a href="../hackers_station/grep.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.2.</b>
+                        
+                         Grep
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.1.3" data-path="hackers_station/quantiles.html">
+            
+                
+                    <a href="../hackers_station/quantiles.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.3.</b>
+                        
+                         Quantiles
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.2" data-path="hackers_station/build_applications_on_top_of_h2o.html">
+            
+                
+                    <a href="../hackers_station/build_applications_on_top_of_h2o.html">
                         <i class="fa fa-check"></i>
                         
                             <b>5.2.</b>
@@ -500,10 +554,10 @@
         </li>
     
         
-        <li class="chapter " data-level="5.3" data-path="hackers_station/start_with_sparkling_water">
+        <li class="chapter " data-level="5.3" data-path="hackers_station/start_with_sparkling_water.html">
             
                 
-                    <a href="../hackers_station/start_with_sparkling_water">
+                    <a href="../hackers_station/start_with_sparkling_water.html">
                         <i class="fa fa-check"></i>
                         
                             <b>5.3.</b>
@@ -521,10 +575,10 @@
         </li>
     
         
-        <li class="chapter " data-level="6" data-path="troubleshooting/README">
+        <li class="chapter " data-level="6" data-path="troubleshooting/README.html">
             
                 
-                    <a href="../troubleshooting/README">
+                    <a href="../troubleshooting/README.html">
                         <i class="fa fa-check"></i>
                         
                             <b>6.</b>
@@ -641,11 +695,33 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1287">
+                    <section class="normal" id="section-gitbook_4020">
                     
-                        <h1 id="classifications">Classifications</h1>
-<h3 id="classifications-using-generalized-linear-models-gradient-boosting-machines-and-random-forests-in-h2o">Classifications using Generalized Linear Models, Gradient Boosting Machines, and Random Forests in H2O</h3>
-<h6 id="this-tutorial-demonstrates-classification-modeling-in-h2o-using-generalized-linear-models-glm-gradient-boosting-machines-gbm-and-random-forests-it-requires-an-installation-of-the-h2o-r-package-and-its-dependencies">This tutorial demonstrates classification modeling in H2O using generalized linear models (GLM), gradient boosting machines (GBM), and random forests. It requires an installation of the h2o R package and its dependencies.</h6>
+                        <h1 id="supervised-learning-with-regressions-and-classifications">Supervised Learning with Regressions and Classifications</h1>
+<h1 id="regression-using-generalized-linear-models-gradient-boosting-machines-and-random-forests-in-h2o">Regression using Generalized Linear Models, Gradient Boosting Machines, and Random Forests in H2O</h1>
+<h6 id="this-tutorial-demonstrates-regression-modeling-in-h2o-using-generalized-linear-models-glm-gradient-boosting-machines-gbm-and-random-forests-it-requires-an-installation-of-the-h2o-r-package-and-its-dependencies">This tutorial demonstrates regression modeling in H2O using generalized linear models (GLM), gradient boosting machines (GBM), and random forests. It requires an installation of the h2o R package and its dependencies.</h6>
+<h3 id="brief-overview-of-regression-modeling">Brief overview of regression modeling</h3>
+<h4 id="generalized-linear-models-glm">Generalized Linear Models (GLM)</h4>
+<h5 id="intuition-a-linear-combination-of-predictors-is-sufficient-for-determining-an-outcome">Intuition: A linear combination of predictors is sufficient for determining an outcome.</h5>
+<h5 id="important-components">Important components:</h5>
+<h6 id="1-exponential-family-for-error-distribution-gaussiannormal-poisson-gamma-tweedie-etc">1. Exponential family for error distribution (Gaussian/Normal, Poisson, Gamma, Tweedie, etc.)</h6>
+<h6 id="2-link-function-whose-inverse-is-used-to-generate-predictions">2. Link function, whose inverse is used to generate predictions</h6>
+<h6 id="3-elastic-net-mixing-parameter-between-the-l1-and-l2-penalties-on-the-coefficient-estimates">3. (Elastic Net) Mixing parameter between the L1 and L2 penalties on the coefficient estimates.</h6>
+<h6 id="4-elastic-net-shrinkage-parameter-for-the-mixed-penalty-in-3">4. (Elastic Net) Shrinkage parameter for the mixed penalty in 3.</h6>
+<h4 id="gradient-tree-boosting-machines-gbm">Gradient (Tree) Boosting Machines (GBM)</h4>
+<h5 id="intuition-average-an-ensemble-of-weakly-predicting-small-trees-where-each-tree-adjusts-to-the-mistakes-of-the-preceding-trees">Intuition: Average an ensemble of weakly predicting (small) trees where each tree &quot;adjusts&quot; to the &quot;mistakes&quot; of the preceding trees.</h5>
+<h5 id="important-components">Important components:</h5>
+<h6 id="1-number-of-trees">1. Number of trees</h6>
+<h6 id="2-maximum-depth-of-tree">2. Maximum depth of tree</h6>
+<h6 id="3-learning-rate--shrinkage-parameter">3. Learning rate ( <em>shrinkage</em> parameter)</h6>
+<h6 id="where-smaller-learning-rates-tend-to-require-larger-number-of-tree-and-vice-versa">where smaller learning rates tend to require larger number of tree and vice versa.</h6>
+<h4 id="random-forests">Random Forests</h4>
+<h5 id="intuition-average-an-ensemble-of-weakly-predicting-larger-trees-where-each-tree-is-de-correlated-from-all-other-trees">Intuition: Average an ensemble of weakly predicting (larger) trees where each tree is <em>de-correlated</em> from all other trees.</h5>
+<h5 id="important-components">Important components:</h5>
+<h6 id="1-number-of-trees">1. Number of trees</h6>
+<h6 id="2-maximum-depth-of-tree">2. Maximum depth of tree</h6>
+<h6 id="3-number-of-variables-randomly-sampled-as-candidates-for-splits">3. Number of variables randomly sampled as candidates for splits</h6>
+<h6 id="4-sampling-rate-for-constructing-data-set-to-use-on-each-tree">4. Sampling rate for constructing data set to use on each tree</h6>
 <h3 id="load-the-h2o-r-package-and-start-an-local-h2o-cluster">Load the h2o R package and start an local H2O cluster</h3>
 <h6 id="we-will-begin-this-tutorial-by-starting-a-local-h2o-cluster-using-the-default-heap-size-and-as-much-compute-as-the-operating-system-will-allow">We will begin this tutorial by starting a local H2O cluster using the default heap size and as much compute as the operating system will allow.</h6>
 <pre><code>library(h2o)
@@ -658,23 +734,26 @@ rmLastValues &lt;- function(pattern = &quot;Last.value.&quot;)
     h2o.rm(h2oServer, keys)
   invisible(keys)
 }
-</code></pre><h3 id="load-the-training-and-testing-data-into-the-h2o-key-value-store">Load the training and testing data into the H2O key-value store</h3>
+</code></pre><h3 id="load-and-prepare-the-training-and-testing-data-for-analysis">Load and prepare the training and testing data for analysis</h3>
 <h6 id="this-tutorial-uses-a-01-sample-of-the-person-level-2013-public-use-microdata-sample-pums-from-united-states-census-bureau-with-75-of-that-sample-being-designated-to-the-training-data-set-and-25-to-the-test-data-set-this-data-set-is-intended-to-be-an-update-to-the-uci-adult-data-sethttpsarchiveicsuciedumldatasetsadult">This tutorial uses a 0.1% sample of the Person-Level 2013 Public Use Microdata Sample (PUMS) from United States Census Bureau with 75% of that sample being designated to the training data set and 25% to the test data set. This data set is intended to be an update to the <a href="https://archive.ics.uci.edu/ml/datasets/Adult" target="_blank">UCI Adult Data Set</a>.</h6>
 <pre><code>datadir &lt;- &quot;/data&quot;
 pumsdir &lt;- file.path(datadir, &quot;h2o-training&quot;, &quot;pums2013&quot;)
 trainfile &lt;- &quot;adult_2013_train.csv.gz&quot;
 testfile  &lt;- &quot;adult_2013_test.csv.gz&quot;
+
 adult_2013_train &lt;- h2o.importFile(h2oServer,
                                    path = file.path(pumsdir, trainfile),
                                    key = &quot;adult_2013_train&quot;, sep = &quot;,&quot;)
+
 adult_2013_test &lt;- h2o.importFile(h2oServer,
                                   path = file.path(pumsdir, testfile),
                                   key = &quot;adult_2013_test&quot;, sep = &quot;,&quot;)
+
 dim(adult_2013_train)
 dim(adult_2013_test)
-</code></pre><h6 id="for-the-purposes-of-validation-we-will-create-a-single-column-data-set-containing-only-the-target-variable-top2_wagp-from-the-test-data-set">For the purposes of validation, we will create a single column data set containing only the target variable <code>TOP2_WAGP</code> from the test data set.</h6>
-<pre><code>actual_top2_wagp &lt;- h2o.assign(adult_2013_test[, &quot;TOP2_WAGP&quot;],
-                               key = &quot;actual_top2_wagp&quot;)
+</code></pre><h6 id="for-the-purposes-of-validation-we-will-create-a-single-column-data-set-containing-only-the-target-variable-log_wagp-from-the-test-data-set">For the purposes of validation, we will create a single column data set containing only the target variable <code>LOG_WAGP</code> from the test data set.</h6>
+<pre><code>actual_log_wagp &lt;- h2o.assign(adult_2013_test[, &quot;LOG_WAGP&quot;],
+                              key = &quot;actual_log_wagp&quot;)
 rmLastValues()
 </code></pre><h6 id="also-for-our-data-set-we-have-8-columns-that-use-integer-codes-to-represent-categorical-levels-so-we-will-coerce-them-to-factor-after-the-data-read">Also for our data set we have 8 columns that use integer codes to represent categorical levels so we will coerce them to factor after the data read.</h6>
 <pre><code>for (j in c(&quot;COW&quot;, &quot;SCHL&quot;, &quot;MAR&quot;, &quot;INDP&quot;, &quot;RELP&quot;, &quot;RAC1P&quot;, &quot;SEX&quot;, &quot;POBP&quot;)) {
@@ -682,184 +761,175 @@ rmLastValues()
   adult_2013_test[[j]]  &lt;- as.factor(adult_2013_test[[j]])
 }
 rmLastValues()
-</code></pre><h3 id="fit-a-basic-logistic-regression-model">Fit a basic logistic regression model</h3>
-<pre><code>top2_wagp_glm_relp &lt;- h2o.glm(x = &quot;RELP&quot;, y = &quot;TOP2_WAGP&quot;,
-                              data = adult_2013_train,
-                              key  = &quot;top2_wagp_glm_relp&quot;,
-                              family = &quot;binomial&quot;,
-                              lambda = 0)
-top2_wagp_glm_relp
-</code></pre><h3 id="generate-performance-metrics-from-a-single-model">Generate performance metrics from a single model</h3>
-<h6 id="we-can-create-detailed-performance-metrics-using-the-h2operformance-function-that-was-inspired-by-the-performance-function-from-tobias-sings-rocrhttpcranr-projectorgwebpackagesrocrindexhtml-package-which-is-hosted-on-the-comprehensive-r-archive-network-cran">We can create detailed performance metrics using the <code>h2o.performance</code> function that was inspired by the <code>performance</code> function from Tobias Sing&#39;s <a href="http://cran.r-project.org/web/packages/ROCR/index.html" target="_blank">ROCR</a> package, which is hosted on the Comprehensive R Archive Network (CRAN).</h6>
-<h5 id="binary-classifier-performance-metrics">Binary classifier performance metrics</h5>
-<h6 id="p-is-the-total-number-of-positive-values-1-in-the-binary-target">$P$ is the total number of Positive values, $1$, in the binary target</h6>
-<h6 id="n-is-the-total-number-of-negative-values--1-or-0-in-the-binary-target">$N$ is the total number of Negative values, $-1$ or $0$, in the binary target</h6>
-<h6 id="tp-is-the-number-of-true-positives-ie-predict-positive-when-actually-positive">$TP$ is the number of True Positives, i.e. predict positive when actually positive</h6>
-<h6 id="tn-is-the-number-of-true-negatives-ie-predict-negative-when-actually-negative">$TN$ is the number of True Negatives, i.e. predict negative when actually negative</h6>
-<h6 id="fp-is-the-number-of-false-positives-ie-predict-positive-when-acutally-negative-also-known-as-the-type-i-error">$FP$ is the number of False Positives, i.e. predict positive when acutally negative; also known as the Type I error</h6>
-<h6 id="fn-is-the-number-of-false-negatives-ie-predict-negative-when-acutally-positive-also-known-as-the-type-ii-error">$FN$ is the number of False Negatives, i.e. predict negative when acutally positive; also known as the Type II error</h6>
-<h6 id="recall-or-sensitivity-or-true-positive-rate--fractpp--fractptp--fn">$Recall\ (or\ Sensitivity\ or\ True\ Positive\ Rate) = \frac{TP}{P} = \frac{TP}{TP + FN}$</h6>
-<h6 id="specificity-or-true-negative-rate--fractnn--fractnfp--tn">$Specificity\ (or\ True\ Negative\ Rate) = \frac{TN}{N} = \frac{TN}{FP + TN}$</h6>
-<h6 id="precision-or-positive-predictive-value--fractptp--fp">$Precision\ (or\ Positive\ Predictive\ Value) = \frac{TP}{TP + FP}$</h6>
-<h6 id="false-discovery-rate--fracfptp--fp--1---precision">$False\ Discovery\ Rate\ = \frac{FP}{TP + FP} = 1 - Precision$</h6>
-<h6 id="negative-predictive-value--fractntn--fn">$Negative\ Predictive\ Value = \frac{TN}{TN + FN}$</h6>
-<h6 id="fall-out-or-false-positive-rate--fracfpn--fracfpfp--tn">$Fall-out\ (or\ False\ Positive\ Rate) = \frac{FP}{N} = \frac{FP}{FP + TN}$</h6>
-<h6 id="false-negative-rate--fracfnp--fracfntp--fn">$False\ Negative\ Rate = \frac{FN}{P} = \frac{FN}{TP + FN}$</h6>
-<h6 id="accuracy--fractp--tnp--n">$Accuracy = \frac{TP + TN}{P + N}$</h6>
-<h6 id="misclassification-error--fracfp--fnp--n--1---accuracy">$Misclassification\ Error = \frac{FP + FN}{P + N} = 1 - Accuracy$</h6>
-<h6 id="f1--frac2frac1precision--frac1recall--2fracprecision--recallprecision--recall--frac2tp2tp--fp--fn-harmonic-mean">$F1 = \frac{2}{\frac{1}{Precision} + \frac{1}{Recall}} = 2\frac{Precision * Recall}{Precision + Recall} = \frac{2TP}{2TP + FP + FN}$ (harmonic mean)</h6>
-<h6 id="matthews-correlation-coefficient-mcc--fractp--tn---fp--fnsqrttp--fptp--fntn--fptn--fn">$Matthews\ Correlation\ Coefficient\ (MCC) = \frac{TP <em> TN - FP </em> FN}{\sqrt{(TP + FP)(TP + FN)(TN + FP)(TN + FN)}}$</h6>
-<pre><code>pred_top2_wagp_glm_relp &lt;- h2o.predict(top2_wagp_glm_relp, adult_2013_test)
-pred_top2_wagp_glm_relp
+</code></pre><h3 id="fit-a-basic-generalized-linear-model">Fit a basic generalized linear model</h3>
+<h6 id="to-illustrate-some-regression-concepts-we-will-add-a-column-of-random-categories-to-the-training-data-set">To illustrate some regression concepts, we will add a column of random categories to the training data set.</h6>
+<pre><code>rand &lt;- h2o.runif(adult_2013_train, seed = 123)
+randgrp &lt;- h2o.cut(rand, seq(0, 1, by = 0.01))
+adult_2013_train &lt;- cbind(adult_2013_train, RAND_GRP = randgrp)
+adult_2013_train &lt;- h2o.assign(adult_2013_train, key = &quot;adult_2013_train&quot;)
+rmLastValues()
+</code></pre><h6 id="we-will-start-with-an-ordinary-linear-model-that-is-trained-using-the-h2oglm-function-with-gaussian-normal-error-and-no-elastic-net-regularization-lambda--0">We will start with an ordinary linear model that is trained using the <code>h2o.glm</code> function with Gaussian (Normal) error and no elastic net regularization (<code>lambda = 0</code>).</h6>
+<pre><code>log_wagp_glm_0 &lt;- h2o.glm(x = &quot;RAND_GRP&quot;, y = &quot;LOG_WAGP&quot;,
+                          data = adult_2013_train,
+                          key  = &quot;log_wagp_glm_0&quot;,
+                          family = &quot;gaussian&quot;,
+                          lambda = 0)
+log_wagp_glm_0
+</code></pre><h3 id="inspect-an-object-containing-a-single-generalized-linear-model">Inspect an object containing a single generalized linear model</h3>
+<h6 id="when-a-single-model-is-trained-by-h2oglm-it-produces-an-object-of-class-h2oglmmodel">When a single model is trained by <code>h2o.glm</code> it produces an object of class <code>H2OGLMModel</code>.</h6>
+<pre><code>class(log_wagp_glm_0)
+getClassDef(&quot;H2OGLMModel&quot;)
+</code></pre><h6 id="in-this-model-object-most-of-the-values-of-interest-are-contained-in-the-model-slot">In this model object, most of the values of interest are contained in the <code>model</code> slot.</h6>
+<pre><code>names(log_wagp_glm_0@model)
+coef(log_wagp_glm_0@model) # works through stats:::coef.default
+log_wagp_glm_0@model$aic
+1 - log_wagp_glm_0@model$deviance / log_wagp_glm_0@model$null.deviance
+</code></pre><h6 id="in-addition-the-h2omse-function-can-be-used-to-calculate-the-mean-squared-error-of-prediction">In addition the <code>h2o.mse</code> function can be used to calculate the mean squared error of prediction.</h6>
+<pre><code>h2o.mse(h2o.predict(log_wagp_glm_0, adult_2013_test),
+        adult_2013_test[, &quot;LOG_WAGP&quot;])
+rmLastValues()
+</code></pre><h3 id="perform-10-fold-cross-validation-to-measure-variation-in-coefficient-estimates">Perform 10-fold cross-validation to measure variation in coefficient estimates</h3>
+<h6 id="we-can-perform-cross-validation-within-an-h2o-glm-model-by-specifying-an-integer-greater-than-1-in-the-nfolds-argument-to-the-h2oglm-function">We can perform cross-validation within an H2O GLM model by specifying an integer greater than 1 in the <code>nfolds</code> argument to the <code>h2o.glm</code> function.</h6>
+<pre><code>log_wagp_glm_0_cv &lt;- h2o.glm(x = &quot;RAND_GRP&quot;, y = &quot;LOG_WAGP&quot;,
+                             data = adult_2013_train,
+                             key  = &quot;log_wagp_glm_0_cv&quot;,
+                             family = &quot;gaussian&quot;,
+                             lambda = 0,
+                             nfolds = 10L)
+</code></pre><h6 id="the-resulting-model-object-is-also-of-class-h2oglmmodel-but-now-the-xval-slot-is-populated-with-model-fits-resulting-when-one-of-the-folds-was-dropped-during-training">The resulting model object is also of class <code>H2OGLMModel</code>, but now the <code>xval</code> slot is populated with model fits resulting when one of the folds was dropped during training.</h6>
+<pre><code>class(log_wagp_glm_0_cv)
+length(log_wagp_glm_0_cv@xval)
+class(log_wagp_glm_0_cv@xval[[1L]])
+</code></pre><h6 id="we-can-create-boxplots-for-each-of-the-coefficients-to-see-how-variable-the-estimates-were-after-each-of-the-folds-were-dropped-in-turn">We can create boxplots for each of the coefficients to see how variable the estimates were after each of the folds were dropped in turn.</h6>
+<pre><code>boxplot(t(sapply(log_wagp_glm_0_cv@xval, function(x) coef(x@model)))[,-100L],
+        names = NULL)
+points(1:99, coef(log_wagp_glm_0_cv@model)[-100L], pch = &quot;X&quot;, col = &quot;red&quot;)
+abline(h = 0, col = &quot;blue&quot;)
+</code></pre><h5 id="imagesrand_glm_coefpng"><img src="images/rand_glm_coef.png" alt=""></h5>
+<h3 id="explore-categorical-predictors">Explore categorical predictors</h3>
+<h6 id="in-generalized-linear-models-a-categorical-variable-with-k-categories-is-expanded-into-k---1-model-coefficients-this-expansion-can-occur-in-many-different-forms-with-the-most-common-being-dummy-variable-encodings-consisting-of-indicator-columns-for-all-but-the-first-or-last-category-depending-on-the-convention">In generalized linear models, a categorical variable with k categories is expanded into k - 1 model coefficients. This expansion can occur in many different forms, with the most common being <em>dummy variable</em> encodings consisting of indicator columns for all but the first or last category, depending on the convention.</h6>
+<h6 id="we-will-begin-our-modeling-of-the-data-by-examining-the-regression-of-the-natural-logarithm-of-wages-log_wagp-against-three-sets-of-predictors-relationship-relp-educational-attainment-schl-and-combination-of-those-two-variables-relp_schl">We will begin our modeling of the data by examining the regression of the natural logarithm of wages (<code>LOG_WAGP</code>) against three sets of predictors: relationship (<code>RELP</code>), educational attainment (<code>SCHL</code>), and combination of those two variables (<code>RELP_SCHL</code>).</h6>
+<pre><code>log_wagp_glm_relp &lt;- h2o.glm(x = &quot;RELP&quot;, y = &quot;LOG_WAGP&quot;,
+                             data = adult_2013_train,
+                             key  = &quot;log_wagp_glm_relp&quot;,
+                             family = &quot;gaussian&quot;,
+                             lambda = 0)
 
-prob_top2_wagp_glm_relp &lt;- h2o.assign(pred_top2_wagp_glm_relp[, 3L],
-                                      key = &quot;prob_top2_wagp_glm_relp&quot;)
-rmLastValues()
+log_wagp_glm_schl &lt;- h2o.glm(x = &quot;SCHL&quot;, y = &quot;LOG_WAGP&quot;,
+                             data = adult_2013_train,
+                             key  = &quot;log_wagp_glm_schl&quot;,
+                             family = &quot;gaussian&quot;,
+                             lambda = 0)
 
-f1_top2_wagp_glm_relp &lt;- h2o.performance(prob_top2_wagp_glm_relp,
-                                         actual_top2_wagp,
-                                         measure = &quot;F1&quot;)
-f1_top2_wagp_glm_relp
-class(f1_top2_wagp_glm_relp)
-getClassDef(&quot;H2OPerfModel&quot;)
-</code></pre><h3 id="plot-receiver-operating-characteristic-roc-curve-and-find-its-area-under-the-curve-auc">Plot Receiver Operating Characteristic (ROC) curve and find its Area Under the Curve (AUC)</h3>
-<h6 id="a-receiver-operating-characteristic-roc-curve-is-a-graph-of-the-true-positive-rate--recall--against-the-false-positive-rate-1---specificity-for-a-binary-classifier">A receiver operating characteristic (ROC) curve is a graph of the true positive rate ( <em>recall</em> ) against the false positive rate (1 - <em>specificity</em>) for a binary classifier.</h6>
-<pre><code>plot(f1_top2_wagp_glm_relp, type = &quot;cutoffs&quot;, col = &quot;blue&quot;)
-</code></pre><h5 id="imagesglm_f1_cutoff_0png"><img src="images/glm_f1_cutoff_0.png" alt=""></h5>
-<pre><code>plot(f1_top2_wagp_glm_relp, type = &quot;roc&quot;, col = &quot;blue&quot;, typ = &quot;b&quot;)
-</code></pre><h5 id="imagesglm_roc_0png"><img src="images/glm_roc_0.png" alt=""></h5>
-<h6 id="we-can-extract-the-area-under-the-roc-curve-from-our-model-object-to-see-how-close-it-is-to-the-ideal-of-1">We can extract the area under the ROC curve from our model object to see how close it is to the ideal of 1.</h6>
-<pre><code>f1_top2_wagp_glm_relp@model$auc
-</code></pre><h6 id="the-gini-coefficient-not-to-be-confused-with-the-gini-impurity-splitting-metric-used-in-decision-tree-based-algorithms-such-as-h2orandomforest-is-a-linear-rescaling-of-auc-defined-by-gini--2--auc---1">The <em>Gini coefficient</em>, not to be confused with the <em>Gini impurity</em> splitting metric used in decision tree based algorithms such as <code>h2o.randomForest</code>, is a linear rescaling of AUC defined by $Gini = 2 * AUC - 1$.</h6>
-<pre><code>f1_top2_wagp_glm_relp@model$gini
-2 * f1_top2_wagp_glm_relp@model$auc - 1
-</code></pre><h6 id="another-metric-we-could-have-used-to-determine-a-cutoff-is-the-lift-metric-which-is-a-ratio-of-the-probability-of-a-positive-prediction-given-the-model-and-the-baseline-probability-for-the-population-that-is-generated-by-the-h2ogains-function-which-was-inspired-by-craig-rollings-gainshttpcranr-projectorgwebpackagesgainsindexhtml-package-hosted-on-cran">Another metric we could have used to determine a cutoff is the lift metric, which is a ratio of the probability of a positive prediction given the model and the baseline probability for the population, that is generated by the <code>h2o.gains</code> function, which was inspired by Craig Rolling&#39;s <a href="http://cran.r-project.org/web/packages/gains/index.html" target="_blank">gains</a> package hosted on CRAN.</h6>
-<pre><code>h2o.gains(actual_top2_wagp, prob_top2_wagp_glm_relp)
-</code></pre><h3 id="making-class-predictions-based-on-a-probability-cutoff">Making class predictions based on a probability cutoff</h3>
-<h6 id="using-the-cutoff-that-results-in-the-largest-harmonic-mean-of-precision-and-recall-f1-score-we-can-now-classify-our-predictions-on-the-test-data-set">Using the cutoff that results in the largest harmonic mean of precision and recall (F1 score), we can now classify our predictions on the test data set.</h6>
-<pre><code>class(f1_top2_wagp_glm_relp@model)
-names(f1_top2_wagp_glm_relp@model)
-class_top2_wagp_glm_relp &lt;-
-  prob_top2_wagp_glm_relp &gt; f1_top2_wagp_glm_relp@model$best_cutoff
-class_top2_wagp_glm_relp &lt;- h2o.assign(class_top2_wagp_glm_relp,
-                                       key = &quot;class_top2_wagp_glm_relp&quot;)
-rmLastValues()
-</code></pre><h3 id="generate-a-confusion-matrix-from-a-single-model">Generate a confusion matrix from a single model</h3>
-<h6 id="to-understand-how-well-our-model-fits-the-test-data-set-we-can-examine-the-results-of-the-h2oconfusionmatrix-function-for-a-tabular-display-of-the-predicted-versus-actual-values">To understand how well our model fits the test data set, we can examine the results of the <code>h2o.confusionMatrix</code> function for a tabular display of the predicted versus actual values.</h6>
-<pre><code>h2o.confusionMatrix(class_top2_wagp_glm_relp, actual_top2_wagp)
-</code></pre><h3 id="remove-temporary-objects-from-r-and-the-h2o-cluster">Remove temporary objects from R and the H2O cluster</h3>
-<pre><code>rm(pred_top2_wagp_glm_relp,
-   prob_top2_wagp_glm_relp,
-   class_top2_wagp_glm_relp)
-rmLastValues()
-</code></pre><h3 id="fit-an-elastic-net-logistic-regression-model-across-a-grid-of-parameter-settings">Fit an elastic net logistic regression model across a grid of parameter settings</h3>
+log_wagp_glm_relp_schl &lt;- h2o.glm(x = &quot;RELP_SCHL&quot;, y = &quot;LOG_WAGP&quot;,
+                                  data = adult_2013_train,
+                                  key  = &quot;log_wagp_glm_relp_schl&quot;,
+                                  family = &quot;gaussian&quot;,
+                                  lambda = 0)
+</code></pre><h6 id="as-we-can-see-below-both-the-akaike-information-criterion-aic-and-percent-deviance-explained-metrics-point-to-using-a-combination-of-relp-and-schl-in-a-linear-model-for-log_wagp">As we can see below, both the Akaike information criterion (AIC) and percent deviance explained metrics point to using a combination of <code>RELP</code> and <code>SCHL</code> in a linear model for <code>LOG_WAGP</code>.</h6>
+<pre><code>log_wagp_glm_relp@model$aic
+log_wagp_glm_schl@model$aic
+log_wagp_glm_relp_schl@model$aic
+1 - log_wagp_glm_relp@model$deviance / log_wagp_glm_relp@model$null.deviance
+1 - log_wagp_glm_schl@model$deviance / log_wagp_glm_schl@model$null.deviance
+1 - log_wagp_glm_relp_schl@model$deviance / log_wagp_glm_relp_schl@model$null.deviance
+</code></pre><h3 id="fit-an-elastic-net-regression-model-across-a-grid-of-parameter-settings">Fit an elastic net regression model across a grid of parameter settings</h3>
 <h6 id="now-that-we-are-familiar-with-h2o-model-fitting-in-r-we-can-fit-more-sophisticated-models-involving-a-larger-set-of-predictors">Now that we are familiar with H2O model fitting in R, we can fit more sophisticated models involving a larger set of predictors.</h6>
 <pre><code>addpredset &lt;- c(&quot;COW&quot;, &quot;MAR&quot;, &quot;INDP&quot;, &quot;RAC1P&quot;, &quot;SEX&quot;, &quot;POBP&quot;, &quot;AGEP&quot;,
                 &quot;WKHP&quot;, &quot;LOG_CAPGAIN&quot;, &quot;LOG_CAPLOSS&quot;)
 </code></pre><h6 id="in-the-context-of-elastic-net-regularization-we-need-to-search-the-parameter-space-defined-by-the-mixing-parameter-alpha-and-the-shrinkage-parameter-lambda-to-aide-us-in-this-search-h2o-can-produce-a-grid-of-models-for-all-combinations-of-a-discrete-set-of-parameters">In the context of elastic net regularization, we need to search the parameter space defined by the mixing parameter <code>alpha</code> and the shrinkage parameter <code>lambda</code>. To aide us in this search H2O can produce a grid of models for all combinations of a discrete set of parameters.</h6>
 <h6 id="we-will-use-different-methods-for-specifying-the-alpha-and-lambda-values-as-they-are-dependent-upon-one-another-for-the-alpha-parameter-we-will-specify-five-values-ranging-from-0-ridge-to-1-lasso-by-increments-of-025-for-lambda-we-will-turn-on-an-automated-lambda-search-by-setting-lambda--true-and-specify-the-number-of-lambda-values-to-10-by-setting-nlambda--10">We will use different methods for specifying the <code>alpha</code> and <code>lambda</code> values as they are dependent upon one another. For the <code>alpha</code> parameter, we will specify five values ranging from 0 (ridge) to 1 (lasso) by increments of 0.25. For <code>lambda</code>, we will turn on an automated <code>lambda</code> search by setting <code>lambda = TRUE</code> and specify the number of <code>lambda</code> values to 10 by setting <code>nlambda = 10</code>.</h6>
-<pre><code>top2_wagp_glm_grid &lt;- h2o.glm(x = c(&quot;RELP_SCHL&quot;, addpredset),
-                              y = &quot;TOP2_WAGP&quot;,
-                              data = adult_2013_train,
-                              key  = &quot;top2_wagp_glm_grid&quot;,
-                              family = &quot;binomial&quot;,
-                              lambda_search = TRUE,
-                              nlambda = 10,
-                              return_all_lambda = TRUE,
-                              alpha = c(0, 0.25, 0.5, 0.75, 1))
+<pre><code>log_wagp_glm_grid &lt;- h2o.glm(x = c(&quot;RELP_SCHL&quot;, addpredset), y = &quot;LOG_WAGP&quot;,
+                             data = adult_2013_train,
+                             key  = &quot;log_wagp_glm_grid&quot;,
+                             family = &quot;gaussian&quot;,
+                             lambda_search = TRUE,
+                             nlambda = 10,
+                             return_all_lambda = TRUE,
+                             alpha = c(0, 0.25, 0.5, 0.75, 1))
 </code></pre><h6 id="we-now-have-an-object-of-class-h2oglmgrid-that-contains-a-list-of-h2oglmmodellist-objects-for-each-of-the-models-fit-on-the-grid">We now have an object of class <code>H2OGLMGrid</code> that contains a list of <code>H2OGLMModelList</code> objects for each of the models fit on the grid.</h6>
-<pre><code>class(top2_wagp_glm_grid)
+<pre><code>class(log_wagp_glm_grid)
 getClassDef(&quot;H2OGLMGrid&quot;)
 
-class(top2_wagp_glm_grid@model[[1L]])
+class(log_wagp_glm_grid@model[[1L]])
 getClassDef(&quot;H2OGLMModelList&quot;)
 
-length(top2_wagp_glm_grid@model[[1L]]@models)
-class(top2_wagp_glm_grid@model[[1L]]@models[[1L]])
+length(log_wagp_glm_grid@model[[1L]]@models)
+class(log_wagp_glm_grid@model[[1L]]@models[[1L]])
 </code></pre><h6 id="currently-the-h2o-package-does-not-contain-any-helper-functions-for-extracting-models-of-interest-so-we-have-to-explore-the-model-object-and-choose-the-model-we-like-best">Currently the <code>h2o</code> package does not contain any helper functions for extracting models of interest, so we have to explore the model object and choose the model we like best.</h6>
-<pre><code>top2_wagp_glm_grid@model[[1L]]@models[[1L]]@model$params$alpha # ridge
-top2_wagp_glm_grid@model[[2L]]@models[[1L]]@model$params$alpha
-top2_wagp_glm_grid@model[[3L]]@models[[1L]]@model$params$alpha
-top2_wagp_glm_grid@model[[4L]]@models[[1L]]@model$params$alpha
-top2_wagp_glm_grid@model[[5L]]@models[[1L]]@model$params$alpha  # lasso
+<pre><code>log_wagp_glm_grid@model[[1L]]@models[[1L]]@model$params$alpha # ridge
+log_wagp_glm_grid@model[[2L]]@models[[1L]]@model$params$alpha
+log_wagp_glm_grid@model[[3L]]@models[[1L]]@model$params$alpha
+log_wagp_glm_grid@model[[4L]]@models[[1L]]@model$params$alpha
+log_wagp_glm_grid@model[[5L]]@models[[1L]]@model$params$alpha  # lasso
 
-top2_wagp_glm_grid_f1 &lt;-
-  sapply(top2_wagp_glm_grid@model,
+log_wagp_glm_grid_mse &lt;-
+  sapply(log_wagp_glm_grid@model,
          function(x)
            sapply(x@models, function(y)
-             h2o.performance(h2o.predict(y, adult_2013_test)[, 3L],
-                             actual_top2_wagp,
-                             measure = &quot;F1&quot;)@model$error
-           ))
-top2_wagp_glm_grid_f1
-top2_wagp_glm_grid_f1 == min(top2_wagp_glm_grid_f1)
+                  h2o.mse(h2o.predict(y, adult_2013_test),
+                          actual_log_wagp)))
+log_wagp_glm_grid_mse
+log_wagp_glm_grid_mse == min(log_wagp_glm_grid_mse)
 
-top2_wagp_glm_best &lt;- top2_wagp_glm_grid@model[[4L]]@models[[7L]]
-
-prob_top2_wagp_glm_best &lt;- h2o.predict(top2_wagp_glm_best, adult_2013_test)[, 3L]
-prob_top2_wagp_glm_best &lt;- h2o.assign(prob_top2_wagp_glm_best,
-                                      key = &quot;prob_top2_wagp_glm_best&quot;)
-rmLastValues()
-
-f1_top2_wagp_glm_best &lt;- h2o.performance(prob_top2_wagp_glm_best,
-                                         actual_top2_wagp,
-                                         measure = &quot;F1&quot;)
-
-plot(f1_top2_wagp_glm_best, type = &quot;cutoffs&quot;, col = &quot;blue&quot;)
-</code></pre><h5 id="imagesglm_f1_cutoff_1png"><img src="images/glm_f1_cutoff_1.png" alt=""></h5>
-<pre><code>plot(f1_top2_wagp_glm_best, type = &quot;roc&quot;, col = &quot;blue&quot;)
-</code></pre><h5 id="imagesglm_roc_1png"><img src="images/glm_roc_1.png" alt=""></h5>
-<h6 id="we-can-find-the-number-of-non-zero-coefficients-in-our-best-logistic-regression-model-to-gain-some-understanding-about-its-overall-complexity">We can find the number of non-zero coefficients in our best logistic regression model to gain some understanding about its overall complexity.</h6>
-<pre><code>table(coef(top2_wagp_glm_best@model) != 0)
-nzcoefs &lt;- coef(top2_wagp_glm_best@model)
-nzcoefs &lt;- names(nzcoefs)[nzcoefs != 0]
-nzcoefs &lt;- unique(sub(&quot;\\..*$&quot;, &quot;&quot;, nzcoefs))
-setdiff(c(&quot;RELP_SCHL&quot;, addpredset), nzcoefs) # all preds had non-zero coefs
-</code></pre><h3 id="fit-a-gradient-boosting-machine-binomial-regression-model">Fit a gradient boosting machine binomial regression model</h3>
+log_wagp_glm_best &lt;- log_wagp_glm_grid@model[[5L]]@models[[10L]]
+</code></pre><h3 id="fit-a-gaussian-regression-with-a-log-link-function">Fit a gaussian regression with a log link function</h3>
+<h6 id="in-the-previous-example-we-modeled-wagp-on-a-natural-logarithm-scale-which-implied-a-multiplicative-error-structure-we-can-explore-if-we-have-an-additive-error-but-supplying-the-untransformed-wage-variable-wagp-as-the-response-and-using-the-natural-logarithm-link-function">In the previous example we modeled <code>WAGP</code> on a natural logarithm scale, which implied a multiplicative error structure. We can explore if we have an additive error, but supplying the untransformed wage variable (<code>WAGP</code>) as the response and using the natural logarithm link function.</h6>
+<pre><code>wagp_glm_grid &lt;- h2o.glm(x = c(&quot;RELP_SCHL&quot;, addpredset), y = &quot;WAGP&quot;,
+                         data = adult_2013_train,
+                         key  = &quot;log_wagp_glm_grid&quot;,
+                         family = &quot;gaussian&quot;,
+                         link   = &quot;log&quot;,
+                         lambda_search = TRUE,
+                         nlambda = 10,
+                         return_all_lambda = TRUE,
+                         alpha = c(0, 0.25, 0.5, 0.75, 1))
+wagp_glm_grid
+</code></pre><h3 id="fit-a-gradient-boosting-machine-regression-model">Fit a gradient boosting machine regression model</h3>
 <h6 id="given-that-not-all-relationships-can-be-reduced-to-a-linear-combination-or-terms-we-can-compare-the-glm-results-with-that-of-a-gradient-tree-boosting-machine-as-with-the-final-glm-exploration-we-will-fit-a-grid-of-gbm-models-by-varying-the-number-of-trees-and-the-shrinkage-rate-and-select-the-best-model-with-respect-to-the-test-data-set">Given that not all relationships can be reduced to a linear combination or terms, we can compare the GLM results with that of a gradient (tree) boosting machine. As with the final GLM exploration, we will fit a grid of GBM models by varying the number of trees and the shrinkage rate and select the best model with respect to the test data set.</h6>
-<pre><code>top2_wagp_gbm_grid &lt;- h2o.gbm(x = c(&quot;RELP&quot;, &quot;SCHL&quot;, addpredset),
-                              y = &quot;TOP2_WAGP&quot;,
-                              data = adult_2013_train,
-                              key  = &quot;top2_wagp_gbm_grid&quot;,
-                              distribution = &quot;multinomial&quot;,
-                              n.trees = c(10, 20, 40),
-                              shrinkage = c(0.05, 0.1, 0.2),
-                              validation = adult_2013_test,
-                              importance = TRUE)
-top2_wagp_gbm_grid
+<pre><code>log_wagp_gbm_grid &lt;- h2o.gbm(x = c(&quot;RELP&quot;, &quot;SCHL&quot;, addpredset),
+                             y = &quot;LOG_WAGP&quot;,
+                             data = adult_2013_train,
+                             key  = &quot;log_wagp_gbm_grid&quot;,
+                             distribution = &quot;gaussian&quot;,
+                             n.trees = c(10, 20, 40),
+                             shrinkage = c(0.05, 0.1, 0.2),
+                             validation = adult_2013_test,
+                             importance = TRUE)
+log_wagp_gbm_grid
 
-class(top2_wagp_gbm_grid)
-slotNames(top2_wagp_gbm_grid)
-class(top2_wagp_gbm_grid@model)
-length(top2_wagp_gbm_grid@model)
-class(top2_wagp_gbm_grid@model[[1L]])
-top2_wagp_gbm_best &lt;- top2_wagp_gbm_grid@model[[1L]]
-top2_wagp_gbm_best
+class(log_wagp_gbm_grid)
+getClassDef(&quot;H2OGBMGrid&quot;)
+class(log_wagp_gbm_grid@model)
+length(log_wagp_gbm_grid@model)
+class(log_wagp_gbm_grid@model[[1L]])
+log_wagp_gbm_best &lt;- log_wagp_gbm_grid@model[[1L]]
+log_wagp_gbm_best
+</code></pre><h6 id="a-comparison-of-mean-squared-errors-against-the-test-set-suggests-our-gbm-fit-outperforms-our-glm-fit">A comparison of mean squared errors against the test set suggests our GBM fit outperforms our GLM fit.</h6>
+<pre><code>h2o.mse(h2o.predict(log_wagp_glm_best, adult_2013_test),
+        actual_log_wagp)
+h2o.mse(h2o.predict(log_wagp_gbm_best, adult_2013_test),
+        actual_log_wagp)
+</code></pre><h3 id="fit-a-random-forest-regression-model">Fit a random forest regression model</h3>
+<h6 id="lastly-we-will-fit-a-single-random-forest-model-with-200-trees-of-maximum-depth-10-and-compare-the-mean-squared-errors-across-the-three-model-types">Lastly we will fit a single random forest model with 200 trees of maximum depth 10 and compare the mean squared errors across the three model types.</h6>
+<pre><code>log_wagp_forest &lt;- h2o.randomForest(x = c(&quot;RELP&quot;, &quot;SCHL&quot;, addpredset),
+                                    y = &quot;LOG_WAGP&quot;,
+                                    data = adult_2013_train,
+                                    key  = &quot;log_wagp_forest&quot;,
+                                    classification = FALSE,
+                                    depth = 10,
+                                    ntree = 200,
+                                    validation = adult_2013_test,
+                                    seed = 8675309,
+                                    type = &quot;BigData&quot;)
+log_wagp_forest
 
-h2o.performance(h2o.predict(top2_wagp_glm_best, adult_2013_test)[, 3L],
-                actual_top2_wagp, measure = &quot;F1&quot;)@model$error
-h2o.performance(h2o.predict(top2_wagp_gbm_best, adult_2013_test)[, 3L],
-                actual_top2_wagp, measure = &quot;F1&quot;)@model$error
-</code></pre><h3 id="fit-a-random-forest-classifier">Fit a random forest classifier</h3>
-<h6 id="lastly-we-will-fit-a-single-random-forest-model-with-200-trees-of-maximum-depth-10-and-compare-the-errors-across-the-three-model-types">Lastly we will fit a single random forest model with 200 trees of maximum depth 10 and compare the errors across the three model types.</h6>
-<pre><code>top2_wagp_forest &lt;- h2o.randomForest(x = c(&quot;RELP&quot;, &quot;SCHL&quot;, addpredset),
-                                     y = &quot;TOP2_WAGP&quot;,
-                                     data = adult_2013_train,
-                                     key  = &quot;top2_wagp_forest&quot;,
-                                     classification = TRUE,
-                                     depth = 10,
-                                     ntree = 200,
-                                     validation = adult_2013_test,
-                                     seed = 8675309,
-                                     type = &quot;BigData&quot;)
-top2_wagp_forest
-
-h2o.performance(h2o.predict(top2_wagp_glm_best, adult_2013_test)[, 3L],
-                actual_top2_wagp, measure = &quot;F1&quot;)@model$error
-h2o.performance(h2o.predict(top2_wagp_gbm_best, adult_2013_test)[, 3L],
-                actual_top2_wagp, measure = &quot;F1&quot;)@model$error
-h2o.performance(h2o.predict(top2_wagp_forest,   adult_2013_test)[, 3L],
-                actual_top2_wagp, measure = &quot;F1&quot;)@model$error
+h2o.mse(h2o.predict(log_wagp_glm_best, adult_2013_test),
+        actual_log_wagp)
+h2o.mse(h2o.predict(log_wagp_gbm_best, adult_2013_test),
+        actual_log_wagp)
+h2o.mse(h2o.predict(log_wagp_forest,   adult_2013_test),
+        actual_log_wagp)
 </code></pre>
                     
                     </section>
@@ -870,10 +940,10 @@ h2o.performance(h2o.predict(top2_wagp_forest,   adult_2013_test)[, 3L],
         </div>
 
         
-        <a href="../hands-on_training/regression" class="navigation navigation-prev " aria-label="Previous page: Regression"><i class="fa fa-angle-left"></i></a>
+        <a href="../hands-on_training/r_with_h2o.html" class="navigation navigation-prev " aria-label="Previous page: R with H2O "><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../hands-on_training/deep_learning.html" class="navigation navigation-next " aria-label="Next page: Deep Learning"><i class="fa fa-angle-right"></i></a>
+        <a href="../hands-on_training/regression.html" class="navigation navigation-next " aria-label="Next page: Regression"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

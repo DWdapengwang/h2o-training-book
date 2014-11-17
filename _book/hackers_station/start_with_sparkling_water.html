@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Advanced Topics | What is H2O?</title>
+        <title>Start with Sparkling Water | What is H2O?</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,10 +18,10 @@
     
     
     
-    <link rel="next" href="../hands-on_training/multi-model_parameter_tuning_for_higgs_dataset.html" />
+    <link rel="next" href="../troubleshooting/README.html" />
     
     
-    <link rel="prev" href="../hands-on_training/anomoly_detection.html" />
+    <link rel="prev" href="../hackers_station/build_applications_on_top_of_h2o.html" />
     
 
         
@@ -37,7 +37,7 @@
 
 
         
-    <div class="book"  data-level="3.5" data-basepath=".." data-revision="1416253371525">
+    <div class="book"  data-level="5.3" data-basepath=".." data-revision="1416254106586">
     
 
 <div class="book-summary">
@@ -167,10 +167,10 @@
                 
     
         
-        <li class="chapter " data-level="3.3.1" data-path="hands-on_training/regression">
+        <li class="chapter " data-level="3.3.1" data-path="hands-on_training/regression.html">
             
                 
-                    <a href="../hands-on_training/regression">
+                    <a href="../hands-on_training/regression.html">
                         <i class="fa fa-check"></i>
                         
                             <b>3.3.1.</b>
@@ -290,7 +290,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="3.5" data-path="hands-on_training/advanced_topics.html">
+        <li class="chapter " data-level="3.5" data-path="hands-on_training/advanced_topics.html">
             
                 
                     <a href="../hands-on_training/advanced_topics.html">
@@ -481,13 +481,67 @@
                 
             
             
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.1.1" data-path="hackers_station/kmeans.html">
+            
+                
+                    <a href="../hackers_station/kmeans.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.1.</b>
+                        
+                         KMeans
+                    </a>
+                
+            
+            
         </li>
     
         
-        <li class="chapter " data-level="5.2" data-path="hackers_station/build_applications_on_top_of_h2o">
+        <li class="chapter " data-level="5.1.2" data-path="hackers_station/grep.html">
             
                 
-                    <a href="../hackers_station/build_applications_on_top_of_h2o">
+                    <a href="../hackers_station/grep.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.2.</b>
+                        
+                         Grep
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.1.3" data-path="hackers_station/quantiles.html">
+            
+                
+                    <a href="../hackers_station/quantiles.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.3.</b>
+                        
+                         Quantiles
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.2" data-path="hackers_station/build_applications_on_top_of_h2o.html">
+            
+                
+                    <a href="../hackers_station/build_applications_on_top_of_h2o.html">
                         <i class="fa fa-check"></i>
                         
                             <b>5.2.</b>
@@ -500,10 +554,10 @@
         </li>
     
         
-        <li class="chapter " data-level="5.3" data-path="hackers_station/start_with_sparkling_water">
+        <li class="chapter active" data-level="5.3" data-path="hackers_station/start_with_sparkling_water.html">
             
                 
-                    <a href="../hackers_station/start_with_sparkling_water">
+                    <a href="../hackers_station/start_with_sparkling_water.html">
                         <i class="fa fa-check"></i>
                         
                             <b>5.3.</b>
@@ -521,10 +575,10 @@
         </li>
     
         
-        <li class="chapter " data-level="6" data-path="troubleshooting/README">
+        <li class="chapter " data-level="6" data-path="troubleshooting/README.html">
             
                 
-                    <a href="../troubleshooting/README">
+                    <a href="../troubleshooting/README.html">
                         <i class="fa fa-check"></i>
                         
                             <b>6.</b>
@@ -641,9 +695,168 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1289">
+                    <section class="normal" id="section-gitbook_4007">
                     
-                        <h1 id="advanced-topics">Advanced Topics</h1>
+                        <h1 id="start-with-sparkling-water">Start with Sparkling Water</h1>
+<blockquote>
+<p>This short tutorial introduces <em>Sparkling Water</em> project
+enabling H<sub>2</sub>O platform execution on the top of Spark.</p>
+<p>The tutorial guides through project building and demonstrates
+capabilities of <em>Sparkling Water</em> on the example using Spark Shell
+to build a Deep Learning model with help of H<sub>2</sub>O algorithms and Spark data wrangling.</p>
+</blockquote>
+<h2 id="project-repository">Project Repository</h2>
+<p>The <em>Sparkling Water</em> project is hosted on GitHub.
+You can clone it:</p>
+<pre><code>$ git clone https://github.com/0xdata/sparkling-water.git
+$ cd sparkling-water
+</code></pre><p>Or the repository is also already prepared on the provided H<sub>2</sub>O:</p>
+<pre><code>cd ~/devel/sparkling-water
+</code></pre><h2 id="build-the-project">Build the Project</h2>
+<p>The provided top-level <code>gradlew</code> command is used for building:</p>
+<pre><code>$ ./gradlew build
+</code></pre><p>The command produces an assembly artifact which can be
+executed directly on the Spark platform.</p>
+<h2 id="run-sparkling-water">Run Sparkling Water</h2>
+<h3 id="export-location-of-your-spark-distribution">Export location of your Spark distribution</h3>
+<pre><code>$ export SPARK_HOME=/opt/spark
+</code></pre><blockquote>
+<p>Note: The provided sandbox image already contains exported shell variable <code>SPARK_HOME</code></p>
+</blockquote>
+<h3 id="run-sparkling-water">Run Sparkling Water</h3>
+<p>Start a Spark cluster with <em>Sparkling Water</em>:</p>
+<pre><code>bin/run-sparkling.sh
+</code></pre><p>Go to <a href="http://localhost:54321/steam/index.html" target="_blank">http://localhost:54321/steam/index.html</a> to access H<sub>2</sub>O web interface.</p>
+<blockquote>
+<p>Note: By default the command creates a Spark cluster specified by <code>local-cluster[3,2,1024]</code> Spark master address. Hence, the cluster contains 3 worker nodes, each has running H<sub>2</sub>O services.</p>
+</blockquote>
+<h3 id="run-sparkling-shell">Run Sparkling Shell</h3>
+<p>Start Spark shell with <em>Sparkling Water</em>:</p>
+<pre><code>bin/sparkling-shell
+</code></pre><blockquote>
+<p>Note: The command launches regular Spark shell with H<sub>2</sub>O services. To access Spark UI go to <a href="http://localhost:4040" target="_blank">http://localhost:4040</a>, to access H<sub>2</sub>O web UI go to <a href="http://localhost:54321/steam/index.html" target="_blank">http://localhost:54321/steam/index.html</a>.</p>
+</blockquote>
+<h2 id="step-by-step-example">Step-by-Step Example</h2>
+<ol>
+<li><p>Run Sparkling shell with an embedded cluster consisting of 3 Spark worker nodes:</p>
+<pre><code>export MASTER=&quot;local-cluster[3,2,1024]&quot;
+bin/sparkling-shell
+</code></pre></li>
+<li><p>You can go to <a href="http://localhost:4040/" target="_blank">http://localhost:4040/</a> to see the Sparkling shell (i.e., Spark driver) status.</p>
+<p><img src="images/spark-ui.png" alt="H2O Web UI"></p>
+</li>
+<li><p>Create H<sub>2</sub>O cloud using all 3 Spark workers:</p>
+<pre><code class="lang-scala"><span class="hljs-keyword">import</span> org.apache.spark.h2o._
+<span class="hljs-keyword">import</span> org.apache.spark.examples.h2o._
+<span class="hljs-function"><span class="hljs-keyword">val</span> <span class="hljs-title">h2oContext</span> =</span> <span class="hljs-keyword">new</span> <span class="hljs-type">H2OContext</span>(sc).start()
+<span class="hljs-keyword">import</span> h2oContext._
+</code></pre>
+</li>
+<li><p>Load weather data for Chicago international airport (ORD) with help of regular Spark RDD API:</p>
+<pre><code class="lang-scala"><span class="hljs-function"><span class="hljs-keyword">val</span> <span class="hljs-title">weatherDataFile</span> =</span> <span class="hljs-string">"/data/h2o-training/sparkling-water/weather_ORD.csv"</span>
+<span class="hljs-function"><span class="hljs-keyword">val</span> <span class="hljs-title">wrawdata</span> =</span> sc.textFile(weatherDataFile,<span class="hljs-number">3</span>).cache()
+<span class="hljs-comment">// Parse and skip rows composed only of NAs</span>
+<span class="hljs-function"><span class="hljs-keyword">val</span> <span class="hljs-title">weatherTable</span> =</span> wrawdata.map(_.split(<span class="hljs-string">","</span>)).map(row =&gt; <span class="hljs-type">WeatherParse</span>(row)).filter(!_.isWrongRow())
+</code></pre>
+</li>
+<li><p>Load and parse flight data using H<sub>2</sub>O API:</p>
+<pre><code class="lang-scala"><span class="hljs-keyword">import</span> java.io.<span class="hljs-type">File</span>
+<span class="hljs-function"><span class="hljs-keyword">val</span> <span class="hljs-title">dataFile</span> =</span> <span class="hljs-string">"/data/h2o-training/sparkling-water/allyears2k_headers.csv.gz"</span>
+<span class="hljs-comment">// Load and parse using H2O parser</span>
+<span class="hljs-function"><span class="hljs-keyword">val</span> <span class="hljs-title">airlinesData</span> =</span> <span class="hljs-keyword">new</span> <span class="hljs-type">DataFrame</span>(<span class="hljs-keyword">new</span> <span class="hljs-type">File</span>(dataFile))
+</code></pre>
+</li>
+<li><p>Go to <a href="http://localhost:54321/steam/index.html" target="_blank">H<sub>2</sub>O web UI</a> and explore data:</p>
+<p><img src="images/h2o-ui.png" alt="H2O Web UI"></p>
+</li>
+<li><p>Select flights with destination in Chicago (ORD) with help of Spark API:</p>
+<pre><code class="lang-scala"><span class="hljs-function"><span class="hljs-keyword">val</span> <span class="hljs-title">airlinesTable</span> :</span> <span class="hljs-type">RDD</span>[<span class="hljs-type">Airlines</span>] = toRDD[<span class="hljs-type">Airlines</span>](airlinesData)
+<span class="hljs-function"><span class="hljs-keyword">val</span> <span class="hljs-title">flightsToORD</span> =</span> airlinesTable.filter(f =&gt; f.<span class="hljs-type">Dest</span>==<span class="hljs-type">Some</span>(<span class="hljs-string">"ORD"</span>))
+</code></pre>
+</li>
+<li><p>Compute number of these flights:</p>
+<pre><code class="lang-scala">flightsToORD.count
+</code></pre>
+</li>
+<li><p>Use Spark SQL to join flight data with weather data</p>
+<pre><code class="lang-scala"><span class="hljs-keyword">import</span> org.apache.spark.sql.<span class="hljs-type">SQLContext</span>
+<span class="hljs-function"><span class="hljs-keyword">val</span> <span class="hljs-title">sqlContext</span> =</span> <span class="hljs-keyword">new</span> <span class="hljs-type">SQLContext</span>(sc)
+<span class="hljs-keyword">import</span> sqlContext._
+flightsToORD.registerTempTable(<span class="hljs-string">"FlightsToORD"</span>)
+weatherTable.registerTempTable(<span class="hljs-string">"WeatherORD"</span>)
+</code></pre>
+</li>
+<li><p>Perform SQL JOIN on both tables</p>
+<pre><code class="lang-scala"><span class="hljs-function"><span class="hljs-keyword">val</span> <span class="hljs-title">bigTable</span> =</span> sql(
+      <span class="hljs-string">"""SELECT
+        |f.Year,f.Month,f.DayofMonth,
+        |f.CRSDepTime,f.CRSArrTime,f.CRSElapsedTime,
+        |f.UniqueCarrier,f.FlightNum,f.TailNum,
+        |f.Origin,f.Distance,
+        |w.TmaxF,w.TminF,w.TmeanF,w.PrcpIn,w.SnowIn,w.CDD,w.HDD,w.GDD,
+        |f.ArrDelay
+        |FROM FlightsToORD f
+        |JOIN WeatherORD w
+        |ON f.Year=w.Year AND f.Month=w.Month AND f.DayofMonth=w.Day"""</span>.stripMargin)
+</code></pre>
+</li>
+<li><p>Run deep learning to produce model estimating arrival delay:</p>
+<pre><code class="lang-scala"><span class="hljs-keyword">import</span> hex.deeplearning.<span class="hljs-type">DeepLearning</span>
+<span class="hljs-keyword">import</span> hex.deeplearning.<span class="hljs-type">DeepLearningModel</span>.<span class="hljs-type">DeepLearningParameters</span>
+<span class="hljs-function"><span class="hljs-keyword">val</span> <span class="hljs-title">dlParams</span> =</span> <span class="hljs-keyword">new</span> <span class="hljs-type">DeepLearningParameters</span>()
+dlParams._train = bigTable
+dlParams._response_column = <span class="hljs-symbol">'ArrDelay</span>
+dlParams._epochs = <span class="hljs-number">100</span>
+<span class="hljs-comment">// Create a job</span>
+<span class="hljs-function"><span class="hljs-keyword">val</span> <span class="hljs-title">dl</span> =</span> <span class="hljs-keyword">new</span> <span class="hljs-type">DeepLearning</span>(dlParams)
+<span class="hljs-function"><span class="hljs-keyword">val</span> <span class="hljs-title">dlModel</span> =</span> dl.trainModel.get
+</code></pre>
+</li>
+<li><p>Use model to estimate delay on training data</p>
+<pre><code class="lang-scala"><span class="hljs-function"><span class="hljs-keyword">val</span> <span class="hljs-title">predictionH2OFrame</span> =</span> dlModel.score(bigTable)(<span class="hljs-symbol">'predict</span>)
+<span class="hljs-function"><span class="hljs-keyword">val</span> <span class="hljs-title">predictionsFromModel</span> =</span> toRDD[<span class="hljs-type">DoubleHolder</span>](predictionH2OFrame).collect.map(_.result.getOrElse(<span class="hljs-type">Double</span>.<span class="hljs-type">NaN</span>))
+</code></pre>
+</li>
+<li><p>Generate a R-code to show residuals graph:</p>
+<pre><code class="lang-scala">println(s<span class="hljs-string">"""
+#
+# R script for residual plot
+#
+# Import H2O library
+library(h2o)
+# Initialize H2O R-client
+h = h2o.init()
+# Fetch prediction and actual data, use remembered keys
+pred = h2o.getFrame(h, "${predictionH2OFrame._key}")
+act = h2o.getFrame (h, "${rame_rdd_14_b429e8b43d2d8c02899ccb61b72c4e57}")
+# Select right columns
+predDelay = pred$$predict
+actDelay = act$$ArrDelay
+# Make sure that number of rows is same
+nrow(actDelay) == nrow(predDelay)
+# Compute residuals
+residuals = predDelay - actDelay
+# Plot residuals
+compare = cbind (as.data.frame(actDelay$$ArrDelay), as.data.frame(residuals$$predict))
+nrow(compare)
+plot( compare[,1:2] )
+"""</span>)
+</code></pre>
+</li>
+<li><p>Open RStudio and execute generated code:</p>
+<p><img src="images/rstudio.png" alt="RStudio"></p>
+<blockquote>
+<p>Note: RStudio has to contain the newest H2O-DEV client library.</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="more-information">More information</h2>
+<ul>
+<li><a href="http://github.com/0xdata/sparkling-water" target="_blank"><em>Sparkling Water</em> GitHub</a></li>
+<li><a href="https://www.youtube.com/user/0xdata" target="_blank">H<sub>2</sub>O YouTube Channel</a></li>
+<li><a href="http://www.slideshare.net/0xdata" target="_blank">H<sub>2</sub>O SlideShare</a></li>
+<li><a href="http://h2o.ai/blog" target="_blank">H<sub>2</sub>O Blog</a></li>
+</ul>
 
                     
                     </section>
@@ -654,10 +867,10 @@
         </div>
 
         
-        <a href="../hands-on_training/anomoly_detection.html" class="navigation navigation-prev " aria-label="Previous page: Anomoly Detection"><i class="fa fa-angle-left"></i></a>
+        <a href="../hackers_station/build_applications_on_top_of_h2o.html" class="navigation navigation-prev " aria-label="Previous page: Build Applications on Top of H2O"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../hands-on_training/multi-model_parameter_tuning_for_higgs_dataset.html" class="navigation navigation-next " aria-label="Next page: Multi-model Parameter Tuning"><i class="fa fa-angle-right"></i></a>
+        <a href="../troubleshooting/README.html" class="navigation navigation-next " aria-label="Next page: Troubleshooting"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
