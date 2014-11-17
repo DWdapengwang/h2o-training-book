@@ -1,0 +1,785 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <title>Anomoly Detection | What is H2O?</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.0.3">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    
+    <link rel="next" href="../hands-on_training/advanced_topics.html" />
+    
+    
+    <link rel="prev" href="../hands-on_training/dimensionality_reduction.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="../gitbook/style.css">
+
+    
+    <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-exercises/exercises.css">
+    
+
+
+        
+    <div class="book"  data-level="3.4.3" data-basepath=".." data-revision="1416253371525">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1" data-path="h2o_world_training_sandbox/README.html">
+            
+                
+                    <a href="../h2o_world_training_sandbox/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                         H2O World Training Sandbox
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2" data-path="h2o_in_big_data_environments/README.html">
+            
+                
+                    <a href="../h2o_in_big_data_environments/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                         H2O in Big Data environments
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3" data-path="hands-on_training/README.html">
+            
+                
+                    <a href="../hands-on_training/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                         Hands-On Training
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.1" data-path="hands-on_training/h2o_with_the_web_ui.html">
+            
+                
+                    <a href="../hands-on_training/h2o_with_the_web_ui.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                         H2O with the Web UI
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2" data-path="hands-on_training/r_with_h2o.html">
+            
+                
+                    <a href="../hands-on_training/r_with_h2o.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                         R with H2O 
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.3" data-path="hands-on_training/supervised_learning_with_regressions.html">
+            
+                
+                    <a href="../hands-on_training/supervised_learning_with_regressions.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                         Supervised Learning
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.3.1" data-path="hands-on_training/regression">
+            
+                
+                    <a href="../hands-on_training/regression">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.1.</b>
+                        
+                         Regression
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.3.2" data-path="hands-on_training/classifications.html">
+            
+                
+                    <a href="../hands-on_training/classifications.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.2.</b>
+                        
+                         Classifications
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.3.3" data-path="hands-on_training/deep_learning.html">
+            
+                
+                    <a href="../hands-on_training/deep_learning.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.3.</b>
+                        
+                         Deep Learning
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.4" data-path="hands-on_training/unsupervised_learning.html">
+            
+                
+                    <a href="../hands-on_training/unsupervised_learning.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                         Unsupervised Learning
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.4.1" data-path="hands-on_training/kmeans_clustering.html">
+            
+                
+                    <a href="../hands-on_training/kmeans_clustering.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.1.</b>
+                        
+                         KMeans Clustering
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.4.2" data-path="hands-on_training/dimensionality_reduction.html">
+            
+                
+                    <a href="../hands-on_training/dimensionality_reduction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.2.</b>
+                        
+                         Dimensionality Reduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter active" data-level="3.4.3" data-path="hands-on_training/anomoly_detection.html">
+            
+                
+                    <a href="../hands-on_training/anomoly_detection.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.3.</b>
+                        
+                         Anomoly Detection
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.5" data-path="hands-on_training/advanced_topics.html">
+            
+                
+                    <a href="../hands-on_training/advanced_topics.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                         Advanced Topics
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.5.1" data-path="hands-on_training/multi-model_parameter_tuning_for_higgs_dataset.html">
+            
+                
+                    <a href="../hands-on_training/multi-model_parameter_tuning_for_higgs_dataset.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.1.</b>
+                        
+                         Multi-model Parameter Tuning
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.5.2" data-path="hands-on_training/categorical_feature_engineering.html">
+            
+                
+                    <a href="../hands-on_training/categorical_feature_engineering.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.2.</b>
+                        
+                         Categorical Feature Engineering
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.5.3" data-path="hands-on_training/tools.html">
+            
+                
+                    <a href="../hands-on_training/tools.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.3.</b>
+                        
+                         Tools
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.6" data-path="hands-on_training/practical_use_cases">
+            
+                
+                    <a href="../hands-on_training/practical_use_cases">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                         Practical Use Cases
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4" data-path="demos/README.html">
+            
+                
+                    <a href="../demos/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                         Demos
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="4.1" data-path="demos/integration_with_tableau_and_excel.html">
+            
+                
+                    <a href="../demos/integration_with_tableau_and_excel.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                         Tableau
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.2" data-path="demos/excel.html">
+            
+                
+                    <a href="../demos/excel.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                         Excel
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.3" data-path="demos/streaming_data.html">
+            
+                
+                    <a href="../demos/streaming_data.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                         Streaming Data
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5" data-path="hackers_station/README.html">
+            
+                
+                    <a href="../hackers_station/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                         Hackers Station
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.1" data-path="hackers_station/start_developing_with_h2o.html">
+            
+                
+                    <a href="../hackers_station/start_developing_with_h2o.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                         Start Developing with H2O
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.2" data-path="hackers_station/build_applications_on_top_of_h2o">
+            
+                
+                    <a href="../hackers_station/build_applications_on_top_of_h2o">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                         Build Applications on Top of H2O
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.3" data-path="hackers_station/start_with_sparkling_water">
+            
+                
+                    <a href="../hackers_station/start_with_sparkling_water">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                         Start with Sparkling Water
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6" data-path="troubleshooting/README">
+            
+                
+                    <a href="../troubleshooting/README">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                         Troubleshooting
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7" data-path="more_information/README.html">
+            
+                
+                    <a href="../more_information/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                         More Information
+                    </a>
+                
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">Twitter</button>
+                <button type="button" data-sharing="google-plus" class="button">Google</button>
+                <button type="button" data-sharing="facebook" class="button">Facebook</button>
+                <button type="button" data-sharing="weibo" class="button">Weibo</button>
+                <button type="button" data-sharing="instapaper" class="button">Instapaper</button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >What is H2O?</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_1285">
+                    
+                        <h1 id="anomoly-detection">Anomoly Detection</h1>
+<h1 id="anomaly-detection-on-mnist-with-h2o-deep-learning">Anomaly Detection on MNIST with H2O Deep Learning</h1>
+<h6 id="this-tutorial-shows-how-a-deep-learning-auto-encoderhttpenwikipediaorgwikiautoencoder-model-can-be-used-to-find-outliers-in-a-dataset-this-file-is-both-valid-r-and-markdown-code-we-use-the-well-known-mnisthttpyannlecuncomexdbmnist-dataset-of-hand-written-digits-where-each-row-contains-the-282784-raw-gray-scale-pixel-values-from-0-to-255-of-the-digitized-digits-0-to-9">This tutorial shows how a Deep Learning <a href="http://en.wikipedia.org/wiki/Autoencoder" target="_blank">Auto-Encoder</a> model can be used to find outliers in a dataset. This file is both valid R and markdown code. We use the well-known <a href="http://yann.lecun.com/exdb/mnist/" target="_blank">MNIST</a> dataset of hand-written digits, where each row contains the 28^2=784 raw gray-scale pixel values from 0 to 255 of the digitized digits (0 to 9).</h6>
+<h3 id="start-h2o-and-load-the-mnist-data">Start H2O and load the MNIST data</h3>
+<h6 id="initialize-the-h2o-server-and-import-the-mnist-trainingtesting-datasets">Initialize the H2O server and import the MNIST training/testing datasets.</h6>
+<pre><code>library(h2o)
+h2oServer &lt;- h2o.init(nthreads=-1)
+homedir &lt;- &quot;/data/h2o-training/mnist/&quot;
+TRAIN = &quot;train.csv.gz&quot;
+TEST = &quot;test.csv.gz&quot;
+train_hex &lt;- h2o.importFile(h2oServer, path = paste0(homedir,TRAIN), header = F, sep = &#39;,&#39;, key = &#39;train.hex&#39;)
+test_hex &lt;- h2o.importFile(h2oServer, path = paste0(homedir,TEST), header = F, sep = &#39;,&#39;, key = &#39;test.hex&#39;)
+</code></pre><h6 id="the-data-consists-of-784-282-pixel-values-per-row-with-gray-scale-values-from-0-to-255-the-last-column-is-the-response-a-label-in-0129">The data consists of 784 (=28^2) pixel values per row, with (gray-scale) values from 0 to 255. The last column is the response (a label in 0,1,2,...,9).</h6>
+<pre><code>predictors = c(1:784)
+resp = 785
+</code></pre><h6 id="we-do-unsupervised-training-so-we-can-drop-the-response-column">We do unsupervised training, so we can drop the response column.</h6>
+<pre><code>train_hex &lt;- train_hex[,-resp]
+test_hex &lt;- test_hex[,-resp]
+</code></pre><h3 id="finding-outliers---ugly-hand-written-digits">Finding outliers - ugly hand-written digits</h3>
+<h6 id="we-train-a-deep-learning-auto-encoder-to-learn-a-compressed-low-dimensional-non-linear-representation-of-the-dataset-hence-learning-the-intrinsic-structure-of-the-training-dataset-the-auto-encoder-model-is-then-used-to-transform-all-test-set-images-to-their-reconstructed-images-by-passing-through-the-lower-dimensional-neural-network-we-then-find-outliers-in-a-test-dataset-by-comparing-the-reconstruction-of-each-scanned-digit-with-its-original-pixel-values-the-idea-is-that-a-high-reconstruction-error-of-a-digit-indicates-that-the-test-set-point-doesnt-conform-to-the-structure-of-the-training-data-and-can-hence-be-called-an-outlier">We train a Deep Learning Auto-Encoder to learn a compressed (low-dimensional) non-linear representation of the dataset, hence learning the intrinsic structure of the training dataset. The auto-encoder model is then used to transform all test set images to their reconstructed images, by passing through the lower-dimensional neural network. We then find outliers in a test dataset by comparing the reconstruction of each scanned digit with its original pixel values. The idea is that a high reconstruction error of a digit indicates that the test set point doesn&#39;t conform to the structure of the training data and can hence be called an outlier.</h6>
+<h4 id="1-learn-whats-normal-from-the-training-data">1. Learn what&#39;s <em>normal</em> from the training data</h4>
+<h6 id="train-unsupervised-deep-learning-autoencoder-model-on-the-training-dataset-for-simplicity-we-train-a-model-with-1-hidden-layer-of-50-tanh-neurons-to-create-50-non-linear-features-with-which-to-reconstruct-the-original-dataset--we-learned-from-the-dimensionality-reduction-tutorial-that-50-is-a-reasonable-choice-for-simplicity-we-train-the-auto-encoder-for-only-1-epoch-one-pass-over-the-data-we-explicitly-include-constant-columns-all-white-background-for-the-visualization-to-be-easier">Train unsupervised Deep Learning autoencoder model on the training dataset. For simplicity, we train a model with 1 hidden layer of 50 Tanh neurons to create 50 non-linear features with which to reconstruct the original dataset.  We learned from the Dimensionality Reduction tutorial that 50 is a reasonable choice. For simplicity, we train the auto-encoder for only 1 epoch (one pass over the data). We explicitly include constant columns (all white background) for the visualization to be easier.</h6>
+<pre><code>ae_model &lt;- h2o.deeplearning(x=predictors,
+                           y=42, #response (ignored - pick any non-constant column)
+                           data=train_hex,
+                           activation=&quot;Tanh&quot;,
+                           autoencoder=T,
+                           hidden=c(50),
+                           ignore_const_cols=F,
+                           epochs=1)
+</code></pre><h6 id="note-that-the-response-column-is-ignored-it-is-only-required-because-of-a-shared-deeplearning-code-framework">Note that the response column is ignored (it is only required because of a shared DeepLearning code framework).</h6>
+<h4 id="2-find-outliers-in-the-test-data">2. Find outliers in the test data</h4>
+<h6 id="the-anomaly-app-computes-the-per-row-reconstruction-error-for-the-test-data-set-it-passes-it-through-the-autoencoder-model-built-on-the-training-data-and-computes-mean-square-error-mse-for-each-row-in-the-test-set">The Anomaly app computes the per-row reconstruction error for the test data set. It passes it through the autoencoder model (built on the training data) and computes mean square error (MSE) for each row in the test set.</h6>
+<pre><code>test_rec_error &lt;- as.data.frame(h2o.anomaly(test_hex, ae_model))
+</code></pre><h6 id="in-case-you-wanted-to-see-the-lower-dimensional-features-created-by-the-auto-encoder-deep-learning-model-heres-a-way-to-extract-them-for-a-given-dataset-this-a-non-linear-dimensionality-reduction-similar-to-pca-but-the-values-are-capped-by-the-activation-function-in-this-case-they-range-from--11">In case you wanted to see the lower-dimensional features created by the auto-encoder deep learning model, here&#39;s a way to extract them for a given dataset. This a non-linear dimensionality reduction, similar to PCA, but the values are capped by the activation function (in this case, they range from -1...1)</h6>
+<pre><code>test_features_deep &lt;- h2o.deepfeatures(test_hex, ae_model, layer=1)
+summary(test_features_deep)
+</code></pre><h4 id="3-visualize-the-good-the-bad-and-the-ugly">3. Visualize the <em>good</em>, the <em>bad</em> and the <em>ugly</em></h4>
+<h6 id="we-will-need-a-helper-function-for-plotting-handwritten-digits-adapted-from-httpwwwr-bloggerscomthe-essence-of-a-handwritten-digit-dont-worry-if-you-dont-follow-this-code">We will need a helper function for plotting handwritten digits (adapted from <a href="http://www.r-bloggers.com/the-essence-of-a-handwritten-digit/" target="_blank">http://www.r-bloggers.com/the-essence-of-a-handwritten-digit/</a>). Don&#39;t worry if you don&#39;t follow this code...</h6>
+<pre><code>plotDigit &lt;- function(mydata, rec_error) {
+  len&lt;-nrow(mydata)
+  N&lt;-ceiling(sqrt(len))
+  op &lt;- par(mfrow=c(N,N),pty=&#39;s&#39;,mar=c(1,1,1,1),xaxt=&#39;n&#39;,yaxt=&#39;n&#39;)
+  for (i in 1:nrow(mydata)) {
+    colors&lt;-c(&#39;white&#39;,&#39;black&#39;)
+    cus_col&lt;-colorRampPalette(colors=colors)
+    z&lt;-array(mydata[i,],dim=c(28,28))
+    z&lt;-z[,28:1]
+    image(1:28,1:28,z,main=paste0(&quot;rec_error: &quot;, round(rec_error[i],4)),col=cus_col(256))
+  }
+  on.exit(par(op))
+}
+
+plotDigits &lt;- function(data, rec_error, rows) {
+  row_idx &lt;- order(rec_error[,1],decreasing=F)[rows]
+  my_rec_error &lt;- rec_error[row_idx,]
+  my_data &lt;- as.matrix(as.data.frame(data[row_idx,]))
+  plotDigit(my_data, my_rec_error)
+}
+</code></pre><h6 id="lets-look-at-the-test-set-points-with-lowmedianhigh-reconstruction-errors-we-will-now-visualize-the-original-test-set-points-and-their-reconstructions-obtained-by-propagating-them-through-the-narrow-neural-net">Let&#39;s look at the test set points with low/median/high reconstruction errors. We will now visualize the original test set points and their reconstructions obtained by propagating them through the narrow neural net.</h6>
+<pre><code>test_recon &lt;- h2o.predict(ae_model, test_hex)
+summary(test_recon)
+</code></pre><h4 id="the-good">The good</h4>
+<h6 id="lets-plot-the-25-digits-with-lowest-reconstruction-error-first-we-plot-the-reconstruction-then-the-original-scanned-images">Let&#39;s plot the 25 digits with lowest reconstruction error. First we plot the reconstruction, then the original scanned images.</h6>
+<pre><code>plotDigits(test_recon, test_rec_error, c(1:25))
+plotDigits(test_hex,   test_rec_error, c(1:25))
+</code></pre><h5 id="imagesgood_bothpng"><img src="images/good_both.png" alt=""></h5>
+<h6 id="clearly-a-well-written-digit-1-appears-in-both-the-training-and-testing-set-and-is-easy-to-reconstruct-by-the-autoencoder-with-minimal-reconstruction-error-nothing-is-as-easy-as-a-straight-line">Clearly, a well-written digit 1 appears in both the training and testing set, and is easy to reconstruct by the autoencoder with minimal reconstruction error. Nothing is as easy as a straight line.</h6>
+<h4 id="the-bad">The bad</h4>
+<h6 id="now-lets-look-at-the-25-digits-with-median-reconstruction-error">Now let&#39;s look at the 25 digits with median reconstruction error.</h6>
+<pre><code>plotDigits(test_recon, test_rec_error, c(4988:5012))
+plotDigits(test_hex,   test_rec_error, c(4988:5012))
+</code></pre><h5 id="imagesbad_bothpng"><img src="images/bad_both.png" alt=""></h5>
+<h6 id="these-test-set-digits-look-normal---it-is-plausible-that-they-resemble-digits-from-the-training-data-to-a-large-extent-but-they-do-have-some-particularities-that-cause-some-reconstruction-error">These test set digits look &quot;normal&quot; - it is plausible that they resemble digits from the training data to a large extent, but they do have some particularities that cause some reconstruction error.</h6>
+<h4 id="the-ugly">The ugly</h4>
+<h6 id="and-here-are-the-biggest-outliers---the-25-digits-with-highest-reconstruction-error">And here are the biggest outliers - The 25 digits with highest reconstruction error!</h6>
+<pre><code>plotDigits(test_recon, test_rec_error, c(9976:10000))
+plotDigits(test_hex,   test_rec_error, c(9976:10000))
+</code></pre><h5 id="imagesugly_bothpng"><img src="images/ugly_both.png" alt=""></h5>
+<h6 id="now-here-are-some-pretty-ugly-digits-that-are-plausibly-not-commonly-found-in-the-training-data---some-are-even-hard-to-classify-by-humans">Now here are some pretty ugly digits that are plausibly not commonly found in the training data - some are even hard to classify by humans.</h6>
+<h3 id="voila">Voila!</h3>
+<h5 id="we-were-able-to-find-outliers-with-h2o-deep-learning-auto-encoder-models-we-would-love-to-hear-your-usecase-for-anomaly-detection">We were able to find outliers with H2O Deep Learning Auto-Encoder models. We would love to hear your usecase for Anomaly detection.</h5>
+<h6 id="note-every-run-of-deeplearning-results-in-different-results-since-we-use-hogwildhttpwwweecsberkeleyedubrechtpapershogwildtrpdf-parallelization-with-intentional-race-conditions-between-threads--to-get-reproducible-results-at-the-expense-of-speed-for-small-datasets-set-reproduciblet-and-specify-a-seed"><em>Note:</em> Every run of DeepLearning results in different results since we use <a href="http://www.eecs.berkeley.edu/~brecht/papers/hogwildTR.pdf" target="_blank">Hogwild!</a> parallelization with intentional race conditions between threads.  To get reproducible results at the expense of speed for small datasets, set reproducible=T and specify a seed.</h6>
+<h4 id="more-information-can-be-found-in-the-h2o-deep-learning-booklethttpstcokwzyfmgj2s-and-in-our-slideshttpwwwslidesharenet0xdatapresentations">More information can be found in the <a href="https://t.co/kWzyFMGJ2S" target="_blank">H2O Deep Learning booklet</a> and in our <a href="http://www.slideshare.net/0xdata/presentations" target="_blank">slides</a>.</h4>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../hands-on_training/dimensionality_reduction.html" class="navigation navigation-prev " aria-label="Previous page: Dimensionality Reduction"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../hands-on_training/advanced_topics.html" class="navigation navigation-next " aria-label="Next page: Advanced Topics"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-exercises/ace/ace.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-exercises/ace/theme-tomorrow.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-exercises/ace/mode-javascript.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-exercises/exercises.js"></script>
+    
+
+    
+    <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        <script src="../gitbook/plugins/gitbook-plugin-exercises/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+    </body>
+    
+</html>

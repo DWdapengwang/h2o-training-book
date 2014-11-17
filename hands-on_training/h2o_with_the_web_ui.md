@@ -131,4 +131,4 @@ or export any frame:
   * In a active H<sub>2</sub>O session
   * Navigate to the [Load Model](http://localhost:54321/2/LoadModel.html)
   * Input for *path*: '/data/h2o-training/airlines/50TreesGBMmodel'
-  * Hit Submit 
+  * Hit Submit
