@@ -20,7 +20,7 @@
        * [Multi-model Parameter Tuning](hands-on_training/multi-model_parameter_tuning_for_higgs_dataset.md)
        * [Categorical Feature Engineering](hands-on_training/categorical_feature_engineering.md)
        * [Tools](hands-on_training/tools.md)
-   * [Pratical Use Cases for Marketing](practical_use_cases.md)
+   * [Pratical Use Cases for Marketing](hands-on_training/practical_use_cases.md)
 * [Demos](demos/README.md)
    * [Tableau](demos/integration_with_tableau_and_excel.md)
    * [Excel](demos/excel.md)
