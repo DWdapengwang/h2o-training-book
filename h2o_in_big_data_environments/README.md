@@ -8,4 +8,4 @@ Similarily users can also import data sitting in S3 by launching H2O on EC2 inst
 
 Read more about H2O on Big Data Environments from our VP of Engineering, [Tom Kraljevic](http://h2o.ai/team/tom-kraljevic/):
 
-### [H2O in Big Data Environments](H2OinBigDataEnvironments.pdf)
+#### [H2O in Big Data Environments](H2OinBigDataEnvironments.pdf)
