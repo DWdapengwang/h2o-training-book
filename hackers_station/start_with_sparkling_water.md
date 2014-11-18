@@ -1,4 +1,4 @@
-# Start with Sparkling Water
+# Build with Sparkling Water
 
 > This short tutorial introduces _Sparkling Water_ project
 enabling H<sub>2</sub>O platform execution on the top of Spark.
