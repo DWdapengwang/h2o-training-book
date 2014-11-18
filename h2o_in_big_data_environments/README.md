@@ -6,5 +6,6 @@ Customers can use data locked in HDFS as a data source. H2O is a primary citizen
 
 Similarily users can also import data sitting in S3 by launching H2O on EC2 instances with access to S3 buckets. This way customers can take advantage of having the  flexibility to add nodes to a cloud with minimal difficulty.
 
-[H2O in Big Data Environments](H2OinBigDataEnvironments.pdf)
-![](H2OinBigDataEnvironments.pdf)
+Read more about H2O on Big Data Environments from our VP of Engineering, [Tom Kraljevic](http://h2o.ai/team/tom-kraljevic/):
+
+### [H2O in Big Data Environments](H2OinBigDataEnvironments.pdf)
