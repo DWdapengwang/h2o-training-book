@@ -22,11 +22,11 @@
        * [Categorical Feature Engineering](hands-on_training/categorical_feature_engineering.md)
        * [Tools](hands-on_training/tools.md)
    * [Pratical Use Cases for Marketing](pratical_use_cases_for_marketing/README.md)
-* Demos
+* [Demos](demos/README.md)
    * [Tableau](demos/integration_with_tableau_and_excel.md)
    * [Excel](demos/excel.md)
    * [Streaming Data](demos/streaming_data.md)
-* Build Applications on Top of H2O
+* [Build Applications on Top of H2O](hackers_station/README.md)
    * [KMeans](hackers_station/kmeans.md)
    * [Grep](hackers_station/grep.md)
    * [Quantiles](hackers_station/quantiles.md)

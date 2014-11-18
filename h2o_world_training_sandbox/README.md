@@ -19,10 +19,10 @@
   ![VirtualBox Menu](images/02_vb_menu.png)
 
   * Import wizard is shown
-  ![Select file](images/03_select_file.png)
+  ![Select file](images/04_import_wizard.png)
 
   * Open provided _h2oworld-training.ova_ file from USB drive
-  ![Select file](images/04_import_wizard.png)
+  ![Select file](images/03_select_file.png)
 
   * Review configurations of the image file and hit Import
   ![Import Image](images/boot01.png)
