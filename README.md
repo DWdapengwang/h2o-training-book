@@ -6,7 +6,8 @@ Data collection is easy. Decision making is hard. H2O makes it fast and easy to 
 
 With H2O, you can make better predictions by harnessing sophisticated, ready-to- use algorithms and the processing power you need to analyze bigger data sets, more models, and more variables.
 
-Get started with minimal effort and investment. H2O is an extensible open source platform that offers the most pragmatic way to put big data to work for your busi- ness. With H2O, you can work with your existing languages and tools. Further, you can extend the platform seamlessly into your Hadoop environments.
+Get started with minimal effort and investment. H2O is an extensible open source platform that offers the most pragmatic way to put big data to work for your business. With H2O, you can work with your existing languages and tools. Further, you can extend the platform seamlessly into your Hadoop environments.
+
 ## Get H2O!
 ###Download H2O
 http://0xdata.com/download/
