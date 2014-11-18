@@ -3,7 +3,7 @@
 * [Introduction](README.md)
 * [H2O World Training Sandbox](h2o_world_training_sandbox/README.md)
 * [H2O in Big Data Environments](h2o_in_big_data_environments/README.md)
-* [Hands-On Training]
+* [Hands-On Training](hands-on_training/README.md)
    * [H2O with the Web UI](hands-on_training/h2o_with_the_web_ui.md)
    * [R with H2O ](hands-on_training/r_with_h2o.md)
    * [Supervised Learning](hands-on_training/supervised_learning_with_regressions.md)
@@ -22,11 +22,11 @@
        * [Categorical Feature Engineering](hands-on_training/categorical_feature_engineering.md)
        * [Tools](hands-on_training/tools.md)
    * [Pratical Use Cases for Marketing](pratical_use_cases_for_marketing/README.md)
-* [Demos]
+* Demos
    * [Tableau](demos/integration_with_tableau_and_excel.md)
    * [Excel](demos/excel.md)
    * [Streaming Data](demos/streaming_data.md)
-* [Build Applications on Top of H2O]
+* Build Applications on Top of H2O
    * [KMeans](hackers_station/kmeans.md)
    * [Grep](hackers_station/grep.md)
    * [Quantiles](hackers_station/quantiles.md)
