@@ -98,6 +98,7 @@ Let's see which model had the lowest validation error (grid search automatically
     }
 
 We can then find the model with the lowest validation error:
+
     best_err <- best_model@model$valid_class_error #best model from grid search above
     for (i in 1:length(models)) {
       err <- models[[i]]@model$valid_class_error

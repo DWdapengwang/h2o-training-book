@@ -1,4 +1,4 @@
-# Tools
+# Other Useful Tools
 
 ### Synthetic Data
  Use `h2o.createFrame` to synthetic random data in H2O. This method can also be used to quickly create very large datasets for scaling tests. Note that there is no intrinsic structure in the data (it's either constant or random), so results from many machine learning methods will not be very meaningful.
