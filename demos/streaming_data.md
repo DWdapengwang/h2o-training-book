@@ -36,14 +36,14 @@ This tutorial walks you through the following sequence:
 
 ### 2.1.  Clone the required repositories from Github
 
-`$ git clone https://github.com/apache/storm.git`  
-`$ git clone https://github.com/0xdata/h2o-training.git`  
+`$ git clone https://github.com/apache/storm.git`
+`$ git clone https://github.com/0xdata/h2o-training.git`
 
 * *NOTE*: Building storm (c.f. [Section 5](#BuildStorm)) requires [Maven](http://maven.apache.org/). You can install Maven (version 3.x) by following the [Maven installation instructions](http://maven.apache.org/download.cgi).
 
 Navigate to the directory for this tutorial inside the h2o-training repository:
 
-`$ cd h2o-training/tutorials/streaming/storm`  
+`$ cd h2o-training/tutorials/streaming/storm`
 
 You should see the following files in this directory:
 
@@ -70,11 +70,11 @@ Get the [latest version of R from CRAN](http://www.r-project.org/index.html) and
 
 > Note:  The H2O package for R includes both the R code as well as the main H2O jar file.  This is all you need to run H2O locally on your laptop.
 
-Step 1:  Start R  
-`$ R`  
+Step 1:  Start R
+`$ R`
 
-Step 2:  Install H2O from CRAN  
-`> install.packages("h2o")`  
+Step 2:  Install H2O from CRAN
+`> install.packages("h2o")`
 
 > Note:  For convenience, this tutorial was created with the [Markov](http://h2o-release.s3.amazonaws.com/h2o/rel-markov/1/index.html) stable release of H2O (2.8.1.1) from CRAN, as shown above.  Later versions of H2O will also work.
 
@@ -101,7 +101,7 @@ For viewing predictions in real-time ([Section 8](#real_time)) you will need the
 
 Let's take a look at a small piece of the training_data.csv file for a moment.  This is a synthetic data set created for this tutorial.
 
-`$ head -n 20 training_data.csv`  
+`$ head -n 20 training_data.csv`
 
 | Label | Has4Legs | CoatColor | HairLength | TailLength | EnjoysPlay | StairsOutWindow | HoursSpentNapping | RespondsToCommands | EasilyFrightened | Age | Noise1             | Noise2             | Noise3              | Noise4             | Noise5             |
 |-------|----------|-----------|------------|------------|------------|-----------------|-------------------|--------------------|------------------|-----|--------------------|--------------------|---------------------|--------------------|--------------------|
@@ -139,7 +139,7 @@ The remaining columns are all input features (i.e. the "x" columns) we use to pr
 
 The example.R script builds the model and exports the Java POJO to the generated_model temporary directory.  Run example.R as follows:
 
-`$ R -f example.R`  
+`$ R -f example.R`
 
 ```
 R version 3.1.2 (2014-10-31) -- "Pumpkin Helmet"
@@ -163,7 +163,7 @@ Type 'q()' to quit R.
 > #
 > # Example R code for generating an H2O Scoring POJO.
 > #
-> 
+>
 > # "Safe" system.  Error checks process exit status code.  stop() if it failed.
 > safeSystem <- function(x) {
 +   print(sprintf("+ CMD: %s", x))
@@ -174,7 +174,7 @@ Type 'q()' to quit R.
 +     stop(msg)
 +   }
 + }
-> 
+>
 > library(h2o)
 Loading required package: RCurl
 Loading required package: bitops
@@ -205,7 +205,7 @@ The following objects are masked from ‘package:base’:
 
     ifelse, max, min, strsplit, sum, tolower, toupper
 
-> 
+>
 > cat("Starting H2O\n")
 Starting H2O
 > myIP <- "localhost"
@@ -223,24 +223,24 @@ Java(TM) SE Runtime Environment (build 1.7.0_51-b13)
 Java HotSpot(TM) 64-Bit Server VM (build 24.51-b03, mixed mode)
 
 
-Successfully connected to http://localhost:54321 
+Successfully connected to http://localhost:54321
 
 R is connected to H2O cluster:
-    H2O cluster uptime:         1 seconds 587 milliseconds 
-    H2O cluster version:        2.8.1.1 
-    H2O cluster name:           H2O_started_from_R 
-    H2O cluster total nodes:    1 
-    H2O cluster total memory:   3.56 GB 
-    H2O cluster total cores:    8 
-    H2O cluster allowed cores:  2 
-    H2O cluster healthy:        TRUE 
+    H2O cluster uptime:         1 seconds 587 milliseconds
+    H2O cluster version:        2.8.1.1
+    H2O cluster name:           H2O_started_from_R
+    H2O cluster total nodes:    1
+    H2O cluster total memory:   3.56 GB
+    H2O cluster total cores:    8
+    H2O cluster allowed cores:  2
+    H2O cluster healthy:        TRUE
 
 Note:  As started, H2O is limited to the CRAN default of 2 CPUs.
        Shut down and restart H2O as shown below to use all your CPUs.
            > h2o.shutdown(localH2O)
            > localH2O = h2o.init(nthreads = -1)
 
-> 
+>
 > cat("Building GBM model\n")
 Building GBM model
 > df <- h2o.importFile(h, "training_data.csv");
@@ -249,7 +249,7 @@ Building GBM model
 > x <- c("NumberOfLegs","CoatColor","HairLength","TailLength","EnjoysPlay","StairsOutWindow","HoursSpentNapping","RespondsToCommands","EasilyFrightened","Age", "Noise1", "Noise2", "Noise3", "Noise4", "Noise5")
 > gbm.h2o.fit <- h2o.gbm(data = df, y = y, x = x, n.trees = 10)
 ^M  |                                                                            ^M  |                                                                      |   0%^M  |                                                                            ^M  |======================================================================| 100%
-> 
+>
 > cat("Downloading Java prediction model code from H2O\n")
 Downloading Java prediction model code from H2O
 > model_key <- gbm.h2o.fit@key
@@ -280,17 +280,17 @@ Downloading Java prediction model code from H2O
 > safeSystem(cmd)
 [1] "+ CMD: sed -i '' 's/class GBM_9d538f637ef85c78d6e2fea88ad54bc9/class GBMPojo/' generated_model/GBMPojo.java"
 [1] 0
-> 
+>
 > cat("Note: H2O will shut down automatically if it was started by this R script and the script exits\n")
 Note: H2O will shut down automatically if it was started by this R script and the script exits
-> 
+>
 ```
 
 ### 4.2.  Look at the output
 
 The generated_model directory is created and now contains two files:
 
-`$ ls -l generated_model`  
+`$ ls -l generated_model`
 
 ```
 mbp2:storm tomk$ ls -l generated_model/
@@ -374,20 +374,20 @@ The DOMAINS array contains information about the level names of categorical colu
 ### 5.1 Build storm and import into IntelliJ
 To build storm navigate to the cloned repo and install via Maven:
 
-`$ cd storm && mvn clean install -DskipTests=true`  
+`$ cd storm && mvn clean install -DskipTests=true`
 
 Once storm is built, open up your favorite IDE to start building the h2o streaming topology. In this tutorial, we will be using [IntelliJ](https://www.jetbrains.com/idea/).
 
 To import the storm-starter project into your IntelliJ please follow these screenshots:
 
-Click on "Import Project" and find the storm repo. Select storm and click "OK"  
+Click on "Import Project" and find the storm repo. Select storm and click "OK"
 ![](images/ij_1.png)
 
-Import the project from extrenal model using Maven, click "Next"  
+Import the project from extrenal model using Maven, click "Next"
 ![](images/ij_2.png)
 
 
-Ensure that "Import Maven projects automatically" check box is clicked (it's off by default), click "Next"  
+Ensure that "Import Maven projects automatically" check box is clicked (it's off by default), click "Next"
 ![](images/ij_3.png)
 
 That's it! Now click through the remaining prompts (Next -> Next -> Next -> Finish).
@@ -396,11 +396,11 @@ Once inside the project, open up *storm-starter/test/jvm/storm.starter*. Yes, we
 
 ### 5.2  Build the topology
 
-The topology we've prepared has one spout TestH2ODataSpout and two bolts (a "Predict Bolt" and a "Classifier Bolt"). Please copy the pre-built bolts and spout into the *test* directory in IntelliJ. 
+The topology we've prepared has one spout TestH2ODataSpout and two bolts (a "Predict Bolt" and a "Classifier Bolt"). Please copy the pre-built bolts and spout into the *test* directory in IntelliJ.
 
-`$ cp H2OStormStarter.java /PATH_TO_STORM/storm/examples/storm-starter/test/jvm/storm/starter/`  
+`$ cp H2OStormStarter.java /PATH_TO_STORM/storm/examples/storm-starter/test/jvm/storm/starter/`
 
-`$ cp TestH2ODataSpout.java /PATH_TO_STORM/storm/examples/storm-starter/test/jvm/storm/starter/`  
+`$ cp TestH2ODataSpout.java /PATH_TO_STORM/storm/examples/storm-starter/test/jvm/storm/starter/`
 
 Your project should now look like this:
 
@@ -413,29 +413,29 @@ We are now ready to import the H2O pieces into the IntelliJ project. We'll need 
 
 To import the *h2o-model.jar* into your IntelliJ project, please follow these screenshots:
 
-File > Project Structure…  
+File > Project Structure…
 ![](images/ij_6.png)
 
-Click the "+" to add a new dependency  
+Click the "+" to add a new dependency
 ![](images/ij_7.png)
 
-Click on Jars or directories…  
+Click on Jars or directories…
 ![](images/ij_8.png)
 
-Find the h2o-model.jar that we previously downloaded with the R script in [section 4](#RPOJO)  
+Find the h2o-model.jar that we previously downloaded with the R script in [section 4](#RPOJO)
 ![](images/ij_9.png)
 
 Click "OK", then "Apply", then "OK".
 
 You now have the h2o-model.jar as a depencny in your project.
 
-We now copy over the POJO from [section 4](#RPOJO) into our storm project. 
+We now copy over the POJO from [section 4](#RPOJO) into our storm project.
 
-`$ cp ./generated_model/GBMPojo.java /PATH_TO_STORM/storm/examples/storm-starter/test/jvm/storm/starter/`  
+`$ cp ./generated_model/GBMPojo.java /PATH_TO_STORM/storm/examples/storm-starter/test/jvm/storm/starter/`
 
 **_OR_** if you were not able to build the GBMPojo, copy over the pre-generated version:
 
-`$ cp ./premade_generated_model/GBMPojo.java /PATH_TO_STORM/storm/examples/storm-starter/test/jvm/storm/starter/`  
+`$ cp ./premade_generated_model/GBMPojo.java /PATH_TO_STORM/storm/examples/storm-starter/test/jvm/storm/starter/`
 
 Your storm-starter project directory should now look like this:
 
@@ -477,7 +477,7 @@ In order to use the GBMPojo class, our **_PredictionBolt_** in H2OStormStarter h
 ```
 
 
-The probability emitted is the probability of being a 'dog'. We use this probability to decide wether the observation is of type 'cat' or 'dog' depending on some threshold. This threshold was chosen such that the F1 score was maximized for the testing data (please see AUC and/or h2o.preformance() from R). 
+The probability emitted is the probability of being a 'dog'. We use this probability to decide wether the observation is of type 'cat' or 'dog' depending on some threshold. This threshold was chosen such that the F1 score was maximized for the testing data (please see AUC and/or h2o.preformance() from R).
 
 The **_ClassifierBolt_** then looks like:
 
@@ -531,16 +531,16 @@ To watch the predictions in real time, we start up an http-server on port 4040 a
 
 In order to get http-server, install *npm* (you may need sudo):
 
-`$ brew install npm`  
-`$  npm install http-server -g`  
+`$ brew install npm`
+`$  npm install http-server -g`
 
 Once these are installed, you may navigate to the *web* directory and start the server:
 
 
-`$ cd web`  
-`$ http-server -p 4040 -c-1`  
+`$ cd web`
+`$ http-server -p 4040 -c-1`
 
-Now open up your browser and navigate to [http://localhost:4040](http://localhost:4040). Requires a modern browser (depends on [D3](http://d3js.org/) for animation).  
+Now open up your browser and navigate to [http://localhost:4040](http://localhost:4040). Requires a modern browser (depends on [D3](http://d3js.org/) for animation).
 
 Here's a [short video](https://www.youtube.com/watch?v=-DEbBlwBsdI) showing what it looks like all together.
 
@@ -551,12 +551,12 @@ Enjoy!
 * [CRAN](http://cran.r-project.org)
 * GBM
 
-    [The Elements of Statistical Learning. Vol.1. N.p., page 339](http://www.stanford.edu/~hastie/local.ftp/Springer/OLD//ESLII_print4.pdf)  
-    Hastie, Trevor, Robert Tibshirani, and J Jerome H Friedman.  
+    [The Elements of Statistical Learning. Vol.1. N.p., page 339](http://www.stanford.edu/~hastie/local.ftp/Springer/OLD//ESLII_print4.pdf)
+    Hastie, Trevor, Robert Tibshirani, and J Jerome H Friedman.
     Springer New York, 2001.
-    
+
     [Data Science with H2O (GBM)](http://docs.0xdata.com/datascience/gbm.html)
-    
+
     [Gradient Boosting (Wikipedia)](http://en.wikipedia.org/wiki/Gradient_boosting)
 
 * [H2O](http://h2o.ai)

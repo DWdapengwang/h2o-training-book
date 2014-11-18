@@ -13,7 +13,7 @@ Initialize the H2O server and import the Adult dataset.
     data_hex <- h2o.importFile(h2oServer, path = paste0(homedir,TRAIN), header = F, sep = ' ', key = 'data_hex')
 
 We manually assign column names since they are missing in the original file.
-    
+
     colnames(data_hex) <- c("age","workclass","fnlwgt","education","education-num","marital-status","occupation","relationship","race","sex","capital-gain","capital-loss","hours-per-week","native-country","income")
     summary(data_hex)
 
@@ -35,9 +35,9 @@ First, we source a few [helper functions](../binaryClassificationHelper.R.html) 
       train_hex <- h2o.assign(frame[random < .8,], "train_hex")
       valid_hex <- h2o.assign(frame[random >= .8 & random < .9,], "valid_hex")
       test_hex  <- h2o.assign(frame[random >= .9,], "test_hex")
-     
+
       predictors <- colnames(frame)[-match(response,colnames(frame))]
-      
+
       # multi-model comparison with N-fold cross-validation
       data = list(x=predictors, y=response, train=train_hex, valid=valid_hex, nfolds=N_FOLDS)
       models <- c(
@@ -45,7 +45,7 @@ First, we source a few [helper functions](../binaryClassificationHelper.R.html) 
         h2o.fit(h2o.gbm, data, gbmparams)
       )
       best_model <- h2o.leaderBoard(models, test_hex, match(response,colnames(frame)))
-  
+
       h2o.rm(h2oServer, grep(pattern = "Last.value", x = h2o.ls(h2oServer)$Key, value = TRUE))
       best_model
     }
@@ -62,7 +62,7 @@ First, we source a few [helper functions](../binaryClassificationHelper.R.html) 
  According to GBM, the most important columns are `marital-status,relationship,capital-gain,education-num,age`
 
 ### Feature engineering
- 
+
  The following section shows ways to create new derived features. We'll need this simple append function, as we're going to add new columns the our dataset
 
     h2o.append <- function(frame, col) {
@@ -72,7 +72,7 @@ First, we source a few [helper functions](../binaryClassificationHelper.R.html) 
 
 ####1. Turn age into a factor
 The feature `age` is an integer value, but GLM for example will have a tough time predicing income from age with a linear relationship, while GBM should be able to carve out these non-linear dependencies by itself (but it might need more trees, deeper interaction depth than default values)
- 
+
     data_hex <- h2o.append(data_hex, as.factor(data_hex$age))
     colnames(data_hex)
     summary(data_hex)
@@ -86,7 +86,7 @@ The feature `age` is an integer value, but GLM for example will have a tough tim
     head(sort(best_model@model$normalized_coefficients,decreasing=F),5)
 
 ####2. Same for capital-gain/loss and work hours per week
-  
+
     data_hex <- h2o.append(data_hex, as.factor(data_hex$'hours-per-week'))
     data_hex <- h2o.append(data_hex, as.factor(data_hex$'capital-gain'))
     data_hex <- h2o.append(data_hex, as.factor(data_hex$'capital-loss'))
@@ -104,12 +104,12 @@ The feature `age` is an integer value, but GLM for example will have a tough tim
  Ok, now both algorithms reach similar validation AUC values: `GLM: 0.9285384 GBM: 0.9286973`
 
 ### Replace money-related integer columns by their Log-Transform
-    
+
     data_hex$'capital-gain'   <- log(1+data_hex$'capital-gain')
     data_hex$'capital-loss'   <- log(1+data_hex$'capital-loss')
     data_hex
     best_model <- h2o.trainModels(data_hex)
-    
+
 We see that the training AUC for GLM improves slightly, from `0.9269056070` to `0.9269586507`. Intuition: Money is often distributed exponentially, and the log transform brings it back to a linear space. Note that the validation AUC drops, likely due to small data statistical noise. We clearly got close to the limit of this dataset. Note that GBM didn't benefit from this transform, it seems to be able to better split up the original integer space.
 
     frame <- data_hex
@@ -117,13 +117,13 @@ We see that the training AUC for GLM improves slightly, from `0.9269056070` to `
     train_hex <- h2o.assign(frame[random < .8,], "train_hex")
     valid_hex <- h2o.assign(frame[random >= .8 & random < .9,], "valid_hex")
     test_hex  <- h2o.assign(frame[random >= .9,], "test_hex")
-    
+
     predictors <- colnames(frame)[-match(response,colnames(frame))]
-    
+
     # multi-model comparison with N-fold cross-validation
     data = list(x=predictors, y=response, train=train_hex, valid=valid_hex, nfolds=N_FOLDS)
     models <- c(
       h2o.fit(h2o.deeplearning, data, list())
     )
     best_model <- h2o.leaderBoard(models, test_hex, match(response,colnames(frame)))
-  
+

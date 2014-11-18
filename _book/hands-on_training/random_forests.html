@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>More Information | What is H2O?</title>
+        <title>Random Forests | What is H2O?</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,8 +18,10 @@
     
     
     
+    <link rel="next" href="../hands-on_training/regression.html" />
     
-    <link rel="prev" href="../troubleshooting/README.html" />
+    
+    <link rel="prev" href="../hands-on_training/gradient_boosted_machines.html" />
     
 
         
@@ -35,7 +37,7 @@
 
 
         
-    <div class="book"  data-level="7" data-basepath=".." data-revision="1416331040631">
+    <div class="book"  data-level="3.3.3" data-basepath=".." data-revision="1416331040631">
     
 
 <div class="book-summary">
@@ -197,7 +199,7 @@
         </li>
     
         
-        <li class="chapter " data-level="3.3.3" data-path="hands-on_training/random_forests.html">
+        <li class="chapter active" data-level="3.3.3" data-path="hands-on_training/random_forests.html">
             
                 
                     <a href="../hands-on_training/random_forests.html">
@@ -599,7 +601,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="7" data-path="more_information/README.html">
+        <li class="chapter " data-level="7" data-path="more_information/README.html">
             
                 
                     <a href="../more_information/README.html">
@@ -703,17 +705,30 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_87">
+                    <section class="normal" id="section-gitbook_82">
                     
-                        <h1 id="more-information">More Information</h1>
-<ul>
-<li><a href="http://docs.h2o.ai" target="_blank">H2O Documentation</a></li>
-<li><a href="https://www.youtube.com/user/0xdata" target="_blank">H2O YouTube Channel</a></li>
-<li><a href="http://www.slideshare.net/0xdata/presentations" target="_blank">H2O SlideShare</a></li>
-<li><a href="http://h2o.ai/blog" target="_blank">H2O Blog</a></li>
-<li><a href="http://github.com/0xdata" target="_blank">H2O GitHub</a></li>
-</ul>
-
+                        <h1 id="introduction-to-random-forests-in-h2o">Introduction to Random Forests in H2O</h1>
+<p>This tutorial introduces H2O&#39;s Random Forest framework in R.</p>
+<h4 id="random-forests">Random Forests</h4>
+<h5 id="intuition-average-an-ensemble-of-weakly-predicting-larger-trees-where-each-tree-is-de-correlated-from-all-other-trees">Intuition: Average an ensemble of weakly predicting (larger) trees where each tree is <em>de-correlated</em> from all other trees.</h5>
+<h5 id="important-components">Important components:</h5>
+<ol>
+<li>Number of trees</li>
+<li>Maximum depth of tree</li>
+<li>Number of variables randomly sampled as candidates for splits</li>
+<li>Sampling rate for constructing data set to use on each tree</li>
+</ol>
+<h3 id="r-documentation">R Documentation</h3>
+<p>The <code>h2o.randomForest</code> function fits H2O&#39;s Random Forest from within R.</p>
+<pre><code>library(h2o)
+args(h2o.randomForest)
+</code></pre><p>The R documentation (man page) for H2O&#39;s Random Forest can be opened from within R using the <code>help</code> or <code>?</code> functions:</p>
+<pre><code>help(h2o.randomForest)
+</code></pre><p>We can run the example from the man page using the <code>example</code> function:</p>
+<pre><code>example(h2o.randomForest)
+</code></pre><p>And run a longer demonstration from the <code>h2o</code> package using the <code>demo</code> function:</p>
+<pre><code>demo(h2o.randomForest)
+</code></pre>
                     
                     </section>
                 
@@ -723,8 +738,10 @@
         </div>
 
         
-        <a href="../troubleshooting/README.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Troubleshooting"><i class="fa fa-angle-left"></i></a>
+        <a href="../hands-on_training/gradient_boosted_machines.html" class="navigation navigation-prev " aria-label="Previous page: Gradient Boosted Models"><i class="fa fa-angle-left"></i></a>
         
+        
+        <a href="../hands-on_training/regression.html" class="navigation navigation-next " aria-label="Next page: Regression"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

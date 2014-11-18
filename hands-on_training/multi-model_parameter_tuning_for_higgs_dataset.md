@@ -13,14 +13,14 @@ Initialize the H2O server (enable all cores)
 
     library(h2o)
     h2oServer <- h2o.init(nthreads=-1)
- 
+
 
  Import the data: For simplicity, we use a reduced dataset containing the first 100k rows.
 
     homedir <- "/data/h2o-training/higgs/"
     TRAIN = "higgs.100k.csv.gz"
     data_hex <- h2o.importFile(h2oServer, path = paste0(homedir,TRAIN), header = F, sep = ',', key = 'data_hex')
-    
+
  For small datasets, it can help to rebalance the dataset into more chunks to keep all cores busy
 
     data_hex <- h2o.rebalance(data_hex, chunks=64, key='data_hex.rebalanced')
@@ -32,9 +32,9 @@ Initialize the H2O server (enable all cores)
     valid_hex <- h2o.assign(data_hex[random >= .8 & random < .9,], "valid_hex")
     test_hex  <- h2o.assign(data_hex[random >= .9,], "test_hex")
     h2o.rm(h2oServer, grep(pattern = "Last.value", x = h2o.ls(h2oServer)$Key, value = TRUE))
- 
+
 The first column is the response label (background:0 or higgs:1). Of the 28 numerical features, the first 21 are low-level detector features and the last 7 are high-level humanly derived features (physics formulae).
-  
+
     response = 1
     low_level_predictors = c(2:22)
     low_and_high_level_predictors = c(2:29)
@@ -49,28 +49,28 @@ First, we source a few [helper functions](../binaryClassificationHelper.R.html) 
 The code below trains 60 models (2 loops, 5 classifiers with 2 grid search models each, each resulting in 1 full training and 2 cross-validation models). A leaderboard scoring the best models per h2o.fit() function is displayed.
 
     N_FOLDS=2
-    
+
     for (preds in list(low_level_predictors, low_and_high_level_predictors)) {
       data = list(x=preds, y=response, train=train_hex, valid=valid_hex, nfolds=N_FOLDS)
-      
+
       models <- c(
-        h2o.fit(h2o.glm, data, 
+        h2o.fit(h2o.glm, data,
                 list(family="binomial", variable_importances=T, lambda=c(1e-5,1e-4), use_all_factor_levels=T)),
-        h2o.fit(h2o.randomForest, data, 
+        h2o.fit(h2o.randomForest, data,
                 list(type="fast", importance=TRUE, ntree=c(5), depth=c(5,10))),
-        h2o.fit(h2o.randomForest, data, 
+        h2o.fit(h2o.randomForest, data,
                 list(type="BigData", importance=TRUE, ntree=c(5), depth=c(5,10))),
-        h2o.fit(h2o.gbm, data, 
+        h2o.fit(h2o.gbm, data,
                 list(importance=TRUE, n.tree=c(10), interaction.depth=c(2,5))),
-        h2o.fit(h2o.deeplearning, data, 
+        h2o.fit(h2o.deeplearning, data,
                 list(variable_importances=T, l1=c(1e-5), epochs=1, hidden=list(c(10,10,10), c(100,100))))
       )
       best_model <- h2o.leaderBoard(models, test_hex, response)
       h2o.rm(h2oServer, grep(pattern = "Last.value", x = h2o.ls(h2oServer)$Key, value = TRUE))
     }
-    
+
  The output contains a leaderboard (based on validation AUC) for the models using low-level features only:
-    
+
     #                                        model_type train_auc validation_auc    important_feat tuning_time_s
     #    DeepLearning_ba44837829dc8d1e h2o.deeplearning 0.6102486      0.6661170  C7,C3,C10,C11,C2      5.604354
     #    GBM_8aad39d45442ed2418646fac4 h2o.gbm          0.6393795      0.6483558  C7,C2,C5,C10,C11      3.379146
@@ -81,7 +81,7 @@ The code below trains 60 models (2 loops, 5 classifiers with 2 grid search model
  Note that training AUCs are based on cross-validation.
 
  When using both low- and high-level features, the AUC values go up across the board:
-  
+
     #                                       model_type train_auc validation_auc     important_feat tuning_time_s
     #    DeepLearning_a7cb0d0cc6f6fb8 h2o.deeplearning 0.7280887      0.7586982 C27,C29,C28,C24,C7      6.663959
     #    GBM_bc87169c331b22e37339c643 h2o.gbm          0.7552951      0.7545594 C27,C29,C28,C7,C24      4.437348
@@ -95,12 +95,12 @@ The code below trains 60 models (2 loops, 5 classifiers with 2 grid search model
 
 ### Build an improved Deep Learning model on the low-level features alone
  With slightly modified parameters, it is possible to build an even better Deep Learning model. We add dropout/L1/L2 regularization and increase the number of neurons and the number of hidden layers. Note that we don't use input layer dropout, as there are only 21 features, all of which are assumed to be present and important for particle detection. We also reduce the amount of dropout for derived features. Note that the importance of regularization typically goes down with increasing dataset sizes, as overfitting is less an issue when the model is small compared to the data.
-    
-    h2o.deeplearning(x=low_level_predictors, y=response, activation="RectifierWithDropout", data=train_hex, 
+
+    h2o.deeplearning(x=low_level_predictors, y=response, activation="RectifierWithDropout", data=train_hex,
                      validation=valid_hex, input_dropout_ratio=0, hidden_dropout_ratios=c(0.2,0.1,0.1,0),
                      l1=1e-5, l2=1e-5, epochs=20, hidden=c(200,200,200,200))
-   
- With this computationally slightly more expensive Deep Learning model, we achieve a nice boost over the simple models above: `AUC =  0.7245833 (on validation)`    
+
+ With this computationally slightly more expensive Deep Learning model, we achieve a nice boost over the simple models above: `AUC =  0.7245833 (on validation)`
 
 ###Voila!
 #####We applied multi-model grid search with N-fold cross-valiation on the real-world Higgs dataset, and demonstrated the power of H2O Deep Learning in automatically cerating non-linear derived features for highest predictive accuracy!

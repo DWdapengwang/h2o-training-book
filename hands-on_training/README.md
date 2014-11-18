@@ -30,3 +30,8 @@ In the following sections, you'll learn how to get started with H2O via the simp
   * [Yan Zou](http://h2o.ai/team/yan-zou/): [H2O for Marketing/CRM Applications - Presentation](h2o_training_yan_2014.pdf)
   * [Yan Zou](http://h2o.ai/team/yan-zou/): [H2O for Marketing/CRM Applications - R Script](practical_use_cases.html)
   * [Vinod Iyengar](http://0xdata.com/h2o-world/#vinod/): [Lead Scoring For Real Time Bidding - Presentation](h2o_world_Vinod.pdf)
+
+### 4.5 Advanced Topics
+ * [Arno Candel](http://h2o.ai/team/arno-candel/): [Multi-model Parameter Tuning for Higgs Dataset](advanced/higgs/higgs.R.html)
+ * [Arno Candel](http://h2o.ai/team/arno-candel/): [Categorical Feature Engineering for Adult dataset](advanced/features/features.R.html)
+ * [Arno Candel](http://h2o.ai/team/arno-candel/): [Other Useful Tools](advanced/tools/tools.R.html)

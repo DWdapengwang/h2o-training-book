@@ -6,7 +6,7 @@ Consider the following three-layer neural network with one hidden layer and the 
 
 #####![](images/autoencoder.png)
 
-We use the well-known [MNIST](http://yann.lecun.com/exdb/mnist/) dataset of hand-written digits, where each row contains the 28^2=784 raw gray-scale pixel values from 0 to 255 of the digitized digits (0 to 9). 
+We use the well-known [MNIST](http://yann.lecun.com/exdb/mnist/) dataset of hand-written digits, where each row contains the 28^2=784 raw gray-scale pixel values from 0 to 255 of the digitized digits (0 to 9).
 
 ### Start H2O and load the MNIST data
 
@@ -19,9 +19,9 @@ Initialize the H2O server and import the MNIST training/testing datasets.
     TEST = "test.csv.gz"
     train_hex <- h2o.importFile(h2oServer, path = paste0(homedir,TRAIN), header = F, sep = ',', key = 'train.hex')
     test_hex <- h2o.importFile(h2oServer, path = paste0(homedir,TEST), header = F, sep = ',', key = 'test.hex')
- 
+
 The data consists of 784 (=28^2) pixel values per row, with (gray-scale) values from 0 to 255. The last column is the response (a label in 0,1,2,...,9).
- 
+
     predictors = c(1:784)
     resp = 785
 
@@ -45,14 +45,14 @@ Train unsupervised Deep Learning autoencoder model on the training dataset. For 
                                hidden=c(50),
                                ignore_const_cols=F,
                                epochs=1)
-                               
+
 Note that the response column is ignored (it is only required because of a shared DeepLearning code framework).
-  
+
 ####2. Find outliers in the test data
 The Anomaly app computes the per-row reconstruction error for the test data set. It passes it through the autoencoder model (built on the training data) and computes mean square error (MSE) for each row in the test set.
- 
+
     test_rec_error <- as.data.frame(h2o.anomaly(test_hex, ae_model))
-      
+
 
 In case you wanted to see the lower-dimensional features created by the auto-encoder deep learning model, here's a way to extract them for a given dataset. This a non-linear dimensionality reduction, similar to PCA, but the values are capped by the activation function (in this case, they range from -1...1)
 
@@ -75,22 +75,22 @@ We will need a helper function for plotting handwritten digits (adapted from htt
       }
       on.exit(par(op))
     }
-    
+
     plotDigits <- function(data, rec_error, rows) {
       row_idx <- order(rec_error[,1],decreasing=F)[rows]
       my_rec_error <- rec_error[row_idx,]
       my_data <- as.matrix(as.data.frame(data[row_idx,]))
       plotDigit(my_data, my_rec_error)
     }
-      
+
 Let's look at the test set points with low/median/high reconstruction errors. We will now visualize the original test set points and their reconstructions obtained by propagating them through the narrow neural net.
-  
+
     test_recon <- h2o.predict(ae_model, test_hex)
     summary(test_recon)
 
 ####The good
 Let's plot the 25 digits with lowest reconstruction error. First we plot the reconstruction, then the original scanned images.
-    
+
     plotDigits(test_recon, test_rec_error, c(1:25))
     plotDigits(test_hex,   test_rec_error, c(1:25))
 
@@ -99,7 +99,7 @@ Clearly, a well-written digit 1 appears in both the training and testing set, an
 
 ####The bad
 Now let's look at the 25 digits with median reconstruction error.
-   
+
     plotDigits(test_recon, test_rec_error, c(4988:5012))
     plotDigits(test_hex,   test_rec_error, c(4988:5012))
 
