@@ -7,12 +7,12 @@
 
   * H<sub>2</sub>O World Training Sandbox Image (*.ova* format)
     * Provided on H<sub>2</sub>O World USB sticks, or
-    * Available for [download](https://s3.amazonaws.com/h2o-release/h2o/sandbox/h2oworld-training.ova) (7GB)
+    * Available for [download](https://s3.amazonaws.com/h2o-release/h2o/sandbox/h2oworld-training.ova) (4GB)
 
 > Note: You can use also your favorite virtualization tool like VMWare Fusion, VMWare Player, or Microsoft Hyper-V.
 
 ## 2. Setup Sandbox
-  * Open VirtualBox
+  * Start VirtualBox
   ![VirtualBox Application](images/01_virtualbox.png)
 
   * Select the menu item _File > Import Appliance_
@@ -21,15 +21,18 @@
   * Import wizard is shown
   ![Select file](images/03_select_file.png)
 
-  * Open provided _h2oworld-training.ova_ file
+  * Open provided _h2oworld-training.ova_ file from USB drive
   ![Select file](images/04_import_wizard.png)
 
-  * Review imported image
+  * Review configurations of the image file and hit Import
+  ![Import Image](images/boot01.png)
 
 ## 3. Launch Sandbox
   * Select h2oworld-training item and click on _Start_ icon
+  ![Manager](images/boot03.png)
 
   * Login screen
+  ![Login](images/boot04.png)
 
 ### 3.1 Sandbox Credentials
  * user: `h2o`, password: `h2o`
@@ -43,7 +46,6 @@
   * [RStudio Desktop v0.98.1091](http://www.rstudio.com/products/rstudio/download/)
   * [R version 3.1.1 (2014-07-10) - "Sock it to Me"](http://www.r-project.org)
     * [H<sub>2</sub>O R package v2.8.2.8](http://h2o-release.s3.amazonaws.com/h2o/rel-maxwell/8/index.html#R)
-  * [Hortonworks HDP2.1 Sandbox](http://hortonworks.com/products/hortonworks-sandbox/#install)
   * [Spark v1.1.0 for Hadoop 2.4](https://spark.apache.org/downloads.html)
   * Git v1.7.1
   * Oracle JDK v1.7.0_45
