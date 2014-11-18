@@ -22,7 +22,7 @@ This tutorial uses a 10% sample of the Person-Level 1% 2013 Public Use Microdata
 
 The `key` argument to the `h2o.importFile` function sets the name of the data set in the H2O key-value store. If the `key` argument is not supplied, the data will reside in the H2O key-value store under a machine generated name.
 
-###### The results of the `h2o.ls` function shows the size of the object held by the `adult_2013_full` key in the H2O key-value store.
+The results of the `h2o.ls` function shows the size of the object held by the `adult_2013_full` key in the H2O key-value store.
 
     kvstore <- h2o.ls(h2oServer)
     kvstore
@@ -66,7 +66,7 @@ Although we created an object in R called `adult_2013`, there is no value with t
 
 ### Summarize the 2013 update of the UCI Adult Data Set
 
-As mentioned above, an R proxy object to an H2O data set implements several methods commonly associated with R `data.frame` objects including the `summary` function to obtain column-level summaries and the `dim` function to get the row and column count
+As mentioned above, an R proxy object to an H2O data set implements several methods commonly associated with R `data.frame` objects including the `summary` function to obtain column-level summaries and the `dim` function to get the row and column count.
 
     summary(adult_2013)
     dim(adult_2013)
@@ -146,7 +146,7 @@ Perform a key-value store clean up.
 
 ### Coerce integer columns to factor (categorical) columns
 
-###### As with standard R integer vectors, integer columns in H2O can be converted to a categorical type using an `as.factor` method. For our data set we have 8 columns that use integer codes to represent categorical levels.
+As with standard R integer vectors, integer columns in H2O can be converted to a categorical type using an `as.factor` method. For our data set we have 8 columns that use integer codes to represent categorical levels.
 
     for (j in c("COW", "SCHL", "MAR", "INDP", "RELP", "RAC1P", "SEX", "POBP"))
       adult_2013[[j]] <- as.factor(adult_2013[[j]])
