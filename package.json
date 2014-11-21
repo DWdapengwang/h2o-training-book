@@ -1,0 +1,22 @@
+{
+  "name": "h2o-training-day",
+  "version": "0.0.0",
+  "description": "H2O Training Day",
+  "license": "Apache 2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/0xdata/h2o-training-book.git"
+  },
+  "keywords": [
+    "h2o.ai",
+    "h2oworld"
+  ],
+  "bugs": {
+    "url": "http://jira.h2o.ai/"
+  },
+  "author": "H2O <support@h2o.ai>",
+  "dependencies": {
+    "gitbook-plugin-ga": "~0.2.0",
+    "gitbook-plugin-anchors": "~0.3.0"
+  }
+}
