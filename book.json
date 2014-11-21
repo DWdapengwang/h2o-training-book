@@ -1,3 +1,9 @@
 {
-    "plugins": ["exercises"]
+    "plugins": ["mathjax","ga", "anchors"]
+
+    "pluginsConfig": {
+      "ga": {
+        "token" : "UA-29263631-1"
+      }
+    }
 }
