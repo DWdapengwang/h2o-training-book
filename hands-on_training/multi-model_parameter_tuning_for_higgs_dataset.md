@@ -42,7 +42,7 @@ The first column is the response label (background:0 or higgs:1). Of the 28 nume
 ### Establishing the baseline performance reference with several H2O classifiers
 To get a feel for the performance of different classifiers on this dataset, we build a variety of different H2O models (Generalized Linear Model, Random Forest, Gradient Boosted Machines and DeepLearning). We would like to use grid-search for hyper-parameter tuning with N-fold cross-validation, and we want to do this twice: once using just the low-level features, and once using both low- and high-level features.
 
-First, we source a few [helper functions](binaryClassificationHelper.R.md) that allow us to quickly compare a multitude of binomial classification models, in particular the h2o.fit() and h2o.leaderBoard() functions.  Note that these specific functions require variable importances and N-fold cross-validation to be enabled.
+First, we source a few [helper functions](binaryClassificationHelper.R.html) that allow us to quickly compare a multitude of binomial classification models, in particular the h2o.fit() and h2o.leaderBoard() functions.  Note that these specific functions require variable importances and N-fold cross-validation to be enabled.
 
     source("~/h2o-training/tutorials/advanced/binaryClassificationHelper.R.md")
 
