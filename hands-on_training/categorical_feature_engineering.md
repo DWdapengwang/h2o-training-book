@@ -21,7 +21,7 @@ We will try to predict whether `income` is `<=50K` or `>50K`.
     summary(data_hex$income)
     response = "income"
 
-First, we source a few [helper functions](../binaryClassificationHelper.R.html) that allow us to quickly compare a multitude of binomial classification models, in particular the h2o.fit() and h2o.leaderBoard() functions.  Note that these specific functions require variable importances and N-fold cross-validation to be enabled.
+First, we source a few [helper functions](binaryClassificationHelper.R.md) that allow us to quickly compare a multitude of binomial classification models, in particular the h2o.fit() and h2o.leaderBoard() functions.  Note that these specific functions require variable importances and N-fold cross-validation to be enabled.
 
     source("~/h2o-training/tutorials/advanced/binaryClassificationHelper.R.md")
 
