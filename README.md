@@ -10,9 +10,9 @@ Get started with minimal effort and investment. H2O is an extensible open source
 
 ## Get H2O!
 ###Download H2O
-http://0xdata.com/download/
+http://h2o.ai/download/
 
 ###Join the Community
 [H2O Google Group](mailto:h2ostream@googlegroups.com)
 ### Hack H2O
-https://github.com/0xdata/h2o.git
+https://github.com/h2oai/h2o.git
