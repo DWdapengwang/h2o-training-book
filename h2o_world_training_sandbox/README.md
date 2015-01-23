@@ -1,9 +1,13 @@
 # Setup H<sub>2</sub>O World Training Sandbox
 
 ## 1. Prerequisites
-  * VirtualBox
-    * Provided on H<sub>2</sub>O World USB sticks, or
-    * Available for [download](https://www.virtualbox.org/wiki/Downloads)
+  * A Virtual Machine Player
+    * Option 1: VirtualBox
+        * Provided on H<sub>2</sub>O World USB sticks, or
+        * Available for [download](https://www.virtualbox.org/wiki/Downloads)
+
+    * Option 2: VMware
+        * Available for [download](https://my.vmware.com/web/vmware/free#desktop_end_user_computing/vmware_player/6_0)
 
   * H<sub>2</sub>O World Training Sandbox Image (*.ova* format)
     * Provided on H<sub>2</sub>O World USB sticks, or
@@ -12,6 +16,9 @@
 > Note: You can use also your favorite virtualization tool like VMWare Fusion, VMWare Player, or Microsoft Hyper-V.
 
 ## 2. Setup Sandbox
+
+### 2.1 VirtualBox
+
   * Start VirtualBox
   ![VirtualBox Application](images/01_virtualbox.png)
 
@@ -26,6 +33,20 @@
 
   * Review configurations of the image file and hit Import
   ![Import Image](images/boot01.png)
+
+### 2.1 VMware
+
+  * Start VMware
+
+  * Select the menu item _Player > File > Open_
+
+  * Open provided _h2oworld-training.ova_ file from USB drive
+
+  * In the Import Virtual Machine dialog:
+      * Leave Name for the new virtual machine as _h2oworld-training_
+      * Choose an appropriate _Storage path for the new virtual machine_,
+        e.g. D:\Virtual Machines\h2oworld-training
+      * Click the _Import_ button
 
 ## 3. Launch Sandbox
   * Select h2oworld-training item and click on _Start_ icon
