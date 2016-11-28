@@ -17,8 +17,8 @@ Initialize the H2O server and import the MNIST training/testing datasets.
     homedir <- "/data/h2o-training/mnist/"
     TRAIN = "train.csv.gz"
     TEST = "test.csv.gz"
-    train_hex <- h2o.importFile(h2oServer, path = paste0(homedir,TRAIN), header = F, sep = ',', key = 'train.hex')
-    test_hex <- h2o.importFile(h2oServer, path = paste0(homedir,TEST), header = F, sep = ',', key = 'test.hex')
+    train_hex <- h2o.importFile(path=paste0(homedir,TRAIN),destination_frame = "train_hex")
+    test_hex <- h2o.importFile(path=paste0(homedir,TEST),destination_frame = "test_hex")
 
 The data consists of 784 (=28^2) pixel values per row, with (gray-scale) values from 0 to 255. The last column is the response (a label in 0,1,2,...,9).
 
@@ -37,26 +37,25 @@ We train a Deep Learning Auto-Encoder to learn a compressed (low-dimensional) no
 
 Train unsupervised Deep Learning autoencoder model on the training dataset. For simplicity, we train a model with 1 hidden layer of 50 Tanh neurons to create 50 non-linear features with which to reconstruct the original dataset.  We learned from the Dimensionality Reduction tutorial that 50 is a reasonable choice. For simplicity, we train the auto-encoder for only 1 epoch (one pass over the data). We explicitly include constant columns (all white background) for the visualization to be easier.
 
-    ae_model <- h2o.deeplearning(x=predictors,
-                               y=42, #response (ignored - pick any non-constant column)
-                               data=train_hex,
-                               activation="Tanh",
-                               autoencoder=T,
-                               hidden=c(50),
-                               ignore_const_cols=F,
-                               epochs=1)
-
+	ae_model <- h2o.deeplearning(x=predictors,
+					training_frame=train.hex,
+					hidden=c(50),
+					epoch=1,
+					activation="Tanh",
+					autoencoder=T,
+					ignore_const_cols=F)
+					
 Note that the response column is ignored (it is only required because of a shared DeepLearning code framework).
 
 ####2. Find outliers in the test data
 The Anomaly app computes the per-row reconstruction error for the test data set. It passes it through the autoencoder model (built on the training data) and computes mean square error (MSE) for each row in the test set.
 
-    test_rec_error <- as.data.frame(h2o.anomaly(test_hex, ae_model))
+    test_rec_error <- as.data.frame(h2o.anomaly(data=test_hex,object=ae_model))
 
 
 In case you wanted to see the lower-dimensional features created by the auto-encoder deep learning model, here's a way to extract them for a given dataset. This a non-linear dimensionality reduction, similar to PCA, but the values are capped by the activation function (in this case, they range from -1...1)
 
-    test_features_deep <- h2o.deepfeatures(test_hex, ae_model, layer=1)
+    test_features_deep <- h2o.deepfeatures(data=test_hex,object=ae_model,layer=1)
     summary(test_features_deep)
 
 ####3. Visualize the *good*, the *bad* and the *ugly*
@@ -76,16 +75,17 @@ We will need a helper function for plotting handwritten digits (adapted from htt
       on.exit(par(op))
     }
 
-    plotDigits <- function(data, rec_error, rows) {
-      row_idx <- order(rec_error[,1],decreasing=F)[rows]
-      my_rec_error <- rec_error[row_idx,]
-      my_data <- as.matrix(as.data.frame(data[row_idx,]))
-      plotDigit(my_data, my_rec_error)
+	plotDigits <- function(data, rec_error, rows) {
+  	 row_idx <- order(rec_error[,1],decreasing=F)[rows]
+  	 my_rec_error <- rec_error[row_idx,]
+	 my_da <- as.matrix(as.data.frame(data))
+         my_data <- my_da[row_idx,]
+         plotDigit(my_data, my_rec_error)
     }
 
 Let's look at the test set points with low/median/high reconstruction errors. We will now visualize the original test set points and their reconstructions obtained by propagating them through the narrow neural net.
 
-    test_recon <- h2o.predict(ae_model, test_hex)
+    test_recon <- h2o.predict(object=ae_model,newdata=test_hex)
     summary(test_recon)
 
 ####The good
